@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .topmenu{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #777;
+        }
+        .topmenu li{
+            float: left;
+        }
+        .topmenu li a{
+            text-decoration: none;
+            text-align: center;
+            padding: 16px;
+            color: white;
+            display: inline-block;
+        }
+        .topmenu li a:hover{
+            background-color: #222;
+        }
+        .topmenu li a.active {
+            color: white;/* 为什么要加color */
+            background-color: #4CAF50;
+        }
+        .footer{
+            background-color: #444;
+            color: white;
+            padding: 15px;
+        }
+        .footer p{
+            text-align: center;
+        }
+        .column{
+            float: left;
+            padding: 15px;
+        }
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .sidemenu{
+            width: 25%;
+        }
+        .content{
+            width: 75%;
+        } 
+        .sidemenu ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .sidemenu li a{
+            margin-bottom: 4px;
+            display: block;
+            padding: 8px;
+            background-color: #eee;
+            text-decoration: none;
+            color: #666;
+        }
+        .sidemenu li a:hover {
+            background-color: #555;
+            color: white;
+        }
+        .sidemenu li a.active {
+            background-color: #008CBA;
+            color: white;
+        }
+        .header{
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="topmenu">
+        <li>
+            <a href="#home" class="active">主页</a>
+        </li>
+        <li>
+            <a href="#news">新闻</a>
+        </li>
+        <li>
+            <a href="#about">关于我们</a>
+        </li>
+        <li>
+            <a href="#content">联系我们</a>
+        </li>
+    </ul>
+    <div class="clearfix">
+        <div class="column sidemenu">
+            <ul>
+                <li>
+                    <a href="#flight" class="active">the flight</a>
+                </li>
+                <li>
+                    <a href="#city" class=>the city</a>
+                </li>
+                <li>
+                    <a href="#island" class=>the island</a>
+                </li>
+                <li>
+                    <a href="#food" >the food</a>
+                </li>
+                <li>
+                    <a href="#people" >the people</a>
+                </li>
+                <li>
+                    <a href="#history" >the history</a>
+                </li>
+                <li>
+                    <a href="#oceans" >the oceans</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="column content">
+            <div class="header">
+                <h1>the city</h1>
+            </div>
+            <h1>chania</h1>
+            <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+            <p>You will learn more about responsive web pages in a later chapter.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>底部文字</p>
+    </div>
+</body>
+</html>

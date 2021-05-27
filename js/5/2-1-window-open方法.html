@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            open()
+                一参数：跳转的url
+                二参数：字符串，给打开窗口起一个名字
+                再点击打开窗口，找到有这个名字的网页打开
+                三参数：一串特殊含义的字符串(控制打开窗口属性)
+        */
+       function $(id){
+           return document.getElementById(id);
+       }
+       window.onload = function(){
+           function openWindow(){
+                $("openWindow").onclick = function(){
+                    open("https://www.bilibili.com/video/BV17x411Z7LQ/?spm_id_from=pageDriver","老套剧情","width=100px,height=100px,top=200px,left=200px")
+                }
+                //记得是用逗号隔开样式
+           }
+           openWindow();
+       }
+        
+        
+    </script>
+</head>
+<body>
+    <button id="openWindow">打开窗口</button>
+</body>
+</html>

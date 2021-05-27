@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 640px;
+            height: 320px;
+            background:url(./img2/img2.jpg);
+            
+           
+        }
+        .cursor{
+                height:300%;
+                width: 10px;
+                /* background-image: linear-gradient(to right bottom, white 0%,hotpink 10% ,white 100%); */
+                background-image:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.8),rgba(255,255,255,0)); 
+                background-size: 10px;
+                transform-origin:left;
+                transform:translateY(-1000px)  translateX(-300px) rotate(30deg);
+        }
+        .box:hover .cursor{
+            animation: 3s move infinite;
+        }
+        @keyframes move {
+            0%{
+               transform:translateY(-800px)  translateX(-300px) rotate(30deg);
+            }
+            100%{
+                transform:translateY(100px) translateX(600px) rotate(30deg);}
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="cursor">
+
+        </div>
+    </div>
+</body>
+</html>

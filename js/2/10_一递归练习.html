@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        斐波那契数列
+        兔子繁殖问题，设有一对新生兔子，从第四个月开始他们每个月月初都生一对兔子，新生的兔子，从第四个月月初开始，又每个月生一对兔子
+        按此规律，并假定兔子没有死亡，n(n <= 20)个月月末共有多少对兔子？
+     -->
+     <script>
+         function sum(n){
+             if(n < 4){
+                return 1;
+             }else{
+                return sum(n-1)+sum(n-3) ;
+             }
+             
+         }
+         alert(sum(8));
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

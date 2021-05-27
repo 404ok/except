@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            声明提升
+         */
+
+        /* //  var num = 10;
+         alert(num); */
+
+
+
+        /* 
+            内存分配，一次分配
+
+            准备做菜，先要将菜谱从头到尾看一遍，所有材料准备好，才开始工作
+
+            编程：预先分配好空间    --> 预编译工作
+
+            预编译：在所有代码运行前，计算机将代码从头到尾看一遍，将这个程序需要运行的空间一次性分配好  
+            变量和函数会声明提升
+
+            声明提升：在当前作用域(!!!)，声明变量和函数，会直接提升在整个代码的最前面运行
+         */
+        alert(num1);    //输出undefined
+        var num1 = 10;
+        alert(num1);
+        show();
+        function show(){
+            document.write("hello world~")
+        }
+
+        //局部作用域
+
+        function print(){
+            alert(num);
+            var num = 10;
+            alert(num);
+        }
+        print();
+        alert(num);//报错
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

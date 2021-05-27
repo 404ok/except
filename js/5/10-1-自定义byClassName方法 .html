@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            node.getElementsByClassName()
+        */
+       //node代表从node这个节点开始查找 classStr查找名字
+       //查找ol1下的box name属性
+        onload = function(){
+            function elementsByClassName(node,classStr){
+                var nodes = node.getElementsByTagName("*");
+                var arr = [];
+                for (let i = 0; i < nodes.length; i++) {
+                    if(nodes[i].className == classStr){
+                        arr.push(nodes[i]);
+                    }
+                    
+                }
+            }
+            var ol1 = document.getElementById("ol1");
+            var box = elementsByClassName(ol1,"box")
+            for (let i = 0; i < box.length; i++) {
+                box[i].style.bacagroundColor = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li class="box">111</li>
+        <li>111</li>
+        <li>111</li>
+        <li class="box">111</li>
+        <li name="hello">111</li>
+        <div class="box" name="hello"></div>
+    </ul>
+    <input type="text" name="hello">
+    <ol id="ol1">
+        <li>222</li>
+        <li class="box">222</li>
+        <li class="box">222</li>
+        <li>222</li>
+    </ol>
+</body>
+</html>

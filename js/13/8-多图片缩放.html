@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1 li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+            background-color: pink;
+        }
+        #ul1{
+            width: 366px;
+            height: 366px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+        #ul1 li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="./startMove.js"></script>
+    <script>
+        /*
+            布局：相对定位：看似简单
+            但实际放大时，因为都是浮动，所以放大后，会把别的挤开    必须绝对定位
+            文档流转换
+         */
+        window.onload = function(){
+            var ul1 = document.getElementById("ul1");
+            var lis = ul1.getElementsByTagName("li");
+            var currentIndex = 2;
+
+            for(var i = 0;i < lis.length;i++){
+                lis[i].style.left = lis[i].offsetLeft + "px";
+                lis[i].style.top = lis[i].offsetTop +"px";
+                var img = document.createElement("img");
+                img.src = "IMG/" + (i+1) + ".png";
+                lis[i].appendChild(img);
+            }
+            for(var i = 0;i < lis.length;i++){
+               lis[i].style.position = "absolute";
+               lis[i].style.margin = "0px";
+
+
+               //给每一个li标签添加移入和移出
+               lis[i].onmouseover = function(){
+                   this.style.zIndex = currentIndex++;
+                   startMove(this,{
+                       width:200,
+                       height:200,
+                       marginLeft:-50,
+                       marginTop:-50,
+                   })
+                }
+                lis[i].onmouseout = function(){
+                   startMove(this,{
+                       width:100,
+                       height:100,
+                       marginLeft:0,
+                       marginTop:0
+                   })
+               }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        九宫格：无论是微信、微博、QQ都是九宫格,因为比较方便，不容易造成误触
+     -->
+    <ul id="ul1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

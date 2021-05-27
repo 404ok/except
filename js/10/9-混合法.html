@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name,sex){
+            this.name = name;
+            this.sex = sex;
+        }
+        Person.prototype.showName = function(){
+            alert("我的名字是" + this.name);
+        }
+        Person.prototype.showSex = function(){
+            alert("我的名字是" + this.sex);
+        }
+
+        var p1 = new Person("blue","男");
+        p1.showName();
+        p1.showSex();
+        var p2 = new Person("red","女");
+        p2.showName();
+        p2.showSex();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

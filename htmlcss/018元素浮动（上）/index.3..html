@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>聊天对话框</title>
+<style type="text/css">
+*{font-size: 14px; padding:0; margin:0;}
+.main{
+	margin: 20px auto;
+	border: 1px solid steelblue;
+	width: 290px;
+	height: 400px;
+}
+.msgInput{
+	display: block;
+	width: 265px;
+	height: 60px;
+	margin: 10px auto;
+	
+}
+.content{
+	list-style: none;
+	width: 260px;
+	height: 380px;
+	margin: 5px auto;
+	border: 1px dotted #D1D3D6;
+}
+.msgContent{
+	border: 1px dotted #222;
+	clear: both;
+}
+
+.content .left{
+	float: left;
+	text-align: left;
+	background-color: lightgrey;
+}
+.content .right{
+	float: right;
+	text-align: right;
+	background-color: yellowgreen;
+}
+
+
+</style>
+</head>
+
+<body>
+	<div id="main" class="main">
+		<ul class="content">
+			<li class="msgContent left">你好?</li>
+			<li class="msgContent right">你好</li>
+			<li class="msgContent left">祝你幸福</li>
+			<li class="msgContent right">？？</li>
+			<li class="msgContent left">再见</li>
+			<li class="msgContent right">纳尼？</li>
+			<li class="msgContent right">。。。。。</li>
+		</ul>
+	</div>
+</body>
+</html>

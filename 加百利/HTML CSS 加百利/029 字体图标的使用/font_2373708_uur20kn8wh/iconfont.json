@@ -1,0 +1,37 @@
+{
+  "id": "2373708",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18595814",
+      "name": "书包",
+      "font_class": "shishi",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "18621215",
+      "name": "旅行包",
+      "font_class": "lvhangbao",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "19838408",
+      "name": "卫衣",
+      "font_class": "weiyi",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "19862593",
+      "name": "鸭舌帽",
+      "font_class": "yashemao",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    }
+  ]
+}

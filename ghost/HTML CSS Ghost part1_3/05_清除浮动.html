@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #box1{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            clear: both;
+        } */
+
+        /* #box3{
+            width: 200px;
+            border: 1px solid red;
+        }
+        #box4{
+            width: 100px;
+            height: 200px;
+            background-color: blueviolet;
+            float: left;
+        }
+        .clear{
+            clear: both;
+        } */
+
+
+        #box1{
+            width: 200px;
+            border: 1px solid red;
+        }
+        #box2{
+            width: 100px;
+            height: 200px;
+            background-color: blueviolet;
+            float: left;
+        }
+        .clear:after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <div id="box1"></div>
+    <div id="box2"></div>
+
+    <div id="box3">
+        <div id="box4">
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <span>aaa</span> -->
+
+    <!-- after:加强版 -->
+    <div id="box1"class="clear">
+        <div id="box2">
+
+        </div>
+        <div ></div>
+    </div>
+    <span>aaa</span>
+</body>
+</html>

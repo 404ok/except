@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            margin: 100px;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+    </style>
+    <script>
+        /* 
+            多物体运动：
+                谁运动不确定，所以需要传入
+        */
+        window.onload = function(){
+            var divs = document.getElementsByTagName("div");
+            for(var i = 0;i < divs.length;i++){
+                divs[i].alpha = 30;
+                divs[i].onmouseover = function(){
+                    startMove(this,100);
+                }
+                divs[i].onmouseout = function(){
+                    startMove(this,30);
+                }
+            }
+        }
+        //声明一个中间变量alpha
+        // var alpha = 30;
+        /* 
+            多物体运动：
+                1.定时器不能共用
+                2.任何数据都不能公用
+        */
+        function startMove(node,iTarget){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                //计算速度
+                var speed = (iTarget - node.alpha)/30;
+                speed = speed >0 ? Math.ceil(speed) : Math.floor(speed);
+                if(iTarget == node.alpha){
+                    clearInterval(node.timer);
+                }else{
+                    node.alpha += speed;
+                    //设置透明度
+                    node.style.opacity = node.alpha /100;
+                    node.style.filter = "alpha(opacity="+node.alpha+ ")";
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            强制类型转换：
+                Boolean()   将其他数据类型强制转换为布尔值
+                    口诀：非0即真,非空即真
+                    
+                Number()     将其他数据类型强制转换为数字
+                    注意：只有纯数字符组成的字符串转数字，才能转为数字，其他都为NaN
+                parseInt()     
+                    1.取整
+                    2.将别的进制转为十进制，必须传入字符串
+
+                parseFloat()     将其他数据类型强制转换为浮动数
+
+        */
+
+        var strl ="110100";
+        alert(parseInt(strl,2));
+
+        /* //Boolean()
+        
+
+        //数字
+        alert(Boolean(100));
+        alert(Boolean(0.02));
+        alert(Boolean(0));
+        alert(Boolean(Infinity));   //(true)
+        
+        //字符串
+        alert(Boolean("11"));
+        alert(Boolean("hello"));
+        alert(Boolean("")); //(空字符串：false)
+
+        //特殊数据类型
+        alert(Boolean(undefined));  //(false)
+        alert(Boolean(NaN));        //(false)
+        alert(Boolean(null));       //(false) */
+
+
+       /*  //Number()
+        alert(Number("1000"));
+        alert(Number("100a")); */
+
+
+        //parseInet()
+        alert(parseInt("1000"));
+        alert(parseInt("1000a"));
+        alert(parseInt("as1000"));
+        alert(parseInt("3.14a"));
+
+
+        //parseFloat
+        alert(parseFloat("1000"));
+        alert(parseFloat("1000a"));
+        alert(parseFloat("as1000"));
+        alert(parseFloat("3.14a"))
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

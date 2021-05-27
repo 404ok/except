@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #div1{
+                width: 712px;
+                height: 402px;
+                background: url(./img/动图.gif) no-repeat;
+                position: absolute;
+            }
+            body{
+                background-color: #f7cbad;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var div = document.getElementById("div1");
+                document.onmousemove = function(ev){
+                    var e = ev || window.event;
+                    div.style.left = e.clientX -300 + "px";
+                    div.style.top = e.clientY - 200 + "px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1"></div>
+    </body>
+</html>

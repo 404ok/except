@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            事件类型的种类
+                一、鼠标事件(可以绑定在任意的元素节点上)
+                    click       单击
+                    dblclick    双击
+                    mousemove   鼠标移出(会不停的触发)
+                    mousedown   鼠标按下
+                    mouseup     鼠标抬起
+                    下面二者区别：
+                        mouseover   鼠标移入    mouseenter  鼠标移入
+                        mouseout    鼠标移出    mouseleave  鼠标移出
+                
+                
+        */
+        window.onload = function(){
+            var btn = document.getElementById("btn1");
+            /* btn.ondblclick = function(){
+                alert("双击");
+            } */
+
+            //此处this代表btn
+            btn.onmouseover = function(){
+                this.style.backgroundColor = "pink";
+            }
+            btn.onmouseout = function(){
+                this.style.backgroundColor = "blue";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮1</button>
+</body>
+</html>

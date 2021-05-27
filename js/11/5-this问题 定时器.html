@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            this:指向当前函数的主人
+            总结this容易混乱的地方：
+                1.事件绑定
+                2.定时器
+            事件绑定
+        */
+
+        //假如函数进行了赋值，则this变化,若只是执行，则不会变化
+        function Aaa(){
+            this.a = 10;
+            var btn = document.getElementById("btn1");
+            //把当前this记下来
+            var _this = this;
+            //赋值
+            /* btn.onclick = function(){
+                _this.show();
+            } */
+            btn.onclick = this.show.bind(this);
+            //bind最简单的用法是创建一个函数，使得这个函数不论怎么调用都有同样的this值
+        }
+        Aaa.prototype.show = function(){
+            alert(this.a);
+        }
+        window.onload = function(){
+            var a1 = new Aaa();
+            a1.show();
+        }
+        
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+</body>
+</html>

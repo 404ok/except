@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+   </style>
+    <script>
+        /* 
+            事件驱动函数 
+            【注意】通过id获取页面上对应的标签
+            document.getElementById(id);
+
+            node.innerHTML 标签间的内容
+        */
+       function code(n){
+            var arr = [];
+            for(var i = 0;i < n;i++){
+                var num =parseInt(Math.random() * 123);
+                if(num >= 1 && num <= 9){
+                    arr.push(num);
+                }else if(num >= 97 && num <= 122 || num >= 65 && num <= 90){
+                    arr.push(String.fromCharCode(num));
+                }else{
+                    i--;
+                }
+            }
+            return arr.join("");
+        }
+       function btnClick(){
+           var div = document.getElementById("div");
+           div.innerHTML = code(6);
+       }
+    </script>
+</head>
+<body>
+    <div id="div">okoko</div>
+    <button onclick="btnClick()">获取验证码</button>
+</body>
+</html>

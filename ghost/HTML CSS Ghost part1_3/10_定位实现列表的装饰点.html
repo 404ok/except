@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        a{
+            text-decoration: none;
+            color: #737270;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        #main{
+            margin:20px  auto;
+            width: 356px;
+            border: 2px solid #dde0e7;
+            border-top: 4px solid #ff8400;
+        }
+        #main h2 {
+            height: 52px;
+            border-bottom: 2px solid #dde0e7;
+            line-height: 52px;
+            font-family: 微软雅黑;
+            padding-left: 17px;
+            font-size: 24px;
+        }
+        #main h2 a{
+            color: black;
+        }
+        #main h2 a:hover{
+            color: #FF8500;
+        }
+        #main  #img img{
+            margin: 15px auto 5px auto ;
+
+        }
+        #main ul{
+            margin-top:12px ;
+            margin-bottom: 9px;
+        }
+
+        #main ul li .first-line{
+            border-bottom: 2px solid #dde0e7;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        #main ul a{
+            
+            padding-left: 25px;
+            font-size: 18px;
+            line-height: 36px;
+        }
+        #main ul li{
+            position: relative;
+        }
+        #main ul li:before{
+            content: '';
+            display: block;
+            width: 3px;
+            height: 3px;
+            background-color: gold;
+            position: absolute;
+            left: 18px ;
+            top: 18px;
+        }
+        #main ul a:hover{
+            color: #FF8500;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>
+            <a href="#">
+                探索趣图
+            </a>
+        </h2>
+        <div id="img">
+            <a href="#">
+                <img src="./img/兔子切图.jpg" alt="">
+            </a>
+        </div>
+        <ul>
+            <li>
+                <div class="first-line">
+                    <a href="#">
+                        GIF：兔子怎么吃车厘子
+                    </a>
+                </div>
+                
+            </li>
+            <li>
+                <a href="#">
+                    1小时手术，第二天看报：角膜，人工的
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    说出来你可能不信,吃寄生虫可以治病
+                </a>
+            </li>
+        </ul>
+        </div>
+    
+</body>
+</html>

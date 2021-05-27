@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>   
+        /* 
+             1.将字符串str = "When I was young,I love a girl in neighbor class",
+            从young提取到girl生成新字符串，但是不许数
+        */
+
+        var str = "When I was young,I love a girl in neighbor class";
+        var start = str.indexOf("young");
+        var end = str.indexOf("girl")  + "girl".length;
+        /* 
+            indexOf获取字符串的下标
+        */
+        var newStr = str.substring(start,end);
+        alert(newStr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

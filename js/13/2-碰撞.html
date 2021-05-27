@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var div1 = document.getElementById("div1");
+            var div2 = document.getElementById("div2");
+            //蓝色可以在当前页面上拖拽
+
+            div2.onmousedown = function(ev){
+                var e = ev || window.event;
+                var offsetX = e.clientX - div2.offsetLeft;
+                var offsetY = e.clientY - div2.offsetTop;
+                document.onmousemove = function(ev){
+                    var e = ev || window.event;
+                    //判断
+                    if(knock(div1,div2)){
+                        div1.style.backgroundColor = 'black';
+                    }else{
+                        div1.style.backgroundColor = "red";
+                    }
+                    div2.style.left = e.clientX - offsetX +"px";
+                    div2.style.top = e.clientY - offsetY + "px";
+                }
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+        /* 
+            碰撞:
+                逆向判断
+                找绝对碰不到：
+                     
+                找到物体的坐标系：一定要以一个原点作为标准
+        */
+       function knock(node1,node2){
+            //先将node1、node2的上下左右四条边算出来
+            var l1 = node1.offsetLeft;
+            var r1 = node1.offsetLeft + node1.offsetWidth;
+            var t1 = node1.offsetTop;
+            var b1 = node1.offsetTop + node1.offsetHeight;
+            var l2 = node2.offsetLeft;
+            var r2 = node2.offsetLeft + node2.offsetWidth;
+            var t2 = node2.offsetTop;
+            var b2 = node2.offsetTop + node2.offsetHeight;
+            //碰撞
+            if(l2 >r1 || r2 < l1 || t2 > b1 || b2 < t1){
+                return false;
+            }else{
+                return true;
+            }
+       }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

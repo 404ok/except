@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            /* 
+                replace()
+                    格式：supStr.replace(oldeStr,newStr);
+                    功能：用newStr将oldStr,替换掉。生成新字符串
+                    参数：
+                        第一个参数传入的字符串只能替换一次
+                        第一个参数 正则表达式
+                            /xxx/ i忽略大小写 g全局匹配
+                    返回值：替换成新字符串
+                    【注意】只能替换第一个
+            */
+
+            var str = "how are aRe you";
+            var newStr = str.replace(/are/gi,"old are");
+            alert(newStr);
+
+            /* 
+                split() 字符串分割
+                    格式：字符串.split(分割符,length)
+                    参数：
+                        第一个参数，用这个分割符对原字符串进行分割
+                        第二个参数，控制返回的数组的元素格式    【注】一般情况不用
+                    功能：用分隔符对原字符串，进行字符串分割将分割完毕以后的子串，放在数组中返回
+                    返回值:数组
+                注意：
+                    1.相邻的两个分隔符，会产生空字符串
+                    2.分隔符为空字符串时，直接将每一个字符，单独分割成子串，放在数组中返回
+            */
+        var str1 = "hello  world ,how are you";
+        var arr1 = str1.split("");
+        //原理：一个空格，找到空格，然后换成","
+        alert(str1);//hello world ,how are you
+        alert(arr1);//hello,world,,how,are,you
+        /* 
+                toLowerCase()    转成全小写
+                toUpperCase()   转成全大写
+        */
+
+        var str2 = "okJSIO";
+        alert(str2.toLowerCase());
+        alert(str2.toUpperCase());
+
+        /* 
+                concat 字符串拼接
+        */
+        var str3 = "look";
+        var newArr3 = str3.concat("ok",90);
+        var newArr4 = str3 + "peach";
+        //加号来进行字符串拼接
+        alert(newArr3);
+        alert(newArr4);
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

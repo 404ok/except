@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+        a:link{
+            color: red;
+        }
+        a:visited{
+            color: yellow;
+        }
+        a:hover{
+            color: chartreuse;
+        }
+        a:active{
+            color: pink;
+        }
+        
+        /* div::after{
+            content: "World";
+        } */
+        div::before{
+            content: "World";
+        }
+        
+        :checked{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">这是一个链接</a>
+    <div>
+        Hello
+    </div>
+    <input type="checkbox" >
+    <input type="checkbox" >
+    <input type="checkbox" >
+</body>
+</html>

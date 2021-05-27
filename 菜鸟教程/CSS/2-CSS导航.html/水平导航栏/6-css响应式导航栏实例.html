@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul.topnav{
+            list-style-type: none;
+            overflow: hidden;
+            background-color: lightgreen;
+        }
+        li{
+            float: left;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+        a:hover:not(.active){
+            background-color: yellowgreen;
+        }
+        a.active{
+            background-color: turquoise;
+        }
+        ul.topnav li.right{
+            float: right;
+        }
+        @media screen and (max-width:600px) {
+            ul.topnav li.right,ul.topnav li{
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="topnav">
+        <li><a href="#" class="active">主页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">联系</a></li>
+        <li class="right"><a href="#" >关于</a></li>
+    </ul>
+
+    <div style="padding:0 16px;">
+        <h2>响应式导航栏实例</h2>
+        <p>在屏幕宽度小于600px,会重置导航栏</p>
+        <h4>重置浏览器窗口大小，查看效果</h4>
+    </div>
+</body>
+</html>

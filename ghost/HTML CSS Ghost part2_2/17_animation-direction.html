@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2,.box3{
+            width: 200px;
+            height: 200px;
+            background-color: turquoise;
+            margin: 4px;
+        }
+        .box1{
+            animation: 1s move infinite linear;
+        }
+        @keyframes move {
+            0%{
+                transform: translate(0,0);
+            }
+            100%{
+                transform: translate(300px,0);
+            }
+        }
+        .box2{
+            animation: 1s move infinite linear;
+            animation-direction: alternate;
+        }
+        .box3{
+            animation: 1s move infinite linear;
+            animation-direction: reverse;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

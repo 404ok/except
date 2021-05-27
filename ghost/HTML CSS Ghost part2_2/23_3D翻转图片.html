@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            display: block;
+        }
+        .parent{
+            width: 640px;
+            height: 320px;
+            margin: 100px auto;
+            position: relative;
+            perspective: 700px;
+
+        }
+        .parent div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: 2s;
+        }
+        .parent .first{
+            transform: rotateY(0);
+        }
+        .parent .second{
+            transform: rotateY(-180deg);
+        }
+        .parent:hover .first{
+            transform: rotateY(180deg);
+        }
+        .parent:hover .second{
+            transform: rotateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="first">
+            <img src="./img2/img1.jpg" alt="">
+        </div>
+        <div class="second">
+            <img src="./img2/img2.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

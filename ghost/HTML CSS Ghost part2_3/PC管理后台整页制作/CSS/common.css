@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+img{
+    display: block;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;
+    font-weight: normal;
+}
+a{
+    text-decoration: none;
+    color: #666666;
+}
+html,body{
+    font-family: MicrosoftYaHei,Arial;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.l{
+    float: left;
+}
+.r{
+    float: right;
+}
+.clear::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#header{
+    height: 80px;
+    background-color: #018ffb;
+    border-top: 5px solid #424147;
+}
+#header .header-logo h1{
+    margin: 19px 14px 0 20px;
+}
+#header .header-logo h2{
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 25px;
+    margin-top: 28px;
+}
+#header .header-nav li{
+    color: white;
+    margin-left: 25px;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 34px;
+}
+#header .header-nav li:last-child{
+    margin-right: 20px;
+}
+#header .header-nav i{
+    margin-right: 8px;
+}
+#header .header-nav i.iconwode{
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    line-height: 8px;
+}
+#header .header-nav i.iconshouye{
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    line-height: 12px;
+}
+#header .header-nav a{
+    color: white;
+}
+
+#menu{
+    width: 200px;
+    background-color: #424147;
+    height: calc(100% - 85px);
+}
+#menu ul{
+    color: #9A999E;
+    text-align: center;
+}
+#menu ul li{
+    height: 140px;
+    border-top:1px #494841 solid ;
+    border-bottom: 1px #3a393e solid;
+}
+#menu ul li:nth-child(1){
+    color: white;
+    background-color: #4e4d53;
+}
+#menu ul li a{
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-top: 35px;
+    box-sizing: border-box;
+}
+#menu ul li i{
+    font-size: 40px;
+}
+#menu ul li p{
+    margin-top: 15px;
+}
+
+#main{
+    overflow: hidden;
+    height: calc(100% - 85px - 50px);
+}
+#main-container{
+    height: 100%;
+    overflow: auto;
+}
+#footer{
+    font-size: 12px;
+    line-height: 49px;
+    height: 49px;
+    border-top: 1px #dbe7ed solid;
+    background-color:#f1f9fc ;
+    padding-right: 20px;
+} 

@@ -1,0 +1,20 @@
+.subbar{
+    position:fixed;
+    bottom: 100px;
+    left: 50%;
+    margin-left: 602px;
+}
+
+.subbar li{
+    width: 30px;
+    height: 30px;
+    border: 1px #ccc solid;
+    text-align: center;
+    line-height: 30px;
+}
+.subbar li i{
+
+}
+.subbar li p{
+    display: none;
+}

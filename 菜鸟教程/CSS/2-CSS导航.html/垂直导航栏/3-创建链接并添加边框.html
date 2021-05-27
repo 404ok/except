@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            color: black;
+            background-color:#f1f1f1 ;
+            width: 200px;
+            padding: 8px 16px;
+            border: 1px solid #555;
+            text-align: center;
+        }
+        a:nth-child(1),a:nth-child(2),a:nth-child(3){
+            border-bottom: none;
+        }
+        li a.active{
+            background-color: #4CAF50;
+            color: white;
+        }
+        li a:hover:not(.active){
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#" class="active">主页</a>
+            <a href="#">新闻</a>
+            <a href="#">联系</a>
+            <a href="#">关于</a>
+        </li>
+    </ul>
+</body>
+</html>

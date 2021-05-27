@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: #646464;
+}
+ul,ol{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.l{
+    float: left;
+}
+.r{
+    float: right;
+}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+    position: relative;
+}
+.container-fluid{
+    width: 100%;
+}
+
+#head{
+    margin-top: 19px;
+    height: 81px;
+}
+#head .head_logo{
+    width: 162px;
+    height: 44px;
+}
+#head .head-menu{
+    font-size: 14px;
+    line-height: 81px;
+}
+#head .head-menu li{
+    float: left;
+    margin-left: 58px;
+}
+
+#service{
+    overflow: hidden;
+}
+.area-title{
+    margin-top: 60px;
+    text-align: center;
+}
+.area-title h3{
+    color: #363636;
+    line-height: 20px;
+    font-size: 20px;
+    height: 20px;
+    background: url(../../博文尚美/Images/titbg.jpg) no-repeat center;
+    font-weight: normal;
+}
+.area-title p{
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    color: #9f9f9f;
+}
+
+#foot{
+    background-color: #66c5b4;
+}
+#foot .container{
+    height:54px ;
+    line-height: 54px;
+    font-size: 12px;
+    color: white;
+}
+#foot .container a{
+    color: white;
+    margin: 0 10px;
+}

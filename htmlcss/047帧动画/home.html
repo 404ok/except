@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		body {
+			padding: 100px;
+		}
+		span {
+			display: inline-block;
+		}
+		.heart-left, .heart-right {
+			width: 50px; height: 80px; background-color: red;
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+		}
+		.heart-left {
+			transform: rotateZ(-45deg);
+		}
+		.heart-right {
+			transform: translateX(-28px) rotateZ(45deg);
+		}
+		.heart {
+			animation: beat 1.5s infinite;
+		}
+		@keyframes beat {
+			30% { transform: scale(1.3); }
+			100% { transform: scale(1); }
+		}
+	</style>
+	<body>
+		<span class="heart">
+			<span class="heart-left"></span><span class="heart-right"></span>
+		</span>
+		<p style="margin-left: -20px; margin-top: 30px;">加百利的小心心</p>
+	</body>
+</html>

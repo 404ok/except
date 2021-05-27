@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* a{
+            text-decoration: none;
+            color: black;
+        }
+        ul,li{
+            list-style: none;
+        } */
+    </style>
+    <!-- 1.先将ajax引进来 -->
+    <script src="./ajax.js"></script>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById("btn1");
+            var ul = document.getElementById("ul1")
+            //点击按钮，将ajax数据下载下来
+            btn.onclick = function(){
+                //每次获取数据都会要先把上一次清空一下,要不然会重复插入节点
+                ul.innerHTML = " ";
+                $ajax({
+                    method:"get",
+                    url:"./getNews.php",
+                    success:function(result){
+                        // alert(result);
+                        var arr = JSON.parse(result);//字符串 => 数据结构
+                        //通过循环创建节点，添加到页面上
+                        for(var i = 0;i < arr.length;i++){
+                            var newLi = document.createElement("li");
+                            var newA = document.createElement("a");
+                            newA.href = "#" + i;
+                            newA.innerHTML = arr[i].title;
+                            var newSpan = document.createElement("span");
+                            newSpan.innerHTML = "【" + arr[i].date + "】";
+                            //先是新建，再是插入
+                            newLi.appendChild(newA);
+                            newLi.appendChild(newSpan);
+                            ul.appendChild(newLi);
+                        }
+
+                    },
+                    error:function(msg){
+                        alert(msg);
+                    }
+                })
+            }
+            //用json格式化工具分析数据
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">获取新闻列表</button>
+    <ul id="ul1">
+        <!-- <li>
+            <a href="#">标题</a>
+            <span>【日期】</span>
+        </li> -->
+    </ul>
+</body>
+</html>

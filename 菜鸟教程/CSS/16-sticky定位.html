@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        sticky:粘性定位
+        它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。
+        指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。
+    -->
+    <style>
+        div.sticky{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: blue;
+            border: 3px solid hotpink;
+        }
+    </style>
+    </div>
+</head>
+<body>
+    <p>尝试滚动页面</p>
+    <p>注意：IE/EDGE 15及更早IE版本不支持sticky属性</p>
+
+    <div class="sticky">我是粘性定位！</div>
+    <div style="padding-bottom:2000px">
+        <p>滚动我</p>
+        <p>来回滚动我</p>
+        <p>滚动我</p>
+        <p>来回滚动我</p>
+        <p>滚动我</p>
+        <p>来回滚动我</p>
+</body>
+</html>

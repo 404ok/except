@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组
+                字面意思：一组数据，一组(一般情况下相同类型)的数据(不一定都是数字，可以是任意数据类型)。
+                数组是一种数据类型
+                作用：使用单独的变量名来存储一系列的值
+                一瓶啤酒、一扎啤酒、一箱啤酒
+                量词 
+
+                数据类型：
+                    基本数据类型
+                    特殊数据类型
+                    复合/引用数据类型：
+                        数组
+        */
+
+       /*  
+            声明数组：
+                1.通过 new 创建数组
+                    参数:传入任意的数据，存储到数组里。
+                2.省略new运算符创建数组
+                【注】上述两种方法，传入参数只有一个，并且是数字的时候，直接声明这么长的一个数组
+
+                3.数组常量进行赋值(JS一般使用[])
+        */
+       /* var arr = [10,true,"ij"];
+       alert(arr); */
+
+       //声明长度为10的数组，数组中没有数据
+        /* var arr = new Array(10);
+        alert(arr);
+        var arr = Array(10);
+        alert(arr); */
+
+        /* 
+            数组的属性
+                数组.length 返回值数组元素的个数
+            元素：将数据中存储的每个数据叫做一个元素
+            访问数组的元素：
+                数组[下标]：下标从0开始
+        */
+
+        var arr = [100,true,"ok"];
+        alert(arr.length);
+        for(i = 0; i < 3;i++){
+            alert(arr[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

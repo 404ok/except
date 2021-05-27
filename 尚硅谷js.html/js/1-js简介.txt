@@ -1,0 +1,18 @@
+1.什么是语言？
+    计算机很虎，编程语法
+
+2.js起源（1995年）
+    处理网页中的前端验证(检查用户内容是否符合规则)
+3.JScript(IE)
+4.ECMAScript:标准文档   厂商
+    FireFox SpiderMonkey
+    chrome  V8
+5.JavaScript构成：
+    ECMAScript(标准)
+    DOM
+    BOM
+6.js特点
+    解释型语言
+    基于C和Java的语法结构
+    动态语言
+    基于原型的面向对象

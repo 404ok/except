@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            overflow: hidden;
+            background-color: chartreuse;
+            width: 25%;
+            height: 100%;
+            position: fixed;
+        }
+        ul li a{
+            display: block;
+            text-decoration: none;
+            padding: 10px 16px;
+            color: white;
+            font-weight: bold;
+        }
+        a.active{
+            background-color: coral;
+        }
+        a:hover:not(.active){
+            background-color: cadetblue;
+        }
+        .content{
+            margin-left: 25%;
+            height: 2000px;
+        }
+        @media screen and (max-width:900px){
+            ul{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            ul li a{
+                float: left;
+            }
+            .content{
+                margin-left: 0;
+                float: left;
+            }
+        }
+        @media screen and (max-width:500px){
+            ul li a{
+                text-align: center;
+                float: none;
+            }
+        }
+    </style>
+
+    <!-- 
+        响应式边栏导航实例
+        该实例在屏幕宽度小于 900px 时导航栏为顶部水平导航栏，如果大于 900px 导航栏会在左边，且是固定的。
+        如果屏幕宽度小于 400px 会变为垂直导航栏。
+        重置浏览器窗口大小，查看效果。
+     -->
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#" >主页</a>
+        </li>
+        <li>
+            <a href="#" >新闻</a>
+        </li>
+        <li>
+            <a href="#" class="active">下拉菜单</a>
+        </li>
+        
+    </ul>
+    <div class="content">
+        <h2>响应式边栏导航实例</h2>
+        <p>该实例在屏幕宽度小于 900px 时导航栏为顶部水平导航栏</p> 
+        <p>如果大于 900px 导航栏会在左边，且是固定的。</p>
+        <p>如果屏幕宽度小于 400px 会变为垂直导航栏。
+        重置浏览器窗口大小，查看效果。</p>
+        
+    </div>
+</body>
+</html>

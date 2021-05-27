@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 100px;
+            height: 200px;
+            padding: 50px;
+            background-color: orange;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+        #container span{
+            font-size: 18px;
+        }
+        #container button{
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+     <script>
+         /* 
+            window.onload = function(){
+                写在这里的代码，是整个页面加载完成后运行的(固定格式)
+            }
+         */
+        //获取按钮
+        //通过id获取标签的方法进行简化
+        function $(id){
+            return document.getElementById(id)
+        }
+        var i = 0;//总秒数
+        var timer = null;//记录定时器的返回值
+        window.onload = function(){
+                $("start").onclick= function(){
+                timer = setInterval(function(){
+                    i++;
+                    $("sec").innerHTML = doubleNum(i % 60);
+                    $("min").innerHTML = doubleNum(parseInt(i / 60) % 60);
+                    $("hour").innerHTML = doubleNum(parseInt(i / 3600));
+                },3)
+            }
+
+            //暂停
+            $("pause").onclick = function(){
+                clearInterval(timer);
+            }
+
+            //复位面临两种情况：1.在暂停 2.在开始 直接关了
+            $("reset").onclick = function(){
+                clearInterval(timer);
+                i = 0;
+                $("sec").innerHTML = "00";
+                $("min").innerHTML = "00";
+                $("hour").innerHTML = "00";
+
+            }
+        }
+        function doubleNum(n){
+            if(n < 10){
+                return "0" + n;
+            }else{
+                return n;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <button id="start">开始</button>
+        <button id="pause">暂停</button>
+        <button id="reset">复位</button>
+    </div>
+</body> 
+</html>

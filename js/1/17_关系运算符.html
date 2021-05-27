@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            !!!:赋值运算符：=
+                关系运算符：==(用于判断)
+
+            关系运算符：
+                > < <= >= == != !== ===
+            注意：值，绝对是布尔值
+
+            自动数据类型转换：
+                一、和其他运算符一样，当关系运算符操作非数值时要遵循以下规则：
+                <1>.两个操作数都是数值，则数值比较
+                <2>.两个操作数都是字符串时，则比较两个字符串对应的ASCII值
+                    敲键盘：“打电话”
+                    ASCII码：电脑内部，每一个字符和字符对应编码的一张表
+                    (1) 如果是两个单个字符进行比较时，直接比较ASCII值
+                    (2) 如果是两个多字符进行比较，逐位进行比较;若比较出大小，则输出结果
+                    (3) 两个操作数有一个数值，则将另一个转换为数值，再进行数值比较
+                二、在相等和不等的比较上，如果操作数是非数值，则遵循以下原则
+                    (1) 一个操作数是布尔值，则比较之前将其转换为数值，false转为0，true转为1
+                    (2) 一个操作数是字符串，则比较之前将其转换为数值进行比较
+                    (3) 一个操作数是NaN，若 == 返回 false,!= 返回true,并且NaN和自身不等
+                    (4) ===恒等，必须数值与数据类型必须为一样才恒等
+        */  
+       /* alert(10=="10a");
+       alert(NaN == NaN)
+       alert(10>5);
+       alert("a">="b");
+       alert("abcd" >= "adc");
+       alert(1 == false);
+       alert(10 =="10"); */
+
+       /* 
+            小彩蛋
+       */
+      alert(Number(null));      //0
+      alert(Number(undefined)); //NaN
+      alert(null == undefined);
+
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

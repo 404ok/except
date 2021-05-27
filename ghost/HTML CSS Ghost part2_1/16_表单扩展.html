@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* label input{
+            display: none;
+        }
+        label div{
+            width: 28px;
+            height: 28px;
+            background: url(./img/复选框空.png);
+        }
+        label input:checked + div{
+            background: url(./img/复选框.png);
+        } */
+
+
+       /*  label input{
+            display: none;
+        }
+        label div{
+            width: 32px;
+            height: 32px;
+            background: url(./img/文件上传.png);
+        } */
+
+        .upload{
+            width: 32px;
+            height: 32px;
+            position: relative;
+            display: block;
+        }
+        .upload div{
+            width: 100%;
+            height: 100%;
+            background: url(./img/文件上传.png);
+        }
+        .upload input{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <label>
+        <input type="checkbox">
+        <div></div>
+    </label> -->
+
+    <!-- <label >
+        <input type="file">
+        <div></div>
+    </label> -->
+
+    <label class="upload">
+        <input type="file">
+        <div></div>
+    </label>
+</body>
+</html>

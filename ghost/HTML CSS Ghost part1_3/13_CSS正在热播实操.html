@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优酷正在热播</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #666;
+        }
+        img{
+            display: block;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-size: 16px;
+        }
+        .clear:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        body{
+            color: #666;
+            background: #16161A;
+            width: 1920px;
+        }
+        #main{
+            margin: 0 auto;
+            cursor: pointer;
+            padding: 16px 30px 29px 30px;
+        }
+        #main .title{
+            margin-bottom: 28px;
+            height: 39px;
+            line-height: 39px;
+        }
+        #main h1{
+            font-size: 38px;
+            color: white;
+            float: left;
+        }
+        #main #text-one{
+            font-size: 20px;
+            color: #47494A;
+            float: left;
+            padding-left: 56px;
+        }
+        #main #text-two{
+            font-size: 20px;
+            color: #47494A;
+            float: left;
+            padding-left: 39px;
+        }
+        #main span{
+            float: right;
+            display: block;
+            margin-right: 50px;
+            padding-left: 30px;
+            background: url(./img/icon2.jpg) no-repeat -2px 9px ;
+        }
+        #text-one:hover a{
+            color: #0d9bff;
+        }
+        #text-two:hover a{
+            color: #0d9bff;
+        }
+        #main span:hover a{
+            color: #0d9bff;
+        }
+        #main .small_all{
+            float: left;
+            margin-left: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #main #first{
+            margin: 0;
+        }
+        #all #img {
+            transform: scale(1);
+            -webkit-transform:rotate(0deg);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #all img{
+            
+            transition:  all 0.6s;
+        }
+        #all img:hover{
+            transform: scale(1.05);
+            border-radius: 10px;
+        }
+        #all #content a{
+            font-size: 24px;
+            padding-top: 13px;
+            display: block;
+            color: white;
+        }
+        #all #content a:hover{
+            color: #0d9bff;
+        }
+        #all #content p{
+            padding-top: 16px;
+            font-size: 20px;
+            cursor: text;
+            width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="title ">
+            <h1 >正在热播</h1>
+            <div id="text-one" >
+                <a href="https://v.youku.com/v_show/id_XNTExNDIyNDU5Ng==.html?spm=a2h0c.8166622.PhoneSokuUgc_1.dscreenshot"target="_blank">
+                    【人民记忆：百年百城】克拉玛依奔小康 
+                </a>
+            </div>
+            <div id="text-two">
+                <a href="https://v.youku.com/v_show/id_XNTEwOTUyMzgyMA==.html?spm=a2h0c.8166622.PhoneSokuUgc_4.dtitle"target="_blank">
+                    变迁丨主力战手——总书记指挥打赢世纪脱贫攻坚战 
+                </a>
+            </div>
+            <span>
+                <a href="#">换一换</a>
+            </span>
+        </div>
+        
+        <div id="all" >
+            <div class="small_all" id="first">
+                    <div id="img" >
+                        <a href="https://v.youku.com/v_show/id_XNTEwODU0MjQ2MA==.html?spm=a2h0c.8166622.PhoneSokuUgc_4.dtitle"target="_blank">
+                            <img src="./img/1.jpg" alt="">
+                        </a>
+                    </div>
+                
+                <div id="content" >
+                    <a href="https://v.youku.com/v_show/id_XNTEwODU0MjQ2MA==.html?spm=a2h0c.8166622.PhoneSokuUgc_4.dtitle"target="_blank" >  
+                        《习近平喜欢的典故》
+                    </a>
+                    <p>
+                        第五集 愿得此身长报国
+                    </p>
+                </div>
+            </div>
+            <div class="small_all">
+                <div id="img">
+                    <a href="https://v.youku.com/v_show/id_XNTExMjUwNTE4MA==.html?spm=a2h0c.8166622.PhoneSokuUgc_4.dtitle"target="_blank">
+                        <img src="./img/2.jpg" alt="">
+                    </a>
+                </div>
+                <div id="content">
+                    <a href="https://v.youku.com/v_show/id_XNTExMjUwNTE4MA==.html?spm=a2h0c.8166622.PhoneSokuUgc_4.dtitle"target="_blank">  
+                        王牌🥺爷青回
+                    </a>
+                    <p>
+                        唐嫣再扮紫萱与沈腾斗法
+                    </p>
+                </div>
+            </div>
+            <div class="small_all">
+                <div id="img">
+                    <a href="https://v.youku.com/v_show/id_XNDQzNzg0NDg0OA==.html?spm=a2h0c.8166622.PhoneSokuProgram_1.dposter&s=cbfedf7e962411de83b1"target="_blank">
+                        <img src="./img/3.jpg" alt="">
+                    </a>
+                </div>
+                <div id="content">
+                    <a href="https://v.youku.com/v_show/id_XNDQzNzg0NDg0OA==.html?spm=a2h0c.8166622.PhoneSokuProgram_1.dposter&s=cbfedf7e962411de83b1"target="_blank">  
+                        缉魂🤯烧脑神作
+                    </a>
+                    <p>
+                        美少妇谋杀亲夫，谁是真凶？
+                    </p>
+                </div>
+            </div>
+            <div class="small_all">
+                <div id="img">
+                    <a href="https://v.youku.com/v_show/id_XNTA0NjI2ODI2MA==.html?spm=a2h0c.8166622.PhoneSokuProgram_1.dposter&s=dfeb668af1aa4e1c9304"target="_blank">
+                        <img src="./img/4.png" alt="">
+                    </a>
+                </div>
+                <div id="content">
+                    <a href="https://v.youku.com/v_show/id_XNTA0NjI2ODI2MA==.html?spm=a2h0c.8166622.PhoneSokuProgram_1.dposter&s=dfeb668af1aa4e1c9304"target="_blank">  
+                        巴比伦3🔥年度必看
+                    </a>
+                    <p>
+                        豆瓣破9！探柏林乱世众生相
+                    </p>
+                </div>
+            </div>
+            <div class="small_all">
+                <div id="img">
+                    <a href="https://v.youku.com/v_show/id_XNTA5NTYxOTQ0MA==.html?spm=a2h0c.8166622.PhoneSokuProgram_2.dposter&s=578f936ff7494cb1905f"target="_blank">
+                        <img src="./img/5.jpg" alt="">
+                    </a>
+                </div>
+                <div id="content">
+                    <a href="https://v.youku.com/v_show/id_XNTA5NTYxOTQ0MA==.html?spm=a2h0c.8166622.PhoneSokuProgram_2.dposter&s=578f936ff7494cb1905f"target="_blank">  
+                        紧急救援·争分夺秒
+                    </a>
+                    <p>
+                        彭于晏上演生死营救
+                    </p>r
+                </div>
+            </div>
+            <div class="small_all">
+                <div id="img">
+                    <a href="https://www.1905.com/vod/play/807511.shtml?spm=a2h0c.8166622.PhoneSokuProgram_3.dposter"target="_blank">
+                        <img src="./img/6.jpg" alt="">
+                    </a>
+                </div>
+                <div id="content">
+                    <a href="https://www.1905.com/vod/play/807511.shtml?spm=a2h0c.8166622.PhoneSokuProgram_3.dposter"target="_blank">  
+                        弘扬社会主义核心价值观
+                    </a>
+                    <p>
+                        共筑中国梦
+                    </p>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+1.JavaScript
+    比如网页特效、用户记住账号和密码、网页游戏
+    跨平台脚本语言
+    跨平台:在各自环境下，都能运行，即操作系统
+    脚本语言：不能独立运行，要依赖网页
+2.JavaScript组成
+    1.ECMAScript 3,4,5,6
+    2.DOM   文档(从HTML开始，到HTML结束)
+    3.BOM   浏览器一个窗口
+3.所有JavaScript代码在一个script标签中编写
+    属性：
+        1.type='text/javascript',声明当前标签内写的文本格式（省略）
+        2.src='demo.js',可以引入外部js文件
+    注意点：
+        1.可以有多个script标签，自上而下
+            eg:alert()  在当前页面弹出一个警示框
+        2.一个script标签，只能专心做一个事情（不能即引入js文件，和写代码）
+    
+    

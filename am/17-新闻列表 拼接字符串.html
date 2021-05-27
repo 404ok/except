@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* a{
+            text-decoration: none;
+            color: black;
+        }
+        ul,li{
+            list-style: none;
+        } */
+    </style>
+    <!-- 1.先将ajax引进来 -->
+    <script src="./ajax.js"></script>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById("btn1");
+            var ul = document.getElementById("ul1")
+            //点击按钮，将ajax数据下载下来
+            btn.onclick = function(){
+                $ajax({
+                    method:"get",
+                    url:"./getNews.php",
+                    success:function(result){
+                        // alert(result);
+                        var arr = JSON.parse(result);//字符串 => 数据结构
+                        //在innerHTML里有标签，会自动解析
+                        var str = ``;
+                        //通过循环创建节点，添加到页面上
+                        for(var i = 0;i < arr.length;i++){
+                            str += `<li>
+                                <a href="#${i}">${arr[i].title}</a>
+                                <span>【${arr[i].date}】</span>
+                            </li>`
+                        }
+                        ul.innerHTML = str;
+                    },
+                    error:function(msg){
+                        alert(msg);
+                    }
+                })
+            }
+            //用json格式化工具分析数据
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">获取新闻列表</button>
+    <ul id="ul1">
+        <!-- <li>
+            <a href="#">标题</a>
+            <span>【日期】</span>
+        </li> -->
+    </ul>
+</body>
+</html>

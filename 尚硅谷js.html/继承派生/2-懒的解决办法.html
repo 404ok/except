@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            使用工厂方法创建对象
+                通过该方法大批量创建对象
+        */
+
+        function createPerson(name,age,gender){
+            //1.创建一个新的对象
+            var obj1 = new Object();
+            //不能写死，要从外面传进来
+            obj1.name = name;
+            obj1.age = age;
+            obj1.gender = gender;
+            obj1.sayName = function(){
+                alert(this.name);
+            }
+            //将新的对象返回
+            return obj1;
+        }
+        /*
+            使用工厂方法创建的对象，使用的构造函数都是Object
+            所以创建的对象都是Object 这个类型
+            就导致无法区分多种不同类型的对象
+        */
+        //用于创建狗的对象
+        function createDog(name,age){
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sayHello = function(){
+                alert("旺旺~~");
+            };
+            //要记得返回
+            return obj;
+        }
+        var dog = createDog("旺财",9);
+        dog.sayHello();
+        var obj2 = createPerson("蜘蛛精",19,"女");
+        var obj3 = createPerson("蜘蛛精",18,"女");
+        console.log(dog);
+        console.log(obj2);
+        console.log(obj3);
+        //都是对象，无法确认谁是人，谁是狗
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

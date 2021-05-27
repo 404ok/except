@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            /* 
+                如果你只为a元素设置内边距(而不设置ul内边距)那么链接会出现在ul元素之外。所以，我们为ul元素添加了top和bottom内边距(暂时不知道什么浏览器会这样)
+             */
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        li{
+            display: inline;
+        }
+        a:link,a:visited{
+            background-color: blue;
+            text-align: center;
+            padding: 6px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+        }
+        a:hover,a:active{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+           <a href="#">主页</a> 
+        </li>
+        <li>
+           <a href="#">新闻</a> 
+        </li>
+        <li>
+           <a href="#">联系</a> 
+        </li>
+        <li>
+           <a href="#">关于</a> 
+        </li>
+    </ul>
+    <p><b>注意：</b>如果你只为a元素设置内边距(而不设置ul内边距)那么链接会出现在ul元素之外。所以，我们为ul元素添加了top和bottom内边距(暂时不知道什么浏览器会这样)</p>
+</body>
+</html>

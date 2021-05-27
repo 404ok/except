@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        浏览器快捷键：ctrl + TAB/ ctrl + pgDn 切换下一个标签页
+                    ctrl + shift +TAB/ ctrl + pgUp 切换上一个标签页
+                    Ctrl + W 关闭当前页面
+                    Ctrl + F4 关闭chrome浏览器
+
+
+     -->
+    <script>
+        /* 
+            BOM ：Browser(浏览器) Object(对象) Model(模型)     浏览器对象模型
+            即一个浏览器窗口就是一个BOM
+            窗口树状结构：模型
+
+            需要遵守浏览器规则(BOM)
+            window:
+            document:anchores forms images links location
+            frames
+            history
+            location
+            navigation
+            screen
+        */
+
+        /* 
+            系统对话框
+                window方法(默认为window)
+
+                alert() 弹出警告框
+                正确格式：window.alert("world");
+                confirm() 弹出一个待确定和取消的提示框
+                    返回值：点击确定：true
+                            点击取消：false
+                prompt() 弹出一个带输入框的提示框
+                    参数：
+                        第一个参数：面板上显示的内容
+                        第二个参数：输入框里面的默认值(可以不传)
+                    返回值：确定：输入值
+                            取消：null
+        */
+        var resOk = prompt("请输入内容");
+        alert(resOk);
+        var res = confirm("你确定要离开吗？");
+        alert(res);
+
+
+        
+        function show(){
+            alert("hello world");
+        }
+        window.show();
+        show();
+
+        var num = 10;
+        alert(num);
+        alert(window.num);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/COMMON.CSS">
+    <style>
+        #main{
+            background: url(../QQ飞车/images/bg20190104.jpg) no-repeat center 0;
+        }
+        #nav{
+            min-height: 236px;
+            background: url(../QQ飞车/images/nav_down_re.png) repeat-x,url(../QQ飞车/images/nav.png) no-repeat center 0;
+        }
+        #nav .nav-logo{
+            width: 138px;
+            height: 112px;
+            margin: 15px  auto 0 auto;
+        }
+        #nav .container{
+            min-height: 236px;
+            position: relative;
+            overflow: hidden;
+        }
+        #nav dl{
+            top: 0;
+            position: absolute;
+        }
+        #nav dt{
+            height: 66px;
+        }
+        #nav dt a{
+            color: white;
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+        #nav dd{
+            line-height: 27px;
+            font-size: 12px;
+            text-align: center;
+            
+        }
+        #nav dd a{
+            color: white;
+            position: relative;
+        }
+        #nav dd a:hover{
+            color: tomato;
+            text-decoration: underline;
+        }
+        #nav .nav-sy{
+            width: 65px;
+            left: 0;
+        }
+        #nav .nav-yxzl{
+            width: 69px;
+            left: 98px;
+        }
+        #nav .nav-sszx{
+            width: 74px;
+            left: 203px;
+        }
+        #nav .nav-hdzx{
+            width: 68px;
+            left:325px ;
+        }
+        #nav .nav-sczq{
+            width: 68px;
+            left:565px ;
+        }
+        #nav .nav-spzb{
+            width: 68px;
+            left:685px ;
+        }
+        #nav .nav-wjhd{
+            width: 68px;
+            left:805px ;
+        }
+        #nav .nav-kf{
+            width: 81px;
+            left:900px ;
+        }
+
+        #nav dd a.hot:after,#nav dd a.new:after{
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url(../QQ飞车/images/nav_tips.png) no-repeat ;
+            position: absolute;
+            right: -15px;
+            top: 0;
+        }
+        #nav dd a.hot:after{
+            background-position:0 -12px ;
+        }
+        #nav dd a.new:after{
+            background-position:0 0 ;
+        }
+        #link{
+            height: 175px;
+        }
+        #link a{
+            width: 463px;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        #banner{
+            height: 276px;
+            background:url(../QQ飞车/images/top.png) no-repeat;
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="head" class="container-fluid">
+        <div class="container">
+            <div class="head-logo l">
+                <a href="#">腾讯飞车</a>
+            </div>
+            <div class="head-ad l">
+                <img src="../QQ飞车/images/ad.jpg" alt="">
+            </div>
+            <div class="head-menu r">
+                <ul>
+                    <li class="l">
+                        成长守护平台
+                    </li>
+                    <li class="l">
+                        腾讯游戏排行榜
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="container-fluid">
+            <div id="nav" class="container-fluid">
+                <div class="container">
+                    <div class="nav-logo">
+                        <a href="#">
+                            <img src="../QQ飞车/images/inside_logo.png" alt="QQ飞车" title="QQ飞车">
+                        </a>
+                    </div>
+                    <dl class="nav-sy">
+                        <dt>
+                            <a href="#">首页</a>
+                        </dt>
+                        <dd></dd>
+                    </dl>
+                    <dl class="nav-yxzl">
+                        <dt></dt>
+                        <dd><a href="#">新手指引</a></dd>
+                        <dd><a class="hot" href="#">官方漫画</a></dd>
+                        <dd><a class="new" href="#">飞车手游</a></dd>
+                        <dd><a href="#">精美壁纸</a></dd>
+                        <dd><a href="#">游戏下载</a></dd>
+                    </dl>
+                    <dl class="nav-sszx">
+                        <dt></dt>
+                        <dd> <a class="hot" href="#">SSC</a></dd>
+                        <dd><a href="#">谁是车王</a></dd>
+                        <dd><a href="#">全民争霸赛</a></dd>
+                    </dl>
+                    <dl class="nav-hdzx">
+                        <dt></dt>
+                            <dd><a class="hot" href="#">版本专区</a></dd>
+                            <dd><a href="#">合作专区</a></dd>
+                            <dd><a href="#">CDK兑换</a></dd>
+                    </dl>
+                    <dl class="nav-sczq">
+                        <dt></dt>
+                        <dd><a href="#">紫钻专区</a></dd>
+                        <dd><a href="#">道聚城</a></dd>
+                        <dd><a href="#">点券充值</a></dd>
+                    </dl>
+                    <dl class="nav-spzb">
+                        <dt></dt>
+                        <dd><a href="#">教学中心</a></dd>
+                        <dd><a href="#">视频中心</a></dd>
+                    </dl>
+                    <dl class="nav-wjhd">
+                        <dt></dt>
+                        <dd><a href="#">官方论坛</a></dd>
+                        <dd><a class="hot" href="#">掌上飞车</a></dd>
+                        <dd><a href="#">兴趣部落</a></dd>
+                        <dd><a href="#">官方微博</a></dd>
+                        <dd><a href="#">官方微信</a></dd>
+                    </dl>
+                    <dl class="nav-kf">
+                        <dt></dt>
+                        <dd><a href="#">客服中心</a></dd>
+                        <dd><a class="new" href="#">安全信用体系</a></dd>
+                        <dd><a class="new" href="#">封号查询</a></dd>
+                        <dd><a href="#">游戏安全评测</a></dd>
+                        <dd><a href="#">道具删除找回</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="link" class="container">
+                <a href="#"></a>
+            </div>
+            <div id="banner" class="container">
+                <div class="banner-left l">
+                    <div class="banner-download">
+                        <h3>下载游戏</h3>
+                        <p>DOWNLOAD</p>
+                    </div>
+                    <div class="banner-login">
+                        <div>
+                            <img src="./images/56x56.jpg" alt="">
+                        </div>
+                        
+                        <p>欢迎<a href="#">登陆</a>。进入飞车世界</p>
+                    </div>
+                </div>
+                <div class="banner-center l">
+
+                </div>
+                <div class="banner-left l">
+
+                </div>
+            </div>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+        <p>5</p>
+    </div>
+</body>
+</html>

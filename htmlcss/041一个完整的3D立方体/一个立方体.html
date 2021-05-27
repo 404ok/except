@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#cube {
+			width: 300px; height: 300px;
+			border: 1px dashed black;
+			font-size: 80px;
+			text-align: center;
+			line-height: 300px;
+			margin: 150px auto;
+			transform: rotateY(-15deg) rotateX(-10deg);
+			transform-style: preserve-3d;
+		}
+		#cube div {
+			width: 300px; height: 300px; position: absolute; left: 0; top: 0;
+		}
+		#cube div:nth-child(1) {
+			background-color: rgba(255,0,0,0.5);
+			transform: translateY(-150px) rotateX(90deg);
+		}
+		#cube div:nth-child(2) { 
+			background-color: rgba(255,144,0,0.5); 
+			transform: translateY(150px) rotateX(-90deg);
+		}
+		#cube div:nth-child(3) { 
+	     	background-color: rgba(255,255,0,0.5);
+			transform: translateX(-150px) rotateY(90deg);
+		}
+		#cube div:nth-child(4) { 
+			background-color: rgba(0,255,122,0.5);
+			transform: translateX(150px) rotateY(90deg);
+		}
+		#cube div:nth-child(5) { 
+			background-color: rgba(0,255,255,0.5);
+			transform: translateZ(150px);
+		}
+		#cube div:nth-child(6) { 
+			background-color: rgb(122,111,199,0.6);
+			transform: translateZ(-150px);
+		}
+	</style>
+	<body>
+		<div id="cube">
+			<div>上</div>
+			<div>下</div>
+			<div>左</div>
+			<div>右</div>
+			<div>后</div>
+			<div>前</div>
+		</div>
+	</body>
+</html>

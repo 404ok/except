@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        /* 
+            1.创建AJAX：相当于在浏览器打开一个新窗口
+            2.调用open:输入网址
+            3.调用send：敲回车
+            4.等待数据响应：即等待缓冲
+
+
+        */
+        
+        window.onload = function(){
+            var btn = document.getElementById("btn1");
+            btn.onclick = function(){
+                //1.创建AJAX对象
+                var xhr = new XMLHttpRequest();
+                /* 
+                    2.调用open
+                        第一个参数：请求方式    get post 等
+                        第二个参数：url
+                        第一个参数：是否异步(bool)
+                 */
+                xhr.open("get","1.txt",true);//true:是否异步
+                //3.调用send
+                xhr.send();
+                //4.等待数据响应
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        alert(xhr.responseText);
+                    }
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 点击下载数据将1.txt数据下载下来,且页面其他数据不受影响 -->
+    <button id="btn1">下载数据</button>
+</body>
+</html>

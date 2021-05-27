@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            三目运算符：
+                格式：
+                    表达式 1 ? 表达式 2 ： 表达式3;
+                执行：
+                    1.先去判断表达式 1 是否为真
+                    2.表达式 1 为真，直接执行表达式 2
+                    3.表达式 1 为假，直接执行表达式 3
+            注意：本质是一个双分支语句
+        */
+
+        //判断一个数是奇数还是偶数
+        var num = 10;
+        if(num % 2 == 0){
+            alert("偶数");
+        }else{
+            alert("奇数");
+        }
+
+        var num1 = 20;
+        num1 % 2 == 0 ? alert("偶数") : alert("奇数");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

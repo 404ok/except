@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #menu{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: none;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //官方的右键菜单
+            document.oncontextmenu = function(){
+                return false;
+            }
+
+            /* 
+                自定义右键菜单
+                    鼠标按下，与鼠标坐标一致
+                    且按下其他键，右键菜单退出
+            */
+           var menu = document.getElementById("menu");
+            document.onmousedown = function(ev){
+                var e = ev || window.event;
+                if(e.button == 2){
+                    menu.style.display = "block";
+                    menu.style.left = e.clientX + "px";
+                    menu.style.top = e.clientY + "px";
+                }else{
+                    menu.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+        <div id="menu">
+            <ul>
+                <li>菜单一</li>
+                <li>菜单2</li>
+                <li>菜单3</li>
+                <li>菜单4</li>
+            </ul>
+        </div>
+</body>
+</html>

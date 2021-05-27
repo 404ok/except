@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        行内样式(1000) > ID选择器(100) > 类选择器(10) > 标签选择器(1) > 通用选择器(0)
+        口诀：
+            选择器选择的范围越小越精确，优先级就越高
+     -->
+    <style>
+        #p1{
+            color: chartreuse;
+        }
+        *{
+            color: crimson;
+        }
+        .pp{
+            color: gold;
+        }
+        p{
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <p class="pp" id="p1" style="color: blue;">
+        猜一下我的颜色
+    </p>
+</body>
+</html>

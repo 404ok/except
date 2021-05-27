@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数据结构：
+                数组
+                    for循环
+                    for...in
+                    foreach
+                    for...of
+                对象
+                    for...in
+                set for...of
+                map for...of
+        */
+       var arr = [10,20,30,40,50];
+       for(var i = 0;i <arr.length;i++){
+           document.write("for循环: " + arr[i] + "," + i + "<br/>");
+       }
+       document.write("<br/>");
+       for(var i in arr){
+           document.write("for...in循环: " + arr[i] + "," + i + "<br/>");
+        }
+        document.write("<br/>");
+        arr.forEach(function(item,index){
+            document.write("foreach循环: " + item + "," + index + "<br/>");
+        })
+        document.write("<br/>");
+        
+        //for...of遍历数组
+        for(var item of arr){
+            /* 
+            item是直接遍历到的元素
+            */
+           document.write("for...of循环: " + item +   "<br/>");
+        }
+        document.write("<br/>");
+
+        //对于对象进行遍历
+        var person = {
+            username:"钢铁侠",
+            age:"18",
+            sex:"男",
+        };
+        for(var attr in person){
+            /* 
+                attr    遍历到的对象的属性
+            */
+           document.write("对象" + attr + "," + person[attr] + "<br/>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            队列
+                结构：从末尾进，从头部出
+                特点：先进先出
+
+                    push
+
+                    shift()
+                        格式：数组.shift()
+                        参数：没有参数
+                        功能：从数组的头部取下一个元素
+                        返回值：取下的元素
+                    unshift()
+                        格式：数组.unshift(参数1、参数2...参数n)
+                        功能：从数组的头部插入元素
+                        返回值:插完元素以后的数组长度           
+        */
+       var arr = ["唐朝","宋朝","清朝"];
+       var res = arr.shift();
+       var res2 = arr.push("现代");
+       var res3 = arr.unshift("ok","bank");
+       alert(res);
+       alert(res2);
+       alert(arr);
+       alert(res3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

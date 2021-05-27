@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: blue;
+        }
+        .box{
+            height: 300px;
+        }
+    </style>
+    <script>
+        /* 
+            通过.style.xxx的方式只能访问内联的CSS样式   计算权重
+        */
+        window.onload = function(){
+            var div1 = document.getElementById("div1");
+            alert(div1);
+            alert(div1.style.width);
+            alert(div1.style.height);
+            alert(div1.style.backgroundColor);
+
+            // 获取当前样式
+            /* alert(getComputedStyle(div1)["height"]);//火狐，谷歌
+            alert(div1.currentStyle["height"])//IE 
+             */
+        alert(getStyle(div1,"height"))
+            
+        var  btn = document.getElementById("btn");
+        btn.onclick = function(){
+                btn.style.backgroundColor = "pink";
+                btn.style.width = "100px";
+                div1.style.backgroundColor = "pink";
+        }
+        }
+        function getStyle(node,cssStyle){
+                return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+            }
+        //跨浏览器的兼容    node:谁的样式   cssStyle:什么样式
+      
+    </script>
+</head>
+<body>
+    <div id="div1" style="width:200px;background-color:red;" class="box"></div>
+    <button id="btn">修改样式</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btns = document.getElementsByTagName("button");
+            /* btns[1].onclick = function(){
+                alert("原有的点击函数");
+            }
+
+            //下标为0
+            btns[0].onclick = function(){
+                btns[1].onclick = show;
+            }
+            //取消下标1按钮上的函数
+            btns[2].onclick = function(){
+                btns[1].onclick = null;
+            } */
+
+            //以上全部换成事件监听器
+            btns[1].addEventListener("click",function(){
+                alert("原有的函数")
+            },false);
+            btns[0].onclick = function(){
+                btns[1].addEventListener("click",show,false);
+            }
+            btns[2].onclick = function(){
+                btns[1].removeEventListener("click",show);
+            }
+        }
+        function show(){
+            alert("hello world");
+        }
+    </script>
+</head>
+<body>
+    <button>添加函数</button>
+    <button>按钮</button>
+    <button>删除函数</button>
+</body>
+</html>

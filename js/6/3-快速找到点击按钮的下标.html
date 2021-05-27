@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            window.onload = function(){
+                var btn = document.getElementsByTagName("button"); 
+                //刻舟求剑
+                for (var i = 0; i < btn.length; i++) {
+                    btn[i].onclick  = function(){
+                        alert(i);
+                    }
+                    //输出结果都是3,var与let区别
+                }
+
+                //需要点击按钮，输出当前按钮的下标 --> this关键字
+            }
+        </script>
+    </head>
+    <body>
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #msg{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        /* 
+            敏感词过滤
+
+            表单元素：获取其中内容，通过.value的属性获取内容
+            双标签节点：innerHTML属性，获取标签间内容
+
+            要求：
+                1.敏感词都过滤掉  正则表达式
+                2.将敏感词替换成*
+                replace()  字符串
+        */
+       //装有敏感词
+        var arr = [/靠/ig,/tmd/ig,/nm/ig];
+        function btnClick(){
+            var txt1 = document.getElementById("txt1");
+            var msg = document.getElementById("msg");
+            var value = txt1.value;
+            for(var i = 0;i < arr.length;i++){
+                value = value.replace(arr[i] ,"*");
+                //因为原字符串不会变
+
+            }
+            msg.innerHTML = value;
+            txt1.value = "";
+        }
+    </script>
+</head>
+<body>
+    <textarea name="" id="txt1" cols="30" rows="10"></textarea>
+    <button onclick="btnClick()">发布</button>
+    <div id="msg"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+*{
+	margin: 0; padding: 0;
+}
+#cube {
+	width: 300px; height: 300px;
+	border: 1px dashed black;
+	position: absolute; left: 200px; top: 200px;
+	font-size: 80px;
+	text-align: center;
+	line-height: 300px;
+	perspective: 1000px;
+	transition: 2s;
+}
+#cube div {
+	width: 300px; height: 300px; position: absolute; left: 0; top: 0;
+	transition: 2s; opacity: 0;
+}
+#cube div:nth-child(1) {
+	background-color: rgba(255,0,0,0.5);
+}
+#cube div:nth-child(2) { 
+	background-color: rgba(255,144,0,0.5);
+}
+#cube div:nth-child(3) { 
+	background-color: rgba(255,255,0,0.5);
+}
+#cube div:nth-child(4) { 
+	background-color: rgba(0,255,122,0.5);
+}
+#cube div:nth-child(5) { 
+	background-color: rgba(0,255,255,0.5);
+}
+#cube div:nth-child(6) { 
+	background-color: rgb(122,111,199,0.6);
+}
+
+div.code {
+	width: 750px;
+	background-color: #eee;
+	padding: 10 20px;
+	position: absolute; right: 100px; top: 10px;
+	line-height: 24px; font-size: 16px;
+}
+div.code p span.red {
+	color: #CB2D01;
+}
+div.code p span.blue {
+	color: #2369B6;
+}
+div.code p span.green {
+	color: #3C7A03;
+}
+div.code p span.zise {
+	color: #9B3AFF;
+}

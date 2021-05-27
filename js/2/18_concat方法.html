@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                concat()  
+                1.拷贝原数组，生成新数组
+                2.合并数组
+                    格式：数组.concat (数组,数据...)
+                    返回值：合并成的新数组
+                【注】就算传入是数组,数组中元素的元素要单独拆出来再进行合并
+            */
+           var arr1 = [10,20,30];
+           var arr2 = [50,60,70];
+           var newArr = arr1.concat(arr2,"ok",true);
+           alert(newArr);
+           alert(newArr.length);
+           alert(arr1);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

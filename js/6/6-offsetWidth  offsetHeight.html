@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+            padding: 8px;
+            margin: 20px;/* 不会改变宽度，因为在外面，眼睛看不到 */
+        }
+    </style>
+    <script>
+        /* 
+            offset系列方法：
+                实际宽度：
+                    offsetWidth
+                    offsetHeight
+
+                offsetLeft
+                offsetTop
+        */
+        window.onload = function(){
+            var div = document.getElementById("div1");
+            alert(getStyle(div,"width"));//单看width
+
+
+            function getStyle(node,cssStyle){
+                return node.currentStyle ? node.currentSTyle[cssStyle] : getComputedStyle(node)[cssStyle];
+                //三目运算符
+            }
+
+            //获取当前有效样式
+            alert(div.offsetWidth);//真正有效样式，不带px，可直接进行运算
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

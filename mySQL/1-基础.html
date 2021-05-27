@@ -1,0 +1,68 @@
+1.此电脑->计算机右键 -> 管理 -> 服务
+    bin  mysqld --install(cmd以管理员运行)
+  cmd net stop mysql
+      net start mysql
+2.登录mysql
+    mysql -u root -p +回车(-u:username   -p:password)
+    ctrl+C中止命令
+
+    cd A:\BaiduNetdiskDownload\PHPnow-1.5.6\MySQL-5.0.90\bin
+
+    输入命令：client(客户端) => MySql.dbms(数据库管理) => DB => 对应的表
+3.查看数据库(大小写不敏感)
+    show databases;
+    create database 数据库名字 character set utf8;(!!!一定要带分号)
+4.选择数据库
+    use 数据库名;
+    所有都是表
+5.创建表(！！！一定要设置id)
+    CREATE TABLE 表名(
+        字段名1 数据类型,
+        字段名2 数据类型,
+        字段名3 数据类型,
+        字段名4 数据类型,
+        字段名5 数据类型,
+        ...
+    )character set 字符集 collate 校对规则;
+6.数据类型
+    int     整型
+    float   浮点型
+    double  
+    char(10)//固定
+    varchar(30)
+
+    date 日期 "2000-01-02"
+    text 文本 (理论上没有上限)
+7.查看当前数据库下的表
+    show tables;
+8.查看表结构
+    desc 表名
+9.语句
+    增(insert)删(delete)改(update)查(select)
+    增  insert into 表名(字段一，字段二...)values(具体的值1，具体的值2...)
+    改  update 表名 set 字段名1 = 新值，字段名2 = 新值... where 条件；
+
+    不可以+=
+    删除：delete from 表名 where 条件；
+10.查：select * from students;  查询所有信息
+    select 字段1，字段2...from 表名 where 条件；
+11.排序
+    order by xx desc:降序
+    order by xx ：默认升序
+    select name,(math+English+chinese) as total from students order by total;
+
+
+
+1.可视化界面操作数据库  
+解决办法：
+重启
+
+
+http://localhost/phpMyAdmin/
+
+学生表：
+    id      学号    【注】保证id不重复，设置id为这个表的主键(PrimaryKey) 选择AI，id自动增加
+    name    姓名
+    math
+    english
+    chinese

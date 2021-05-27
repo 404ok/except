@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  
+            将字符串中单词用空格隔开
+            已知传入的字符串中只有字母，
+            每个单词的首字母大写，请将每个单词用空格隔开，
+            只保留一个单词的首字母大写
+            eg:
+                传入："HelloMyWorld"
+                返回："Hello my world"
+
+            【注】 字符串不能修改!!!!
+            1.所以需要将字符串转成数组
+            split("") 将字符串的每一个字符分割成元素放在数组里
+            2.数组转成字符串
+            join("") 
+        */
+        function split(str){
+            var arr = str.split("");
+            for(var i = 1;i < arr.length;i++){
+                if(arr[i] >= "A" && arr[i] <= "Z"){
+                    arr[i] = arr[i].toLowerCase();
+                    arr.splice(i,0," ");
+                }
+            }
+            return arr.join("");
+        }
+        alert(split("HelloMyWorld"));
+
+
+
+        function split1(str){
+            var arr = str.split("");
+            for(var i = 1;i < arr.length;i++){
+                if(arr[i] >= "A" && arr[i] <= "Z"){
+                    arr[i] = arr[i].toLowerCase();
+                    arr.splice(i,0," ");
+                }
+            }
+            return arr.join("");
+        }
+        alert(split1("HelloMyWorld"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

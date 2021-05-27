@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px gray dotted;
+            display: grid;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-columns: repeat(3,1fr);
+        }
+        .box div{
+            background-color: greenyellow;
+            border: 1px solid black;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-area: 2/3/4/4; /* 第一个值为水平的起始位置，第二个值为垂直的起始位置 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+    </div>
+</body>
+</html>

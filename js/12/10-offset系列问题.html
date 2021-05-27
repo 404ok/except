@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        /* 
+            每隔30ms减少为1px
+        */
+
+        //offset加了border后，会慢慢变大
+        window.onload = function(){
+            var div = document.getElementById("div1");
+            setInterval(function(){
+                div.style.width = div.offsetWidth - 3 +"px";//获取的是width + border
+                // alert(div.offsetWidth);
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        
+    </div>
+</body>
+</html>

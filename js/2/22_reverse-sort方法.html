@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            reverse()
+                逆向排序
+        */
+       /* var arr = [true,"hello",90];
+       arr.reverse();
+       alert(arr); */
+
+       /* 
+            数组排序
+            sort
+            格式：数组.sort()
+            默认从小到大排序，是按照字符串排序
+            参数：一个函数，代表要这么进行排序(固定用法) return value - value2
+       */
+      /* var arr = [30,20,90,10,70];
+      arr.sort();
+      alert(arr); */
+
+
+      /* 
+        数值大小排序
+      */
+     var arr = [1,10,20,19,9,6];
+     arr.sort(function(value,value2){
+        return value2 - value;
+     })
+     alert(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

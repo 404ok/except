@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            height: 2000px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: khaki;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        /* 还可以在固定在底部，实例在移动设备上使用 */
+        li{
+            float: left;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            padding: 12px;
+            text-align: center;
+        }
+        a:hover:not(.active){
+            background-color:yellow ;
+        }
+        li.active{
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active">
+           <a href="#">主页</a> 
+        </li>
+        <li>
+           <a href="#">新闻</a> 
+        </li>
+        <li>
+           <a href="#">联系</a> 
+        </li>
+        <li>
+           <a href="#">关于</a> 
+        </li>
+    </ul>
+</body>
+</html>

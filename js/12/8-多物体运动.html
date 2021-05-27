@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            margin: 100px;
+        }
+    </style>
+    <script>
+        /* 
+            多物体运动：
+                谁运动不确定，所以需要传入
+        */
+        window.onload = function(){
+            var divs = document.getElementsByTagName("div");
+            for(var i = 0;i < divs.length;i++){
+                divs[i].onmouseover = function(){
+                    startMove(this,300);
+                }
+                divs[i].onmouseout = function(){
+                    startMove(this,100);
+                }
+            }
+        }
+        //多物体运动，只有一个定时器，必须每一个运动的物体都有独立的定时器
+        function startMove(node,iTarget){
+            var divs = document.getElementsByTagName("div");
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                var speed = (iTarget - node.offsetWidth) / 8;
+                speed = speed ? Math.ceil(speed) : Math.floor(speed);
+                if(iTarget == node.offsetLeft){
+                    clearInterval(node.timer);
+                }else{
+                    node.style.width = node.offsetWidth+ speed +"px";
+                }
+            }, 30);
+
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            验证码：验证你是否是机器人
+
+                纯数字组成的验证：非常容易破解 6位数字验证码
+        */
+       /* 纯数字组成的验证码 ,n位验证码，每一个数字范围:0~9的整数  parseInt(Math.random()*10) */
+       function numTestCode(n){
+           var arr= [];
+           for(var i = 0;i < n;i++){
+               var num = parseInt(Math.random()*10);
+               arr.push(num);
+           }
+           return arr.join("");
+       }
+       alert(numTestCode(3));
+
+       /* 数字和字母组成的验证码：
+            0~9 A~Z a~z*/
+
+        //方法一：生成一个数组，装有单个字符（所有）长度：26*2+10 = 62  随机0~61下标即可
+        //方法二：数字：parseInt(Math.random()*10)  字母：ASCII码值进行随机 a~z:97~122 A~Z:65~90 即同数字   随机：0~122
+
+        function testCode(n){
+            var arr = [];
+            for(var i = 0;i < n;i++){
+                var num = parseInt(Math.random()*123);
+                if(num >= 1 && num <= 9){
+                    arr.push(num);
+                }else if(num >= 97 && num <=122 || num >= 65 && num <= 90){
+                    arr.push(String.fromCharCode(num));
+                }else{
+                    i--;
+                }
+            }
+            return arr.join('');
+        }
+        alert(testCode(5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

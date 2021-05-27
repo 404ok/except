@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            判断一个年是平年还是闰年
+                注意：能被四整除且不能被100整除，或者能被400整除则为闰年
+        */
+        
+        var year = 1881;
+        if((year % 4 == 0 && year % 100 != 0)|| year % 400 == 0){
+            alert(year + "年是闰年");
+        }else{
+            alert(year + "年不是闰年");
+        }
+
+        /* 
+            代码规范：
+                阅读代码时间要占到编写代码的10倍
+                1.运算符前后要加空格
+                2. ; 或者 , 后面，只需要加一个空格
+                3.代码缩进
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

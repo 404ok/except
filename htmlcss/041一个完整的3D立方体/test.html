@@ -1,0 +1,275 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>cube3D立方体</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.js"></script>
+	</head>
+	<body>
+		<div id="cube">
+			<div>上</div>
+			<div>下</div>
+			<div>左</div>
+			<div>右</div>
+			<div>后</div>
+			<div>前</div>
+		</div>
+		<div class="code">
+			<!-- ===========================#cube=============================== -->
+			<div class="box">
+				<p><span class="red">#cube</span> {</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">width</span>: <span class="zise">300px</span>;
+					&nbsp;
+					<span class="green">height</span>: <span class="zise">300px</span>;
+					&nbsp;
+					<span class="green">border</span>: <span class="zise">1px</span>
+					<span class="red">dashed</span>
+					<span class="red">black</span>;
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">font-size</span>: <span class="zise">80px</span>;
+					&nbsp;
+					<span class="green">text-align</span>: <span class="zise">center</span>;
+					&nbsp;
+					<span class="green">line-height</span>: <span class="zise">300px</span>;
+				</p>
+				<p class="remove-code">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">perspective</span>: <span class="zise">1000px</span>;
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">transition</span>: <span class="zise">2s</span>;
+				</p>
+				<p class="cube-rotate"  style="display: none;">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">transform</span>: <span class="red">rotateY(-15deg) rotateX(-10deg)</span>;
+				</p>
+				<p class="last-code"  style="display: none;">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					transform-style: preserve-3d;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- ===========================#cube div========================= -->
+			<div class="cube-div">
+				<p><span class="red">#cube</span> <span class="blue">div</span> {</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">width</span>: 
+					<span class="zise">300px</span>;
+					<span class="green">height</span>:
+					<span class="zise">300px</span>;
+					<span class="green">position</span>:
+					<span class="red">absolute</span>;
+					<span class="green">left</span>:
+					<span class="zise">0</span>;
+					<span class="green">top</span>:
+					<span class="zise">0</span>;
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">transition</span>:
+					<span class="zise">2s</span>;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- =============================flat1============================= -->
+			<div class="flat1" style="display: none;">
+				<p>
+					<span class="red">#cube</span>&nbsp; 
+					.<span class="red">flat1</span> {
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">background-color</span>:
+					<span class="red">rgba(255,0,0,0.5)</span>;
+					&nbsp;
+					<span class="green">transform</span>:
+					<span class="red">translateY(-150px) &nbsp; rotateX(90deg)</span>;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- =============================flat2============================= -->
+			<div class="flat2" style="display: none;">
+				<p>
+					<span class="red">#cube</span>&nbsp;
+					.<span class="red">flat2</span> {
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">background-color</span>:
+					<span class="red">rgba(255,144,0,0.5)</span>;
+					&nbsp;
+					<span class="green">transform</span>:
+					<span class="red">translateY(150px) &nbsp; rotateX(-90deg)</span>;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- =============================flat3============================= -->
+			<div class="flat3" style="display: none;">
+				<p>
+					<span class="red">#cube</span>&nbsp;
+					.<span class="red">flat3</span> {
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">background-color</span>:
+					<span class="red">rgba(255,255,0,0.5)</span>;
+					&nbsp;
+					<span class="green">transform</span>:
+					<span class="red">translateX(-150px) &nbsp; rotateY(90deg)</span>;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- =============================flat4============================= -->
+			<div class="flat4" style="display: none;">
+				<p>
+					<span class="red">#cube</span>&nbsp;
+					.<span class="red">flat4</span> {
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">background-color</span>:
+					<span class="red">rgba(0,255,122,0.5)</span>;
+					&nbsp;
+					<span class="green">transform</span>:
+					<span class="red">translateX(150px) &nbsp; rotateY(90deg)</span>;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- =============================flat5============================= -->
+			<div class="flat5" style="display: none;">
+				<p>
+					<span class="red">#cube</span>&nbsp;
+					.<span class="red">flat5</span> {
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">background-color</span>:
+					<span class="red">rgba(0,255,255,0.5)</span>; }
+					&nbsp;
+					<span class="green">transform</span>:
+					<span class="red">translateZ(150px)</span>;
+				</p>
+				<p>}</p>
+			</div>
+			<!-- =============================flat6============================= -->
+			<div class="flat6" style="display: none;">
+				<p>
+					<span class="red">#cube</span>&nbsp;
+					.<span class="red">flat6</span> {
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span class="green">background-color</span>:
+					<span class="red">rgb(122,111,199,0.6)</span>; }
+					&nbsp;
+					<span class="green">transform</span>:
+					<span class="red">translateZ(-150px)</span>;
+				</p>
+				<p>}</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		onload = function() {
+			function move1() {
+				$(".flat1").fadeIn(1500);
+				var ele = $("#cube > div:eq(0)").get(0);
+				ele.style.opacity = 1;
+				setTimeout(() => {
+					ele.style.top = "-150px";
+					setTimeout(() => {
+						ele.style.transform = "rotateX(90deg)";
+					}, 1000)
+				}, 1000)
+			}
+
+			function move2() {
+				$(".flat2").fadeIn(1500);
+				var ele = $("#cube > div:eq(1)").get(0);
+				ele.style.opacity = 1;
+				setTimeout(() => {
+					ele.style.top = "150px";
+					setTimeout(() => {
+						ele.style.transform = "rotateX(-90deg)";
+					}, 1000)
+				}, 1000)
+			}
+
+			function move3() {
+				$(".flat3").fadeIn(1500);
+				var ele = $("#cube > div:eq(2)").get(0);
+				ele.style.opacity = 1;
+				setTimeout(() => {
+					ele.style.left = "-150px";
+					setTimeout(() => {
+						ele.style.transform = "rotateY(90deg)";
+					}, 1000)
+				}, 1000)
+			}
+
+			function move4() {
+				$(".flat4").fadeIn(1500);
+				var ele = $("#cube > div:eq(3)").get(0);
+				ele.style.opacity = 1;
+				setTimeout(() => {
+					ele.style.left = "150px";
+					setTimeout(() => {
+						ele.style.transform = "rotateY(90deg)";
+					}, 1000)
+				}, 1000)
+			}
+
+			function move5() {
+				$(".flat5").fadeIn(1500);
+				var ele = $("#cube > div:eq(4)").get(0);
+				ele.style.opacity = 1;
+				setTimeout(() => {
+					ele.style.transform = "translateZ(-150px)";
+				}, 1000)
+			}
+
+			function move6() {
+				$(".flat6").fadeIn(1500);
+				var ele = $("#cube > div:eq(5)").get(0);
+				ele.style.opacity = 1;
+				setTimeout(() => {
+					ele.style.transform = "translateZ(150px)";
+				}, 1000)
+			}
+
+			function move7() {
+				$(".cube-rotate").fadeIn(1500);
+				var ele = $("#cube").get(0);
+				ele.style.transform = "rotateY(-15deg) rotateX(-10deg)";
+			}
+			function move8() {
+				$(".last-code").fadeIn(1500);
+				var ele = $("#cube").get(0);
+				ele.style["transform-style"] = "preserve-3d";
+			}
+			function move9(){
+				var ele = $("#cube").get(0);
+				ele.style.transform = "rotateY(-210deg) rotateX(-20deg)";
+			}
+			function move10(){
+				$(".remove-code").css({
+					"text-decoration": "line-through"
+				})
+				$("#cube").css({
+					perspective: "none"
+				})
+			}
+			
+			var fnList = [move1, move2, move3, move4, move6, move5, move7, move8, move9, move10];
+			document.onclick = function() {
+				fnList.shift()();
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./tool.js"></script>
+    <script>
+        /* 
+            选择排序(打擂台法):
+                规则：选择一个位置，这个位置的元素，和其他所有数进行比较，如果比较出大小就交换两个数位置
+            第一名打擂台 -> 第二名打擂台、、、最后一名
+
+            第一轮：
+                9，8，7，6，5，4
+                8，9，7，6，5，4
+                7，9，8，6，5，4
+                6，9，8，7，5，4
+                5，9，8，7，6，4
+                4，9，8，7，6，5
+            第二轮：
+                4，9，8，7，6，5
+                4，8，9，7，6，5
+                4，7，9，8，6，5
+                4，6，9，8，7，5
+                4，5，9，8，7，6
+            第三轮：
+                4，5，8，9，7，6
+                4，5，7，9，8，6
+                4，5，6，9，8，7
+            第四轮：
+                4，5，6，8，9，7
+                4，5，6，7，9，8
+            第五轮：
+                4，5，6，7，8，9
+
+            比较轮数 = 数组长度 - 1；
+            每一轮对应的次数 = 数组长度 -当前轮数
+        */
+        var arr = [9,8,7,6,5,4];
+
+        //用的擂台的下标
+        
+        changeSortAsc(arr);
+        alert(arr);
+        changeSortDesc(arr);
+        alert(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

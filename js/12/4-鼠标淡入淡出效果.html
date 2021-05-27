@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img1{
+            opacity: 0.3;
+            filter: alpha(opacity = 30);/* 浏览器兼容性写法 */
+        }
+    </style>
+    <script>
+        /* 
+
+        */
+       window.onload = function(){
+           var img = document.getElementById("img1");
+           img.onmouseover = function(){
+               //30 --> 100
+               startMove(100);
+           }
+           img.onmouseout = function(){
+                //100 --> 30
+                startMove(30);
+           }
+           //设置一个中间变量,透明度当前值
+           var alpha = 30;
+           var timer = null;
+           function startMove(iTarget){
+               var img = document.getElementById("img1");
+               clearInterval(timer);
+               var speed = 2;
+               //因为兼容性问题，取不出来
+               speed = iTarget > alpha ? Math.abs(speed) : -Math.abs(speed);
+               timer = setInterval(function(){
+                    if(iTarget == alpha){
+                        clearInterval(timer);
+                    }else{
+                        alpha += speed;
+                        //重新设置透明度
+                        img.style.opacity = alpha/100;
+                        img.style.filter = `alpha(opacity =${alpha})`;
+                    }
+                    //document.title = alpha;
+               }, 30);
+           }
+       }
+    </script>
+</head>
+<body>
+    <img id="img1" src="./q.jpg" alt="">
+</body>
+</html>

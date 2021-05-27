@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            /* 
+                用递归算法实现，
+                数组长度为5且元素的随机数在2-32间不重复的值
+            */
+            var arr = new Array(5);
+            var rand,i = 0;
+            function addNum(rand,i){
+                rand = parseInt(Math.random()*31 + 2,10);
+                if(arr[4] != undefined){
+                    return arr;
+                }else{
+                    if(arr[0] - rand != 0 && arr[1] - rand != 0 && arr[2] - rand != 0&& arr[3] - rand != 0){
+                        arr[i] = rand;
+                        i++;
+                    }
+                    
+                }return(addNum(rand,i));
+            }
+            addNum(rand,i);
+            alert(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

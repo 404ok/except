@@ -1,0 +1,9 @@
+1.AJAX  锤子？？？
+2.HTTP/HTTPS 协议
+  HTML/XML数据封装格式
+
+  Web Server提供的Web Service 协议+格式
+  
+3.服务器脚本 后端 PHP(MySQL)、ASP.NET(SQLServer)
+  浏览器脚本 前端 HTML、JS、CSS
+4.Web Services 数据型服务、功能型服务(天气预报和发送短信验证码)

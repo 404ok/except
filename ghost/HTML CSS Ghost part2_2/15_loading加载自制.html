@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: 200px auto;
+            width: 300px;
+            position: relative;
+        }
+        .container div{
+            position: absolute;
+            top: 0;
+            opacity: 0.5;
+            width: 50px;
+            height: 50px;
+            background: skyblue;
+            border-radius: 50%;
+            float: left;
+            animation: loading 1s infinite linear;
+        }
+        @keyframes loading {
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(0);
+            }
+        }
+        .container div:nth-child(1){
+            animation-delay: -1s;
+            left: 30px;
+        }
+        .container div:nth-child(2){
+            animation-delay: -0.9s;
+            left: 60px;
+        }
+        .container div:nth-child(3){
+            animation-delay:-0.8s;
+            left: 90px;
+        }
+        .container div:nth-child(4){
+            animation-delay: -0.7;
+            left: 120px;
+        }
+        .container div:nth-child(5){
+            animation-delay: -0.6s;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        
+    </div>
+</body>
+</html>

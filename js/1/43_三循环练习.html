@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            国外：奖励象棋大师，大师说，国际象棋一共有64格，第一格放一粒麦子，后面的格子放前面一格的两倍，当象棋都放满之后，就好啦
+        */
+       var sum = 1;
+       var last = 1;
+       for(i = 1;i < 64 ; i++){
+           last = last*2;
+           sum = sum + last;
+       }
+       alert(sum);
+
+       //一定要想明白什么时候结束
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

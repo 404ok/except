@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+         <script>
+             /* 
+                1.编写一个函数，计算两个数字的和、差、积、商
+                    要求:使用传参的形式
+             */
+            function operation(num1,operator,num2) {
+                    //operator根据运算符的符号，进行不同的运算
+                    switch(operator){
+                        case "+":
+                            return num1 + num2;
+                            break;
+                        case "-":
+                            return num1 - num2;
+                            break;
+                        case "*":
+                            return num1 * num2;
+                            break;
+                        case "/":
+                            return num1 / num2;
+                            break;
+                        default:
+                            alert("error!");
+                            break;
+                    }
+              }
+              var res = operation(3,"/",0);
+              document.write(res);
+         </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

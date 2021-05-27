@@ -1,0 +1,21 @@
+.subbar{
+    position:fixed;
+    bottom: 100px;
+    right: 0;
+    text-align: center;
+}
+
+.subbar li{
+    width: 80px;
+    height: 80px;
+    border: 1px #ccc solid;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+}
+.subbar li i{
+
+}
+.subbar li p{
+   
+}

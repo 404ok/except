@@ -1,0 +1,84 @@
+1.类名、ID属性不要以数字开头，数字开头的ID在 Mozilla/Firefox 浏览器中不起作用。
+2.不要在属性值与单位之间留有空格（如："margin-left: 20 px" ），正确的写法是 "margin-left: 20px" 。
+3.（内联样式）Inline style > （内部样式）Internal style sheet >（外部样式）External style sheet > 浏览器默认样式
+
+【注】 如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。
+4.默认情况下，背景图像进行平铺重复显示，以覆盖整个元素实体.
+    background-repeat background-position
+    属性值的顺序为：:
+        background-color
+        background-image
+        background-repeat
+        background-attachment   背景图像是否固定或者随着页面的其余部分滚动。
+        background-position
+5. 对于W3C标准的CSS：如果你定义了颜色属性，你还必须定义背景色属性。
+6.当text-align设置为"justify"，每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）。
+7. <p class="main">  css引用：p.main
+8.文本转换：
+    p.uppercase {text-transform:uppercase;}字句变大写
+    p.lowercase {text-transform:lowercase;}字句变小写
+    p.capitalize {text-transform:capitalize;}字句首字母大写
+9.font-size大小设置在IE9之前无法工作
+  1em == 当前字体大小
+  默认 ： 1em = 16px
+         px / 16 = em(IE不行)
+  在所以浏览器中解决方案：
+    设置 <body>元素的默认字体大小的是百分比：
+        body{
+            font-size: 100%;
+        }
+        h1{
+            font-size: 2.5em;
+        }
+10.链接状态
+    a:link - 正常，未访问过的链接
+    第一次打开网站显示的超链接/锚文本显示的属性样式
+    a:visited - 用户已访问过的链接
+    根据浏览器访问记录来定义是否访问过
+    a:hover - 当用户鼠标放在链接上时
+    a:active - 链接被点击的那一刻
+【注】hover必须在:link和 a:visited之后定义才有效.
+      active必须在hover之后定义是有效的
+      顺序记忆：L(link)OV(visited)E AND H(hover)A(active)TE
+11.列表
+    list-style-type: circle;
+    list-style-type: upper-roman;
+    数字，方形，数字，罗马数字等
+12.
+总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距
+总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距
+13.outline(轮廓)不占空间，各种样式和border命名一致
+14.max-height:最大高度 + overflow:auto
+15.
+    visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。也就是说，该元素虽然被隐藏了，但仍然会影响布局。
+    display:none可以隐藏某个元素，且隐藏的元素不会占用任何空间。
+16.一个内联元素设置为display:block是不允许有它内部的嵌套块元素。
+17.定位
+    Fixed定位使元素的位置与文档流无关，因此不占据空间。
+    Fixed定位的元素和其他元素重叠。
+
+    relative 定位：相对定位元素的定位是相对其正常位置。
+    
+    样式 "left:-20px" 从元素的原始左侧位置减去 20 像素。
+    样式 "left:20px" 向元素的原始左侧位置增加 20 像素。
+18.清除浮动
+    clear:both
+19.组合选择器 ： 说明了两个选择器直接的关系
+    后代选择器(以空格     分隔)
+    子元素选择器(以大于 > 号分隔）
+    相邻兄弟选择器（以加号 + 分隔）
+        紧接在另一元素后的元素，且二者有相同父元素
+    普通兄弟选择器（以波浪号 ～ 分隔）
+        后续兄弟选择器选取所有指定元素之后的相邻兄弟元素。
+20.anchor伪类
+    a:link {color:#FF0000;} /* 未访问的链接 */
+    a:visited {color:#00FF00;} /* 已访问的链接 */
+    a:hover {color:#FF00FF;} /* 鼠标划过链接 */
+    a:active {color:#0000FF;} /* 已选中的链接 */
+21.CSS伪元素 
+    :focus	input:focus	选择元素输入后具有焦点
+    ：first-line元素 向文本首行设置特殊样式(只用于块元素)
+    ：first-letter 伪元素用于向文本首字母设置特殊样式
+    ":before" 伪元素可以在元素的内容前面插入新内容。
+    ":after" 伪元素可以在元素的内容之后插入新内容。
+22.导航栏 == 链接列表

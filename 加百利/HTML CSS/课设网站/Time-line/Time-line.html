@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>时间线</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+	
+				font-family: 楷体;
+			}
+			#header{
+				height: 40px;
+				padding: 10px;
+			}
+			#header .yemian{
+				float: left;
+			}
+			#header .yemian  a{
+				padding-bottom: 20px;
+			}
+			#header .head{
+				width: 1005px;
+				height: 50px;
+				padding-left: 550px;
+				font-family: 楷体;
+			}
+			.time-vertical {
+			    list-style-type: none;
+			    border-left: 3px solid #707070;
+			    padding: 0px;
+			    height: 770px;
+				margin-left: 500px;
+					  
+			}
+			 
+			.time-vertical li {
+			    height: 100px;
+			    position: relative;
+			}
+			 
+			.time-vertical li a {
+			    display: inline-block;
+			    margin-left: 40px;
+			    margin-top: 15px;
+			    text-decoration: none;
+			    color: #000;
+					  text-indent: 20px;
+			}
+			 
+			.time-vertical li b:before {
+			    content: '';
+			    position: absolute;
+			    top: 15px;
+			    left: -40px;
+			    width: 70px;
+			    height: 20px;
+			    border: 2px solid black;
+			    border-radius: 10px;
+			    background:black;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			 
+			.time-vertical li span {
+			    position: absolute;
+			    color: #fff;
+			    top: 18px;
+			    left: -52px;
+					  display:inline-block;
+					  width:100px;
+					  text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="yemian">
+				<a href="../demo.html">
+					<img src="../img/返回.png" width="15%">
+				</a>
+			</div>
+			<div class="head">
+				<h1>时间线</h1>
+			</div>
+		</div>
+		<div class="container">
+		    <ul class="time-vertical">
+				
+				 <li><b></b><span>初</span><a href="javascript:void(0)">象形字，奠基础;文与画在当初，无歧异，
+				本是一个意思。我国夙有书画同源之说，有人认为伏羲画卦、仓颉造字，是为书画之先河。
+				文字与画图初无歧异之分</a></li>
+				<li><b></b><span>先秦两汉</span><a href="javascript:void(0)">民族绘画风格的初步形成</a></li>
+		        <li><b></b><span>魏晋南北</span><a href="javascript:void(0)">绘画的发展阶段</a></li>
+		        <li><b></b><span>隋唐五代</span><a href="javascript:void(0)">绘画趋向全盛</a></li>
+				<li><b></b><span>两宋</span><a href="javascript:void(0)">蓬勃兴盛</a></li>
+				<li><b></b><span>元</span><a href="javascript:void(0)">以笔墨情趣为主流</a></li>
+		        <li><b></b><span>明</span><a href="javascript:void(0)">绘画流派纷呈，各领风骚。</a></li>
+				<li><b></b><span>清</span><a href="javascript:void(0)">绘画流派的涌现</a></li>
+		    </ul>
+		</div>
+	</body>
+</html>

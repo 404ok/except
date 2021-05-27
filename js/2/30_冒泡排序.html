@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./tool.js"></script>
+    <script>
+        /* 
+            冒泡排序：
+                规则：前后两个数两两进行比较，如果复合交换条件，就交换两个位置
+                规律：冒泡排序每一轮排序，都可以找出一个较大的数，放在正确的位置
+        */
+        /* 
+                9,4,20,7,90
+                从小到大进行排序
+                第一轮：
+                    4,9,7,20,90
+                第二轮：
+                    4,7,9,20,90
+                分析：
+                    比较轮数 = 数组长度 - 1
+                    每一轮比较次数 = 数组长度 - 当前轮数
+        */
+        var arr = [9,4,20,7,90,8];
+        bubbleSortAsc(arr);
+        alert(arr);
+        bubbleSortDesc(arr);
+        alert(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

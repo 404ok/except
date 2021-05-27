@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+        }
+        a:visited,a:link{
+            display: block;
+            /* 显示块元素的链接，让整体变为可点击链接区域(不只是文本)，它允许我们指定宽度 */
+            text-decoration: none;
+            width: 120px;
+            background-color: skyblue;
+            text-align: center;
+            color: white;
+
+            padding: 4px;
+            font-weight: bold;
+        }
+        a:hover,a:active{
+            background-color: slateblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+           <a href="#">主页</a> 
+        </li>
+        <li>
+           <a href="#">新闻</a> 
+        </li>
+        <li>
+           <a href="#">联系</a> 
+        </li>
+        <li>
+           <a href="#">关于</a> 
+        </li>
+    </ul>
+</body>
+</html>

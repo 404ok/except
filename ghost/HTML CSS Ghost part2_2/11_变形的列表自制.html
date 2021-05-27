@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        ul{
+            border: 2px solid black;
+            width: 900px;
+            margin: 30px auto;
+        }
+        li{
+            float: left;
+            margin: 20px;
+            position: relative;
+           overflow: hidden;
+        }
+        li .box1{
+            width: 350px;
+            height: 350px;
+            background: brown;
+            position: absolute;
+            top: -50px;
+            transition: 2s;
+            transform:translate(-400px,-400px) rotate(45deg);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        ul li:hover .box1{
+            transform:translate(-150px,-100px) rotate(45deg);
+        }
+        li .box2{
+            width: 350px;
+            height: 350px;
+            background: brown;
+            position: absolute;
+            top: -50px;
+            transition: 2s;
+            transform:translate(200px,400px) rotate(45deg);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        ul li:hover .box2{
+            transform:translate(50px,100px) rotate(45deg);
+        }
+        ul li .center-box{
+            width: 200px;
+            height:0px;
+            background: black;
+            opacity: 0.6;
+            position: absolute;
+            top: 105px;
+            left: 30px;
+            transition: 1s;
+            transform: rotate(50deg);
+            overflow: hidden;
+            z-index: 2;
+        }
+        ul li:hover .center-box{
+            height: 60px;
+            transform:rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="./img/img.png" alt="">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="center-box"></div>
+        </li>
+        
+    </ul>
+</body>
+</html>

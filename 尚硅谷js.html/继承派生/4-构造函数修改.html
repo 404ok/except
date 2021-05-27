@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            项目不可能一次性做到最好，有迭代的过程，不断优化
+        */
+        /* 
+            创建一个Person构造函数 
+                在一个Person构造函数中，为每一个对象都添加了一个sayName方法
+                目前方法是在构造函数内部创建的，也就是构造函数每执行一次，就会创建一个新的sayName方法
+                也就是所有的实例的sayName都是唯一的
+            
+            这样就导致了构造函数执行一次就会创建一个新的方法，执行1000次就会创建10000个新的方法，且都是一模一样的
+            完全没必要，完全可以使所有的对象共享同一个方法
+        */
+        function Person(name){
+            this.name = name;
+            //向对象中添加一个方法
+            this.sayName = func;
+        }
+
+        //将sayName方法在全局作用域中定义，这样就不会定义10000次了
+        /* 
+            将函数定义在全局作用域中，污染了全局作用域的命名空间，而且定义在全局作用域中也很不安全(两个人都起了这个名字)
+        */
+        function func(){
+                alert("ok");
+        }
+        var per = new Person("哈");
+        var per1 = new Person("ok");
+        per.sayName();
+        per1.sayName();
+        console.log(per.sayName == per1.sayName);
+        console.log(per);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

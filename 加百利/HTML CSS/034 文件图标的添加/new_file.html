@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				background-color: #000000;
+			}
+			ul{
+				
+			}
+			
+			ul li a{
+				background-image: url(img/us-icon.png);
+				background-repeat: no-repeat;
+				background-position-x: right;
+				padding-right:45px;
+			}
+			ul li a[href$='.docx']{
+				background-position-y:-10px ;
+			}
+			ul li a[href$='.docx']{
+				background-position-y:-90px ;
+			}
+			ul li a[href$='.jpg']{
+				background-position-y:-87px ;
+				
+			}
+			/* 伪类选择器，类似于hover */
+			/* nth-of-type（同类型兄弟元素中的排名） */
+			/*  */
+			/* $属性的结尾   ^:属性的开头 */
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<a href="xxx.docx">质量保证</a>
+			</li>
+			<li>
+				<a href="xxx.pptx">免费运输</a>
+			</li>
+			<li>
+				<a href="xxx.jpg">钻石品质</a>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 60px;
+        }
+    </style>
+    <script>
+        /* 
+            动画：图像
+            原理：人眼能够识别的最小时间间隔为18帧
+            动画：切换时间间隔大于18帧，一般情况下电影院放映的电影24帧，
+        */
+        /* 
+            运动框架：
+                1.每次启动定时器之前，先将上一次定时器关闭
+                2.if...else 将运动和停止分开
+
+        */
+
+
+       /* 
+            简单运动，让一个div从左向右开始运动
+       */
+      window.onload = function(){
+          var btn =document.getElementById("btn1");
+          var div =document.getElementById("div1");
+          var speed = 7;
+          //停不下来  设置一个timer来记录计时器的返回值
+          var timer = null;
+          //但是当速度取某些值，它停不下来，因为它到不了这个位置
+          btn.onclick = function(){
+              //点击多次会产生多个定时器，然后会越来越快    所以要保证只有一个定时器使用：每次启动定时器之前，先将上一次定时器关闭即可
+              clearInterval(timer);
+              timer = setInterval(function(){
+                  if(div.offsetLeft >= 500){
+                      clearInterval(timer);
+                  }
+                  //到达目的值后，点击还会继续往前运动
+                else{
+                    div.style.left = div.offsetLeft + speed +"px";
+                }
+              }, 30);
+              
+          }
+      }
+    </script>
+</head>
+<body>
+    <button id="btn1">开始运动</button>
+    <div id="div1"></div>
+</body>
+</html>

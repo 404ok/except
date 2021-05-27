@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            XMLHttpRequest  IE8以下不兼容   政府网站
+            IE6以下：new ActiveXObject("Microsoft.XMLHTTP");
+
+        */
+        //1.创建ajax对象
+
+        window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+
+                var xhr = null;
+                try{
+                    xhr = new XMLHttpRequest();
+                }catch{
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                alert(xhr.readyState);
+                xhr.open("get","2.txt",true);
+                xhr.send();
+                alert(xhr.readyState);
+                /* 
+                    4.等待数据响应
+
+                        readystatechange    事件类型
+                        xhr.readyState      发生变化的时候调用
+                        0   调用open方法之前
+                        1    已经调用send()方法，正在发送请求
+                        2   send()方法完成，已收到全部响应内容
+                        3   正在解析响应内容
+                        4   解析完成，客户端可以调用
+                */
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            alert(xhr.responseText);
+                        }else{
+                            alert("error" + xhr.status);
+                        }
+                    }
+                }
+            }
+        }
+
+        /* 
+            status  HTTP状态码
+            1~5
+            200：交易成功
+            400：语法错误
+            404：没有找到文件，查询或者url
+        */
+    </script>
+</head>
+<body>
+    <button id="btn">下载数据</button>
+</body>
+</html>

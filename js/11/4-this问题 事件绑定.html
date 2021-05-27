@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            this:指向当前函数的主人
+            总结this容易混乱的地方：
+                1.事件绑定
+                2.定时器
+            事件绑定
+        */
+        function Aaa(){
+            this.a = 10;
+            var btn = document.getElementById("btn1");
+            var _this = this;
+
+            /* 传参 就等于赋值
+             setTimeout(this.show,4000); */
+             setTimeout(function(){
+                 _this.show();
+             },4000)
+
+        }
+        Aaa.prototype.show = function(){
+            alert(this.a);
+        }
+        window.onload = function(){
+            var a1 = new Aaa();
+            a1.show();
+        }
+       
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+</body>
+</html>

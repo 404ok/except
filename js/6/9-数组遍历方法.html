@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组：
+                for循环(指所有循环)
+                for...in循环
+                forEach
+        
+        */
+       //1.for循环
+       var arr = [10,20,30,40,50];
+       for (let i = 0; i < arr.length; i++) {
+           document.write("for," + i + "," + arr[i] + "<br/>");
+       }
+       document.write("<br/>");
+
+       //2.for..in循环 效率高，因为不执行判断
+       for(var i in arr){
+            document.write("for," + i + "," + arr[i] + "<br/>");
+       }
+       document.write("<br/>");
+
+       //3.forEach
+       //item:当前遍历元素  index:当前遍历到的下标  arr:遍历到的数组本身
+       arr.forEach(function(item,index,arr){
+            document.write("forEach," + index + "," +  " " + item + "<br/>");
+       });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

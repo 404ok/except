@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            鼠标事件对象属性：(区别：原点位置不一样)
+                    clientX,clientY
+                    pageX,pageY
+                    screenX,screenY
+            用于获取当前鼠标位置
+        */
+       document.onmousedown = function(ev){
+           var e = ev || window.event;
+           //alert(e.button);
+           alert(e.clientX + "," + e.clientY);//可视窗口左上角为原点
+           alert(e.pageX + "," + e.pageY);//整个页面左上角为原点
+           alert(e.screenX + "," + e.screenY);//电脑屏幕左上角为原点
+       }
+    </script>
+</head>
+<body style="height: 3000px;">
+    <h1>hello</h1>
+</body>
+</html>

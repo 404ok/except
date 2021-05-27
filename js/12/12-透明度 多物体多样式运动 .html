@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin: 50px;
+            opacity: 0.3;
+            filter:alpha(opacity= 30);
+        }
+    </style>
+    <script>
+        /* 
+            谁运动，什么样式，什么目标
+            只能解决带px的样式
+        */
+       window.onload = function(){
+            var divs = document.getElementsByTagName("div");
+            divs[0].onclick = function(){
+                //宽变成300
+                startMove(this,"width",300);
+            }
+            divs[1].onclick = function(){
+                //高变成300
+                startMove(this,"height",300);
+            }
+            divs[2].onclick = function(){
+                //marginLeft => 300 注意这里是node.style.???(不能有空格)
+                startMove(this,"marginLeft",300);
+            }
+            divs[3].onclick = function(){
+                //fontSize =>100
+                startMove(this,"fontSize",300);
+            }
+            divs[4].onmouseover = function(){
+                //fontSize =>100
+                startMove(this,"opacity",100);
+            }
+            divs[4].onmouseout = function(){
+                //fontSize =>100
+                startMove(this,"opacity",30);
+            }
+       }
+        function startMove(node,attr,iTarget){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                //计算速度
+                //获取有效样式  这里opacity取的是0.3,取整后，为0
+                // var iCur = parseInt(getStyle(node,attr));
+
+                var iCur = null;
+                if(attr == "opacity"){
+                    //取得是"0.3"字符串，用取浮点数
+                    iCur = parseInt(parseFloat(getStyle(node,"opacity")) * 100);
+                }else{
+                    iCur = parseInt(getStyle(node,attr));
+                }
+                var speed = (iTarget - iCur)/8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if(iCur == iTarget){
+                    clearInterval(node.timer);
+                }else{
+                    //取样式，必须要用style[attr]来取它的样式,这里是+px进行赋值 所以需要进行判断
+                    if(attr == "opacity"){
+                        iCur += speed;
+                        node.style.opacity = iCur / 100;
+                        node.style.filter = "alpha(opacity = "+ iCur/100 + ")";
+                    }else{
+                        node.style[attr] = iCur + speed + "px";
+                    }
+                }
+            }, 30);
+        }
+
+         //获取当前样式 跨浏览器的兼容    node:谁的样式   cssStyle:什么样式
+         function getStyle(node,cssStyle){
+            return node.currentStyle ? node.currentSTyle[cssStyle] : getComputedStyle(node)[cssStyle];
+            //三目运算符
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>div文本</div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+1.Flex
+    flex-direction:用于控制子项整体布局方向，是从左往右还是从右往左，是从上往下还是从下往上
+        row row-reverse column  column-reverse
+    flex-wrap:用来控制子项整体单行显示还是换行显示
+        nowrap:默认值，表示单行显示，不换行
+        wrap:宽度不足换行显示
+        wrap-reverse:宽度不足换行显示，但是从下往上开始，也就是原本换行在下面的子项现在跑到上面
+    flex-flow:属于上面二者缩写，表示flex布局的flow流动特性。
+    第一个值为方向，第二个值表示换行，中间用空格隔开
+    justify-content:决定了主轴方向上子项的对齐和分布方式
+        flex-start
+        flex-end
+        center
+        space-between   两端对齐
+        space-around    环绕
+        space-evenly    匀称、平等
+
+    align-items:  items:flex子项们，因为align-items指的是flex子项们相对于flex容器在侧轴方向上的对齐方式
+        stretch 默认值L:flex子项拉伸    
+        flex-start:表现为容器顶部对齐
+        flex-end:表现为容器底部对齐
+        center:表现为垂直居中对齐
+    
+    align-content：多行有效果
+2.作用在flex子项上的CSS属性
+    order:可以设置order改变某一个flex子项的排序位置，所有flex子项的默认order属性值是0
+    flex-grow:扩展的是flex子项所占据的宽度，扩展所侵占的控件就是除去元素之外的剩余的空白间隙
+    空间有剩余    > = 0
+    flex-shrink:收缩    空间不足
+    flex-basis:定义在分配剩余空间之前元素的默认大小
+    flex:flex-grow flex-shrink flex-basis
+    flex默认值： 0 1 auto
+    align-self:控制单独某一个flex子项的垂直对齐方式
+
+3.gride布局
+    作用在二维布局上，纵横两个方向总是同时存在
+    单位：px , % , 自适应 ， fr
+    (fr代表所占剩余空间的比例，要大于1)
+
+    单位划分很有规律，若需要添加多个横批网格，可以利用repeat() 语法进行简化
+    例如十行十列
+
+    grid-template-columns 、grid-template-rows
+        行列高
+    grid-template-areas
+        给网格划分区域，grid子项只要使用gride-area属性指定其隶属那个区，位置和名字表示法
+        注意：不能形成特殊图形，只能起矩形
+    grid-template
+        是上面三个的整体缩写
+
+    grid-column-gap gride-row-gap：用于定义网格中网格间隙的尺寸 grid-gap:综合写法   横纵
+
+    justify-items:
+        指定了网格元素的水平呈现方式，是水平拉伸显示，还是左中右对齐
+    align-items:
+        制定了网格元素的垂直呈现方式，是垂直拉伸显示，还是上中下对齐
+    注意是针对于网格元素
+    place-items可以让align-items和justify-items属性写在单个声明中   横纵  
+
+    justify-content：
+        指定网格元素的水平分布方式
+    align-content：
+        指定网格元素的垂直分布方式
+    place-content:综合写法
+
+    grid子属性: grid-column-end
+                grid-column-start   grid-column(简写，斜线隔开)
+                grid-row-start      grid-row(简写，斜线隔开)
+                grid-row-end
+                (span属性)
+4.移动端模拟器
+    切换平台后，一定要重新刷新浏览器
+5.访问一些网站的PC和移动端？
+    大一些网站分开开发，PC端一套代码，移动端一套
+    网址 --> 后端检测当前设备 --> 如果是PC端，继续访问地址 --> 若不是，则将域名重定向
+6.viewport视口(移动端)
+分为：visual viewport(可视视口，上面，与设备大小一致) layout viewport(布局视口，下面，默认大小：980px)
+
+    现代网页需要将layout viewport设置成与visual viewport等同大小
+    <meta>标签：width   height  initial-scale(页面初始缩放) minimum-scale   maximum-scale
+    user-scalable(设置页面能否进行缩放)
+
+7.移动端适配方案
+    1.百分比布局(流式布局)：优酷、百度、天猫、腾讯  间距变化
+        文字流式 控件弹性 图片等比缩放
+        优点：大屏幕下显示更多内容
+        缺点：宽屏下比例会有一些不协调
+    2.等比缩放布局(rem布局)：网易、爱奇艺、淘宝、美团   元素大小变化
+
+    一般按一种手机格式设计
+8.rem布局
+    em:相对单位，1em相当于当前元素或父元素的font-size值
+    rem:相对单位，1rem等于根元素的font-size值
+    vw / vh : 把屏幕分为100份，1vw等于屏幕宽的1%
+9.如何动态设置rem
+    1.通过js
+        alt+Z
+    2.通过vw
+    注意：要给body重置一下font-size:16px
+10.响应式布局
+    利用媒体查询，即media queries，可以针对不同的媒体类型定义不同的样式，从而实现响应式布局
+    媒体类型：all
+             print
+             screen(电脑、平板、智能手机)
+             speech(屏幕阅读器等发声设备)
+
+            and、not
+            min-width、max-width
+            orientation:portrait(方向为纵屏)
+            orientation:landscape(方向为横屏)
+            <link>
+    
+    常见修改样式:
+                display
+                float
+                width
+        注意：响应式代码要写到适配的CSS后面
+11.Bootstrap
+    最受欢迎的HTML、CSS和JS框架，用于开发响应式布局、移动设备优先的WEB项目
+    特色：
+        1.响应式布局
+        2.基于flex的栅格系统
+        3.丰富的组件和工具方法
+        4.常见交互效果
+    
+    Containers
+        Containers
+        container-fluid
+        Responsive breakpoints
+    Grid system
+        Grid system
+        Responsive classes  响应式class
+        Gutters 间距
+        Alignment   对齐方式
+        Reordering  排序
+        Offsetting  间距，位置
+    Content:
+        等等等等
+
+

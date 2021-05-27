@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            递归：
+                1.找出临界值，无需计算即可得到的值
+                2.找规律
+                3.假定函数可以用，写出关系公式
+        */
+
+        //求出1~n的和
+        
+        //循环实现
+        function sum(n) {
+                var res = 0;
+                for(var i = 0;i <= n;i++){
+                    res += i;
+                }
+                return res;
+          }
+          alert(sum(7));
+
+        //递归实现
+        function sum1(n){
+            if(n == 1){
+                return 1;
+            }
+            return sum1(n-1)+n;
+        }
+        alert(sum1(100));
+
+        //面试问其实是考察内存管理问题
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

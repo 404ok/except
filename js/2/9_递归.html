@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            函数递归：如果大家去面试，面试官问你递归，面试官对你要求很高
+
+            但是公司明文禁止使用递归
+        */
+
+        /* 
+            递归：
+                满足以下三个特点就是递归：
+                    1.函数自己调用自己
+                    2.一般情况下有参数
+                    3.一般情况下有return
+            【注】：递归可以解决循环能做的所有事情，有一些不容易解决的事情，递归也能轻松解决
+
+            【注】递归，都可以写出来，但是不知道为什么是对的
+        */
+
+        //计算1~n的和？
+        /* function sum(n) {
+            var res = 0;
+            for(var i = 1;i <= n;i++){
+                res += n;
+            }
+            return res;
+          }
+          alert(sum(3)); */
+
+          /* 
+            递归：
+                方法：
+                    1.首先找到临界值，即无需计算，获得的值
+                    2.找这一次和上一次的关系
+                    3.假设当前函数已经可以使用，调用自身计算上一次
+          */
+
+          function sum(n) {
+              if(n == 1){
+                  return 1;
+              }
+              return sum(n-1) + n;
+            }
+            
+            alert(sum(100));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

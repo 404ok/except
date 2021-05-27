@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>布局练习</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#header{
+				height: 50px;
+				background-color: #FF0000;
+			}
+			#header .head{
+				width: 1005px;
+				height: 50px;
+				background-color: aliceblue;
+				margin: auto;
+			}
+			#banner{
+				height: 500px;
+				background-color: #808080;
+			}
+			#category{
+				width: 1005px;
+				height: 200px;
+				margin: auto;
+				background-color: #ADFF2F;
+			}
+			#category .item{
+				width: 125px;
+				height: 165px;
+				padding-left:25px ;
+				padding-right:25px ;
+				padding-bottom:25px ;
+				padding-top:10px;
+				border-right: 1px dashed #000000;
+				float: left;
+			}
+			#category .item.first{
+				padding-left: 0;
+			}
+			#category .item.last{
+				padding-right: 0;
+				padding-left: 0;
+				border: 0;
+			}
+			#case{
+				height: 490px;
+				background-color: #FFD700;
+			}
+			#case .title-text{
+				margin: auto;
+				width: 1000px;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				font-size: 45px;
+				
+			}
+			#case .item-wrappper{
+				width: 1005px;
+				margin: auto;
+				overflow: auto;
+			}
+			#case .item-wrappper .item{
+					width: 320px;
+					height: 330px;
+					background: orchid;
+					float: left;
+			}
+			#case .item-wrappper .item.mg{
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+			#case p{
+				width: 1005px;
+				margin-left: auto;
+				margin-right:auto ;
+				margin-top:15px ;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 30px;
+				color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="head">
+				
+			</div>
+		</div>
+		<div id="banner">
+			
+		</div>
+		<div id="category">
+			<div class="item first"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item last"></div>
+		</div>
+		<div id="case">
+			<div class="title-text">
+				Case
+			</div>
+			<div class="item-wrappper">
+				<div class="item"></div>
+				<div class="item mg"></div>
+				<div class="item"></div>
+				
+			</div>
+			<p>查看更多+</p>
+		</div>
+	</body>
+</html>

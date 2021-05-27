@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            输入年月日，输出当前年第多少天/多少周？
+        */
+       var year = 2021;
+       var mounth = 3;
+       var day = 19;
+       var sum = 0;
+       var week;
+       //倒序
+       switch(mounth){
+           case 12:
+                sum += 30;
+           case 11:
+                sum += 31;
+           case 10:
+                sum += 30;
+           case 9:
+                sum += 31;
+           case 8:
+                sum += 31;
+           case 7:
+                sum += 30;
+           case 6:
+                sum += 31;
+           case 5:
+                sum += 30;
+           case 4:
+                sum += 31;
+           case 3:
+                sum +=  28;
+                if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+                    sum += 1;
+                }
+           case 2:
+                sum +=  31;
+           case 1:
+                sum += day;
+                break;
+            default:
+                alert("ERROR!");
+                break;
+       }
+       week =Math.ceil(sum/7)
+       alert("第" + sum + "天"+"第" +week + "周");
+       /* 判断一个年是平年还是闰年
+                注意：能被四整除且不能被100整除，或者能被400整除则为闰年 */
+
+        //Math.ceil()   向上取整 即全为(入)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

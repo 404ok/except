@@ -1,0 +1,10 @@
+.ok{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.no{
+    width: 200px;
+    height: 150px;
+    background-color: blue;
+}

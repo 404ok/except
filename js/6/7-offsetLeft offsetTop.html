@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            margin: 30px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        #div2{
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: powderblue;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var div2 = document.getElementById("div2");
+            alert(getStyle(div2,"left"));//因为没有设置left
+            alert(div2.offsetLeft);//眼睛能看到的实际距离（最近父节点）
+
+
+            //跨浏览器的兼容    node:谁的样式   cssStyle:什么样式
+            function getStyle(node,cssStyle){
+                return node.currentStyle ? node.currentSTyle[cssStyle] : getComputedStyle(node)[cssStyle];
+                //三目运算符
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+</body>
+</html>

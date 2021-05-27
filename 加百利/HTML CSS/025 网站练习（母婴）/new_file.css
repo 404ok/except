@@ -1,0 +1,17 @@
+#header{
+	
+}
+#p{
+	margin-left: 200px;
+	float: left;
+}
+#search{
+	float: left;
+}
+.text{
+	width: 100px;
+	padding: 200px;
+}
+#search .search{
+	background-color: hotpink;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            日期对象
+            1.没有传入参数，默认当前系统时间
+                 GMT+0800 (中国标准时间)
+                 GMT 格林尼治时间(子母线)
+                2.传入参数
+                    “2000-01-01”
+                    “2000/01/09”
+                    按照顺序：年月日时分秒毫秒
+                    !!! 【注意】在国外月份是从0开始数的 0~11
+                    直接传入毫秒数，1 秒 =1000毫秒
+                    小彩蛋：linux创始人（1970年）林纳斯 内核：安卓 苹果 mac windows
+                    github
+        */
+       var d = new Date(2000,1,1);
+       alert(d);
+       var date = new Date(1000);
+       alert(date)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

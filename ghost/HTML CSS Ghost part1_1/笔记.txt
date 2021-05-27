@@ -1,0 +1,92 @@
+1.快捷键：
+    !+TAB:HTML初始代码
+    shift+alt+a:选中的加注释
+    ctrl+/:此行加注释
+    Ctrl+Y:前进
+    Shift+end:从头选中一行
+    Shift+home:从尾部选中一行
+    Shift+alt+↓:快速复制一行
+    Alt+↑ ↓：快速移动上下位置
+    Shift+TAB：向前缩进
+    ctrl+TAB:工作区选择    
+    多光标：alt+鼠标左键
+    ctrl+D：选择相同元素的下一个 
+
+    ctrl+滚轮：放大缩小浏览器画面
+    ctrl+0:回归最初页面
+    ctrl+F:搜索源代码
+    HTML:超文本 标记（标签） 语言
+
+    WINDOS键+V:剪贴板
+2.标题与段落
+    h1很重要，一个.html文件只有一个h1标签
+    h5，h6不常用
+    em:强调，斜体
+3.img
+    src:引入图片的地址
+    alt:当图片出现问题，可有一段友好提示文字
+    title:提示信息
+    F12:可以检查图片原始大小
+    要写宽高，更友好
+4.链接
+    <a>
+    href:链接的地址
+    target:改变链接打开方式 默认方式：当前页面打开_self 新窗口打开_blank
+    <base>:改变a链接默认行为
+5.跳转锚点
+    1.#加id名
+    2.#加name名 name属性是加给a标签
+6.特殊符号
+    &nbsp; : 空格符
+    &copy; : ©（版权号）
+    &reg; ： 注册商标
+    &lt; : <
+    &gt; : >
+    &amp; : &
+    &yen; : 元
+    &deg; ：摄氏度
+7.列表
+    无序列表：ul,li
+    有序列表：ol li (type="1 a A I i")
+    定义列表：dl dt dd  列表项需要添加标题和对标题需要添加描述的内容
+    嵌套列表：列表之间可以互相嵌套形成多层级列表
+8.表格
+    table：表格的最外层容器
+    th:表头
+    tr:定义表格行
+    td:定义表格单元
+    caption:定义表格标题
+    语义化标签：thead,tbody,tfood
+9.表格标签
+    border:边框
+    cellpadding:表格内空间
+    cellspacing:表格之间的空间
+    rowspan:合并行
+    colspan:合并列
+    align:左右对齐方式  left,center,right
+    valign:上下对齐方式 top,middle,bottom
+10.表单标签
+    form action:提交地址
+    input:type属性，决定是什么控件  单标签
+    text,chekbox(checked,disabled),radio,password,submit,resert,file
+    textarea多行文本框
+    select(size multiple(多选))，option (selected disabled)：下拉菜单
+    label:辅助表单
+    name,for,id,disabled,checked
+11. div:区域划分块（块）
+    span:对文字进行修饰（内联）
+12.CSS基础样式
+    width,height,background-color
+    (%,px)
+13.CSS样式的引入方式
+    1.内联样式
+        style属性
+    2.内部样式
+        style标签
+    内部样式可以复用，符合W3C标准
+    3.外部样式
+        通过引入一个单独的CSS外部文件，name.css
+        <link>标签:引入外部资源，rel:指定资源与页面的关系，href:引入地址
+        @import
+14.CSS颜色表示法
+    单词，十六进制，rgb

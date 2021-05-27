@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            文件是否是压缩包
+                zip rar gz
+                由于 . 在正则表达式中表示匹配单个任意字符，所以要用到转义字符
+
+            转义字符:
+                \.  代表本来.字符的意思
+                \*  代表本来*字符的意思
+        */
+        var box = /^\w+\.(zip|rar|gz)$/;
+        alert(box.test("hello.zip"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 button{
+            width: 100px;
+            height: 30px;
+            background-color: gray;
+            color: white;
+            font-size: 18px;
+        }
+
+        #div1 .active{
+            background-color: orange;
+            color: blue;
+        }
+        #div1 div{
+            width: 340px;
+            height: 300px;
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+    <script>
+        /* 
+            1.首先分装一个构造函数
+        */
+        function TabSwitch(id){ //id为选项卡的父节点
+            //添加属性  看哪些值需要跨函数使用，因为构造函数属性在各个函数里都可以通过this.属性名来调用
+            var node = document.getElementById(id);
+            //按钮需要跨函数使用，div也需要跨函数使用
+            this.btn = node.getElementsByTagName("button");
+            this.div = node.getElementsByTagName("div");
+            var _this = this;
+            //将点击按钮进行切换方法给每一个按钮
+            for (var i = 0;i < this.btn.length;i++){
+                //找到当前按钮下标
+                this.btn[i].index = i;
+                //给每一个按钮添加一个自定义属性index
+                this.btn[i].onclick = function(){
+                    _this.tab(this);
+                }
+            }
+        }
+        //添加方法：点击按钮后要去切换
+        TabSwitch.prototype.tab = function(btn){
+            //清楚所有按钮和div内的样式
+            for (let i = 0; i < this.btn.length; i++) {
+                this.btn[i].className=" ";
+                this.div[i].style.display = "none";
+            }
+            //找到当前点的按钮，将其classname变成active,并且显示div的样式
+            btn.className = "active";
+            this.div[btn.index].style.display = "block";
+
+        }
+        window.onload = function(){
+            new TabSwitch("div1");
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <button class="active">HTML5</button>
+        <button>Python</button>
+        <button>Java</button>
+        <div style="display: block;">HTML5是</div>
+        <div>Python是一种计算机程序设计语言</div>
+        <div>Java是一门面向对象的编程语言</div>
+    </div>
+</body>
+</html>

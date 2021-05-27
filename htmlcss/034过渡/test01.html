@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			padding: 0; margin: 0;
+		}
+		.item {
+			width: 100px; height: 100px;
+			float: left;
+			margin-left: 200px; margin-top: 50px;
+			transition:  width 1s ease-in 2s;
+		}
+		.item span {
+			position: relative;
+			top: -20px;
+			white-space: nowrap;
+		}
+		.item:nth-child(1) {
+			background: sandybrown;
+		}
+		.item:nth-child(1):hover {
+			border-radius: 50px;
+		}
+		
+		.item:nth-child(2) {
+			border-radius: 50px;
+			background: #FFC0CB;
+		}
+		.item:nth-child(2):hover {
+			background: #D74339;
+		}
+		
+		.item:nth-child(3) {
+			border-radius: 50px;
+			background: orangered;
+		}
+		.item:nth-child(3):hover {
+			background: orangered;
+			box-shadow: 0 0 25px 5px orangered;
+		}
+		
+		.item:nth-child(4) {
+			background: gray;
+		}
+		.item:nth-child(4):hover {
+			height: 200px;
+		}
+		
+		.item:nth-child(5) {
+			background: gray;
+		}
+		.item:nth-child(5):hover {
+			opacity: 0.1;
+		}
+	</style>
+	<body>
+		
+		<div class="item">
+			<span>改变border-radius</span>
+		</div>
+		<div class="item">
+			<span>改变background-color</span>
+		</div>
+		<div class="item">
+			<span>改变box-shadow</span>
+		</div>
+		<div class="item">
+			<span>改变height</span>
+		</div>
+		<div class="item">
+			<span>改变opacity</span>
+		</div>
+	</body>
+</html>

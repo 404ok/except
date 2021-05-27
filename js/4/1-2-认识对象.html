@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            1.编程发展历史
+                编程：汇编、C语言(面向过程)
+                学习成本高
+                编程语言：JAVA、C++,JavaScript、Object-C,Python
+                (面向对象)
+            2.思想
+                面向过程编程思想：只考虑数学逻辑
+                面向对象编程思想：直接将生活逻辑映射到我们的程序
+                    1.面向对象分析(分析有哪些对象)
+                    2.设计实体的属性和功能
+                    3.实体之间相互作用
+
+                    车：speed 60km/h 
+                        可以跑在路上
+                    路:length 1000km
+                    最后，让车真的在路上跑得出结果
+
+                例子：
+                    有一辆车速度60km/h,一条路1000km,问题：如果让这辆车跑完这条路，需要多长时间？
+
+            3.语法(在JavaScript中没有类这个概念，只有对象，ECMA6版本新增了类的概念)
+            类：一类具有相同特征事物的抽象概念
+            对象：具体某一个体，唯一的实例
+
+            类    对象
+            狗    你遇到的那只
+            电脑  你桌子上的那台
+
+            4.代码
+
+            5.数据结构
+                基本数据类型(存储一个值) -->数组(处理批量的数据)  -->  对象(既可以存储数据又可以存储函数)
+        */
+
+        // 面向对象的编程思想
+        var car = {
+            speed:60,
+            run:function(road){
+                return road.length /  car.speed;
+            }
+        }
+        var kuahaidaqiao = {
+            length : 1000,
+        };
+        var hours = car.run(kuahaidaqiao);
+        alert("一共花了" + hours.toFixed(2) + "小时");
+
+        var car  = {
+            speed:60,
+            run:function(road){
+                return road.length / car.speed;
+            }
+        }
+        var kuahaidaqiao = {
+            length : 1000,
+        }
+        var hours = car.run(kuahaidaqiao);
+        alert(hours.toFixed(2) + "小时")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

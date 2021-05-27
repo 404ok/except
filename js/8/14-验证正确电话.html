@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            分析：
+                电话号码必须以1开头，并且验证后面是10位
+        */
+       var box = /1\d{10}$/;
+       var str = "1897777545";
+        alert(box.test(str));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

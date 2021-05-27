@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            XMLHttpRequest  IE8以下不兼容   政府网站
+            IE6以下：new ActiveXObject("Microsoft.XMLHTTP");
+
+        */
+        //1.创建ajax对象
+
+        window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+
+                var xhr = null;
+                try{
+                    xhr = new XMLHttpRequest();
+                }catch{
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xhr.open("post","6.post.php",true);
+
+                //必须在send方法之前，去设置请求的格式  setRequestHeader("content-type","application/x-www-form-urlencoded")
+                //通过send方法进行提交，查询字符串
+                /* 
+                    ?name1=value&name2 = value2 search
+                    name1=value&name2 = value2  querystring
+                */
+               xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                xhr.send("username=yyy&age=19&password=9090");
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            alert(xhr.responseText);
+                        }else{
+                            alert("error" + xhr.status);
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btn">POST请求</button>
+</body>
+</html>

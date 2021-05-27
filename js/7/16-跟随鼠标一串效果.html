@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 50%;
+            }
+        </style>
+        <script>
+            /* 
+                先排好队，再移到鼠标位置
+            */
+            window.onload = function(){
+                var arr= document.getElementsByTagName("div");
+                document.onmousemove = function(ev){
+                    var e = ev || window.event;
+                    for (let i = arr.length - 1; i > 0 ; i--) {
+                        arr[i].style.left = arr[i-1].offsetLeft + "px";
+                        arr[i].style.top = arr[i-1].offsetTop + "px";
+                    }
+                    arr[0].style.left = e.clientX + "px";
+                    arr[0].style.top = e.clientY + "px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </body>
+</html>

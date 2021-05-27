@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            基本数据类型--内存
+        */
+       /* var num1 = 10;
+       var num2 = num1;
+       num2 = 20;
+       alert(num1 + ";" + num2); */
+
+
+       /* 
+            做饭：
+                1.原料准备好
+                2.开始准备
+
+            运行程序：
+                1.先准备好运行程序所需空间(一旦分配好以后，内存大小没法改变了)
+                2.开始运行程序
+       */
+       var arr1 = [10,20,30,90];
+       var arr2 = arr1;
+       arr2.push(50,80);
+       alert(arr1);
+       alert(arr2);
+       /* 
+            【引用】数据类型
+            数组：数组的变量存储的是数组的地址
+            对于数组：给了两部分
+                程序运行段  arr1(存一个值：编号)  arr2
+                堆         arr1的一系列单间一个编号
+       */
+
+       /* 
+            concat() 拷贝原数组生成一个新数组
+       */
+       var arr1 = [10,20,30,90];
+       var arr2 = arr1.concat();
+       arr2.push(50,80);
+       alert(arr1);
+       alert(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

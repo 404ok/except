@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 300px;
+        }
+    </style>
+    <script>
+        /* 
+            DOM:document(html标签内) object model(树状图 --> 模型)
+                文档对象模型
+            所有标签类型：节点
+                元素节点：<div></div>
+                属性节点  id = "div1"
+                文本节点 div文本
+
+            
+            元素节点的获取：
+                document.getElementById(id)
+                功能：通过id获取符合条件的元素(id必须是唯一)
+                返回值：就是符合条件的一个节点。
+        */
+       window.onload = function (){
+           //整个代码加载完成后再运行
+            var odiv = document.getElementById("div1");
+            alert(odiv);
+
+
+            /* 
+                获取行间属性的值
+            */
+           alert(odiv.id);
+           alert(odiv.title);
+           //访问class，通过className值访问，因为class是关键字
+           alert(odiv.className);
+
+           //设置行间属性的值
+           odiv.id = "div2";
+           odiv.title = "world";
+ 
+
+           alert(odiv.style.width);
+           alert(odiv.style.height);
+           /* 如果带横杠，直接改成驼峰式命名 */
+           alert(odiv.style.backgroundColor);
+           odiv.style.backgroundColor = "orange";
+           //行间才可访问
+       }
+       
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box" style="width: 300px;background-color: turquoise;">div文本</div>
+</body>
+</html>

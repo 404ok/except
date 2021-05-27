@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>聊天对话框</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0; /*这行样式必须写，后面的章节会介绍*/
+			}
+
+			.content {
+				list-style: none; /*将无序列表的默认样式去掉*/
+				width: 260px;
+				height: 380px;
+				margin: auto; /*这个样式可以让对话框居中，不信删掉试试看？*/
+				border: 1px dotted black; /*合并的写法*/
+			}
+
+			.content .msg {
+				clear: both;
+			}
+
+			.content .left {
+				float: left;
+				background: lightgrey;
+			}
+
+			.content .right {
+				float: right;
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="content">
+			<li class="msg left">你好?</li>
+			<li class="msg right">你好</li>
+			<li class="msg left">祝你幸福</li>
+			<li class="msg right">？？</li>
+			<li class="msg left">再见</li>
+			<li class="msg right">纳尼？</li>
+			<li class="msg right">。。。。。</li>
+		</ul>
+	</body>
+</html>

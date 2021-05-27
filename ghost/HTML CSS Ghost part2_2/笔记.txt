@@ -1,0 +1,129 @@
+1.CSS3
+    1.浏览器前缀与内核
+                             内核            前缀
+        IE                  Trident         -ms-
+        Firefox             Gecko           -moz-
+        Opera               Presto          -o-
+        Chrome              Webkit          -webkit-
+        Safari              Webkit          -webkit-
+        Opera、Chrome       Blink                       
+
+    浏览器前缀
+        CSS3去兼容不同的浏览器，主要是针对旧的浏览器做兼容，
+        新浏览器基本不需要添加前缀
+2.transition过渡
+    transition-property:规定设置过渡效果的CSS属性的名称
+    transition-duration:规定完成过渡效果需要多少秒或毫秒
+    transition-delay:规定过渡效果何时开始   (正：延迟；负：提前)
+    transition-timing-function:规定速度效果的速度曲线
+    linear:匀速 ease:默认...还有贝塞尔曲线
+
+    过渡不要添加到hover标签里
+3.transform变形
+    translate:位移
+    translateX,translateY,translateZ(3D)
+
+    scale:缩放（值为一个比例值，正常大小为1，以当前元素中心点进行缩放）
+    scaleX,scaleY,scaleZ(3D)
+
+    rotate:旋转     (旋转的值，单位是角度 deg,弧度)
+    rotateX(3D),rotateY(3D)
+    rotateZ(2D)->和rotate是等价关系，正值按顺时针旋转，负值按逆时针旋转
+
+    skew:斜切
+    skewX:单位也是角度，正值向左倾斜，负值向右倾斜
+    skewY
+
+    transform的注意事项：
+        1.变形操作不会影响其他元素
+        2.变形操作只能添加给块元素，不能添加给内联元素
+        3.复合写法，可以同时添加多个操作
+            执行顺序：先执行后面的操作，再执行前面的操作。
+            translate会受到rotate、scale、skew的影响
+4.animation动画
+    animation-name:自定义动画名字
+    animation-duration:动画持续时间
+    animation-delay:动画延迟时间
+    animation-iteration-count:动画重复次数，默认值为1，
+        infinite无限次数
+    animation-timing-function:动画的运动形式
+
+    注意：
+        1.运动结束后，默认情况下，会停留在起始位置
+        2.@keyframs: from -> 0%, to -> 100%
+    扩展语法：
+        animation-fill-mode:规定动画播放之前或之后，其动画效果是否可见
+                            none(默认值)：在运动结束之后回到初始位置，在延迟的情况下，让0%在延迟后生效
+                            backwards:在延迟的情况下，让0%在延迟前生效
+                            forwards:在运动结束之后，停到结束位置
+                            both:backwards和forwards同时生效
+
+        animation-direction:属性定义是否应该轮流反向播放动画
+                            alternate:一次正向(0%~100%),一次反向(100%~0%)
+                            reverse；永远都是反向，从100%~0%
+                            normal(默认值):永远都是正向，从0%~100%
+5.CSS动画库
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    animate__animated 动画名称
+    主要看说明文档
+6.transform3D属性
+    rotateX():正值向上翻转
+    rotateY()：正值向右翻转
+    translateZ()：正值向前，负值向后
+    scaleZ()：立体元素的厚度
+
+    3D写法：
+        scale3D():三个值 x y z
+        translate3D():三个值 x y z
+        rotate3D(): 四个值  0|1(x轴是否添加旋转角度)  0|1(y轴是否添加旋转角度) 0|1(z轴是否添加旋转角度)  deg
+
+    perspective(景深)：离屏幕多远的距离去观察，值越大幅度越小
+    perspective-origin:景深基点，观察元素的角度
+
+    transform-style:
+    transform-origin: center center -50px;  (z轴只能写数值)
+
+    backface-visibility:背面隐藏
+    hidden、visible(默认值)
+7.背景扩展
+    background-size:背景图的尺寸大小
+                    cover:覆盖
+                    等比缩放，会超出
+                    contain:包含(等比缩放，不会超出)
+    background-origin:背景图的填充位置
+                    padding-box(默认)   在padding区域填充
+                    border-box
+                    content-box
+    background-clip:背景图的裁切方式
+                    padding-box
+                    border-box(默认)
+                    content-box
+8.CSS3渐变
+    两个百分比都设置50%，则一个盒子，两个颜色
+    linear-gradient:线性渐变    是值，需要添加到background-image属性上
+                    point || angle
+                    color
+                    percentage
+                    eg:to right bottom
+                    注意：渐变0度是在页面下边，正值会按照顺时针旋转，负值逆时针旋转
+    radial-gradient:径向渐变
+                    point
+                    color
+                    percentage
+9.字体图标
+    font-face是CSS3中的一个模块，他主要是把自己定义的Web字体嵌入到你的网页中
+    1.可以方便的改变大小和颜色
+    2.放大后不会失真
+    3.减少请求次数和提高加载速度
+    4.简化页面布局
+    5.减少设计师和前端工程师的工作量
+    6.可计算计算机没有提供的字体
+
+    使用：@font-face    
+        像.woff等文件都是做兼容平台，mac,linux等
+10.text-shadow  文字阴影
+    x y blur color
+    注意：阴影默认颜色与文字颜色一致
+        通过逗号方式可以设置多阴影

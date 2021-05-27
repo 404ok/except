@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: powderblue;
+        }
+    </style>
+    <script>
+        /* 
+            1.确定好圆心位置
+            2.确定半径
+            3.旋转：
+                顺时针(正方形)
+                逆时针
+
+            1弧度 = Math.PI/180;
+        */
+       window.onload = function(){
+            var div = document.getElementById("div1");
+            //1.确定圆心位置
+            var X = 400;
+            var Y = 400;
+            //2.确定半径
+            var r = 100;
+            //3.画圆圈，弧度！！！
+            var i = 0;//代表转过的弧度，但是i又只是一个数字0
+            setInterval(function(){
+                i++;
+                var rad = i * Math.PI / 180;
+                var a = Math.sin(rad) * r;/* x */
+                var b = Math.cos(rad) * r;/* y  */
+
+                //计算div位置
+                div.style.left = X + a + "px";
+                div.style.top = Y - b + "px";
+
+                //看不出来，创建节点
+                var node = document.createElement("div");
+                node.style.width = "5px";
+                node.style.height = "5px";
+                node.style.backgroundColor = "black";
+                node.style.position = "absolute";
+                node.style.left = div.offsetLeft +"px";
+                node.style.top = div.offsetTop +"px";
+                document.body.appendChild(node);
+            }, 30);
+       }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

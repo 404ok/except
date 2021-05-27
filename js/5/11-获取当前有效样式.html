@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: blue;
+        }
+        .box{
+            height: 300px;
+        }
+    </style>
+    <script>
+        /* 
+            通过.style.xxx的方式只能访问内联的CSS样式   计算权重
+        */
+       window.onload = function(){
+           var odiv = document.getElementById("div1");
+           alert(odiv.style.width);
+           alert(odiv.style.backgroundColor);
+           alert(odiv.style.height);
+            /* 
+                获取当前有效样式two(浏览器不一样)
+            */
+            // alert(odiv.currentStyle["height"]);//IE兼容
+            // alert(getComputedStyle(odiv)["height"]); //火狐、谷歌
+
+
+            alert(getStyle(odiv,"width"));
+            //设置样式(因为都是改的行间)
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+                btn.style.backgroundColor = "orange";
+                btn.style.width = "100px";
+            }
+       }
+        //跨浏览器的兼容    node:谁的样式   cssStyle:什么样式
+        function getStyle(node,cssStyle){
+            return node.currentStyle ? node.currentSTyle[cssStyle] : getComputedStyle(node)[cssStyle];
+            //三目运算符
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div1" style="width:200px;background-color:red;" class="box"></div>
+    <button id="btn">修改样式</button>
+</body>
+</html>

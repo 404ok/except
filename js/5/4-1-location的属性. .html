@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            url:统一资源定位符
+
+            中文版本    协议：//主机名/：端口号/路径/?查询字符串#锚点
+            英文版本    protocol://hostname:port/pathname/?search#hash
+
+            location.protocol file:本地磁盘文件访问
+                              http(不安全)
+                              https(证书认证协议)
+
+            location.hostname 主机名 IP(在全球范围内找到你当前你当前网络！！！的地址)
+            域名|IP别称
+
+            location.port 端口号(默认是隐藏的)
+                给当前电脑中使用网络的软件，随机分配一个编号 0~65535
+
+            结合以上：hostname:port 可以直接定位到当前使用网络的程序
+            小细节：
+                装机必备：端口号默认
+                浏览器：8080
+                http: 80
+                https: 443
+
+            loction.pathname
+
+            loction.search    查询字符串
+                ?name1 = vale1 & name2 = valu2
+
+
+            location.hash   锚点即百度百科的书签 #后面
+        */
+        alert(location.protocol);//协议
+        alert(location.hostname);//主机名
+        alert(location.port);
+        alert(location.pathname);
+
+        
+        alert(location);//数据类型：object
+        alert(location.href);//shuj类型：String
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

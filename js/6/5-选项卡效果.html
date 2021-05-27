@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 button{
+            width: 100px;
+            height: 30px;
+            background-color: gray;
+            color: white;
+            font-size: 18px;
+        }
+
+        #div1 .active{
+            background-color: orange;
+            color: blue;
+        }
+        #div1 div{
+            width: 340px;
+            height: 300px;
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            //点击按钮，按钮被点击，且显示内容
+            var div1 = document.getElementById("div1");
+            var btn = div1.getElementsByTagName("button");
+            var divs = div1.getElementsByTagName("div");
+
+            //给每一个按钮添加点击
+            for (let i = 0; i < btn.length; i++) {
+                btn[i].index = i;
+                btn[i].onclick = function(){
+                    //取消所有按钮的样式
+                    for (let j = 0; j < btn.length; j++) {
+                        btn[j].className = "";
+                        divs[j].style.display = "none";
+                    }
+
+                    divs[this.index].style.display = "block";
+                    this.className = "active";
+                    //this就是当前点击的按钮
+                    //另外其他不是"active"
+
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <button class="active">HTML5</button>
+        <button>Python</button>
+        <button>Java</button>
+        <div style="display: block;">HTML5是</div>
+        <div>Python是一种计算机程序设计语言</div>
+        <div>Java是一门面向对象的编程语言</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1 li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            float: left;
+            border: 1px solid black;
+            background-color: chartreuse;
+        }
+        #ul1 li img{
+            width: 100%;
+            height: 100%;
+        }
+        #ul1{
+            position: absolute;
+            left: 0px;
+        }
+        #div1{
+            width: 488px;
+            height: 122px;
+            border: 1px solid black;
+            margin: 150px auto;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        /* 
+            循环广告窗口(banner)
+        */
+       window.onload = function(){
+           //li标签从右向左运动,所以ul1left值变负值
+           var ul1 = document.getElementById("ul1");
+           var div = document.getElementById("div1");
+
+            //,假如如此重复，创建太多，占内存
+            //直接把这四张图片再添加到末尾
+            ul1.innerHTML +=ul1.innerHTML;
+            //重新设置一下ul的宽
+            ul1.style.width = 122 * 8 +"px";
+
+           setInterval(function(){
+               ul1.style.left = ul1.offsetLeft -2 +"px";
+               if(ul1.offsetLeft <= -ul1.offsetWidth /2){
+                   ul1.style.left = "0px";
+               }
+           },30);
+           //如何做出图片循环的效果，即出去之后，从尾巴出来
+       }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <ul id="ul1">
+            <li><img src="./IMG/1.png" alt=""></li>
+            <li><img src="./IMG/2.png" alt=""></li>
+            <li><img src="./IMG/3.png" alt=""></li>
+            <li><img src="./IMG/4.png" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

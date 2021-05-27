@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                document.querySelector()
+                返回值：找到符合条件的第一个元素节点
+
+                document.querySelectorAll()
+                返回值：是一个伪数组
+
+                二者参数：字符串    CSS选择器格式字符串(#id,.class,ul,div)
+
+                快捷键：
+                    alt+右箭头：跳至行末
+                    alt+左箭头：跳至行首
+                    ctrl+shift+K： 删除此行
+            */
+            onload = function(){
+                var node1 = document.querySelector("li");
+                node1.style.backgroundColor = "black";
+
+                var node2 = document.querySelector("[name = hello ]");
+                node2.style.backgroundColor  = "pink";
+
+                var node3 = document.querySelectorAll("#ol1 .box");
+                alert(node3.length);
+                for (let i = 0; i < node3.length; i++) {
+                    node3[i].style.backgroundColor = "pink";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="ol">
+            <li>111</li>
+            <li class="box">111</li>
+            <li>111</li>
+            <li>111</li>
+            <li class="box">111</li>
+            <li name="hello">111</li>
+            <div class="box" name="hello"></div>
+        </ul>
+        <input type="text" name="hello">
+        <ol id="ol1">
+            <li>222</li>
+            <li class="box">222</li>
+            <li class="box">222</li>
+            <li>222</li>
+        </ol>
+    </body>
+</html>

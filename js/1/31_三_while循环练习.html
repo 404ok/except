@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            //打印出1000~2000之间的所有闰年，并以一行四个数的形式输出
+            var i = 1000;
+            var count = 0;
+            while(i <= 2000){
+                //  && 运算比 ||运算顺序高
+                if((i % 4 == 0 && i % 100 != 0)|| i % 400 == 0){
+                    document.write(i+"&nbsp");
+                    count++;
+                    if(count % 4 == 0){
+                        document.write("<br/>");
+                    }
+                    //"&nbsp":为空格
+                }else{
+                    
+                }
+                i++;
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

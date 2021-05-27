@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            题目：
+                判断一个数是不是合数(除了能被1和本身整除之外，还能被其他的数整除 数(不包括0))
+        */
+       var num = 77;
+       var isYes = false;
+       for(var i = 2;i < num;i++){
+           if(num % i == 0){
+               isYes = true;
+               break;
+           }    
+       }
+       if(isYes){
+           alert(num+"是合数");
+       }else{
+           alert(num + "是质数");
+       }
+       //判断是还是不是可以运用布尔值来代表，最后用判断语句来做
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

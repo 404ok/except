@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            事件对象的属性：
+                shiftKey    按下shift键，为true
+                altKey      按下alt键，为true
+                ctrlKey     按下ctrl键，为true
+                metaKey     window系统:window(开始)键，true
+                            macos系统   按下command键，为true
+
+                【注意】和别的操作进行组合，形成一些快捷操作
+        */
+  
+           document.onmousedown = function(ev){
+                var e = ev || window.event;
+                var arr = [];
+                if(e.shiftKey){
+                    arr.push("shift");
+                }
+                if(e.altKey){
+                    arr.push("alt");
+                }
+                if(e.ctrlKey){
+                    arr.push("ctrl");
+                }
+                if(e.metaKey){
+                    arr.push("windows");
+                }
+                alert(arr);
+           }
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

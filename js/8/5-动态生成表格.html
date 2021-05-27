@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- 
+            快捷键：tr>td*5,1行五列
+         -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #t1 tr td{
+                width: 100px;
+                height: 30px;
+            }
+            .box0{
+                background-color: sandybrown;
+            }
+            .box1{
+                background-color: seagreen;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var row = document.getElementById("row");
+                var col = document.getElementById("col");
+                var btn = document.getElementById("btn1");
+                var t1 = document.getElementById("t1");
+
+                //给表格上的删除按钮添加事件委托
+                t1.onclick = function(ev){
+                    var e = ev || window.event;
+                    var target = e.target || window.event.srcElement;
+                    if(target.nodeName.toLowerCase() == "button"){
+                        t1.removeChild(target.parentNode.parentNode);
+                    }
+                }
+
+                btn.onclick = function(){
+                    if(!row.value || !col.value){
+                        alert("请输入对应的行列,生成表格");
+                    }else{
+                        //行
+                        for (let i = 0; i < row.value; i++) {
+                            var tr = document.createElement("tr");
+                            tr.className = "box" +(i % 2);
+                            for (let j = 0; j < col.value; j++) {
+                                var td = document.createElement("td");
+                                tr.appendChild(td);
+                            }
+                            var close = document.createElement("td");
+                            close.innerHTML = "<button>删除</button>"
+                            tr.appendChild(close);
+                            t1.appendChild(tr);
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="行" id="row" >
+        <input type="text" placeholder="列" id="col" >
+        <button id="btn1">生成</button>
+        <table id="t1" border="1">
+
+        </table>
+    </body>
+</html>

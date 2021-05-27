@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        /* 
+            改造原则：
+                1.不能有函数嵌套
+                2.可以有全局变量 
+            拖拽div1    面向对象方法
+         */
+         var div =null;
+         var offsetX = 0;
+         var offsetY = 0;
+         window.onload = function(){
+             div = document.getElementById("div1");
+             div.onmousedown = funcDown;
+             document.onmouseup = funcUp;
+         }
+         function funcDown(ev){
+             var e = ev || window.event;
+             offsetX = e.clientX - div.offsetLeft;
+             offsetY = e.clientY - div.offsetTop;
+             document.onmousemove = funcMove;
+         }
+
+         function funcMove(ev){
+             var e = ev || window.event;
+             div.style.left = e.clientX - offsetX +"px";
+             div.style.top = e.clientY - offsetY +"px";
+         }
+         function funcUp(){
+             document.onmousemove = null;
+         }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

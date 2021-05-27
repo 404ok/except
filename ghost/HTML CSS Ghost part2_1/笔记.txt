@@ -1,0 +1,123 @@
+1.HTML与XHTML的区别
+    DOCTYPE文档及编码
+    元素大小写
+    属性布尔值
+    属性引号
+    图片的alt属性
+    单标签写法
+    双标签闭合问题
+2.strong与b;i与em
+    都是 文本加粗 和 文本斜体
+    区别：i和b不具备语义化
+    都是内联标签
+3.引用标签
+    blockquote:引用大段的段落解释
+    q:应用小段的段落解释
+    abbr:缩写或首字母缩略词 全程写在title中
+    address:引用文档地址信息
+    cite：引用著作的标题
+4.iframe嵌套
+    即在一个已有页面里面可以嵌入一个另外页面
+    主要是利用iframe的属性进行样式的调节
+        frameborder:规定是否显示框架周围的边框
+        width:定义iframe宽度
+        height:定义iframe高度
+        scrolling:规定在iframe里显示滚动条
+        src：规定在iframe中引入的URL
+        srcdoc:规定iframe中显示的页面内容   (识别第一个)
+    应用场景：
+        数据传输，共享代码，局部刷新，第三方介入
+5.br和wbr
+    br:换行
+    wbr:软换行
+6.pre与code
+    放程序代码的显示效果
+7.map与area
+    给特殊图形添加链接
+    area能添加的热区的形状：矩形、圆形、多边形
+8.embed和object
+    给flash和一些插件进行一些渲染操作的标签
+    object元素需要配合param元素一起完成
+9.audio与video
+    引入视频与音频的新功能。属于H5的新功能
+    要加controls：显示
+    loop:循环
+    autoplay:自动播放
+    video内部加source,备选方案
+10.文字注解与文字方向
+    ruby:ruby注释（中文注音或字符）
+    rt:定义字符(中文注音或字符)的解释或发音
+    以上两种合在一起用
+
+    bdo:覆盖默认的文本方向,rtl:逆序，ltr:正序
+11.扩展link标签
+    引入外部资源文件
+    rel="icon",添加网址标题栏的小图标
+    eg:
+        <link rel="icon" type="/image/x-icon" href="https://www.bilibili.com/favicon.ico?v=1">
+
+12.meta标签
+    content=""  传输给服务器自己的内容描述
+13.HTML5新语义化标签
+    header:页眉 (独一无二)
+    footer：页脚(独一无二)
+    main:主体   (独一无二)
+    hgroup:标题组合
+    nav:导航
+
+    article:独立的内容
+    aside:辅助信息的内容
+    section:区域
+    figure:描述图像或视频
+    figcaption:描述图像或视频的标题部分
+
+    datalist:选项列表
+    detalis / summary : 文档细节 / 文档标题
+    progress / meter : 定义进度条 / 定义度量范围
+    time : 定义日期或时间
+    mark ：带有记号的文本
+14.表格扩展
+    添加单线：border-collapse:collapse
+    隐藏空单元：empty-cells：hide
+    斜线分类：border/rotate
+    列分组：colgroup/col
+15.表单扩展
+    1.美化表单控件、美化上传按钮：
+            1.label + checked
+            2.postion + opacity
+    2.新的input控件
+        email:电子邮件地址输入框
+        url:网址输入框
+        number：数值输入框
+        range:滑动条
+        date/mouth/week:日期控件
+        search:搜索框
+        color：颜色控件
+        tel:电话号码输入框  在移动端默认调起数字键盘
+        time:时间控件
+    3.新的表单属性
+        autocomplete:自动完成   默认：on    off
+        autofocus:获取焦点      光标自动在input上
+        required:不能为空       当为空，提交不了
+        pattern:正则验证
+
+        前后端数据交互:
+                method:数据传输方式
+                enctype:数据传输类型
+                name/value:数据的键值对
+    4.扩展标签
+        fieldset:表单内元素分组
+        legend:为fieldset元素定义标题
+        optgroup:定义选项组
+16.BFC规范
+    触发BFC的元素，可以形成一个独立的元素，不受到外界影响，从而解决一些布局问题
+    触发BFC：
+            浮动元素：float除了none以外的值
+            绝对定位元素：position(absolute、fixed)（无relative）
+            display:inline-block、table-cells、flex
+            overflow除了visible以外的值(hidden、auto、scroll)
+    BFC特性及应用：
+                解决margin叠加问题
+                解决margin传递问题
+                解决浮动问题
+                解决覆盖问题

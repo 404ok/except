@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //简单的构造函数
+        /*  
+
+         function Person(name,sex,age){
+             this.age =age;
+             this.name = name;
+             this.sex = sex;
+         }
+         Person.prototype.showSelf = function(){
+             alert(this.age + "+" + this.sex + "+" + this.name);
+         }
+         //白领人
+         function Worker(name,sex,age,job){
+            //构造函数的伪装--继承父级的属性 /.bind /.apply
+            Person.call(this,name,age,sex);
+            this.job = job;
+         }
+         //2.原型链 继承父一级的方法    对父一级的方法进行遍历
+         //1.通过for...in遍历
+         for(var funcName in Person.prototype){
+            Worker.prototype[funcName] = Person.prototype[funcName];
+         }
+         //2.Object.create()    类似与数组的concat方法
+         Worker.prototype = Object.create(Person.prototype);
+         //3.调用构造函数继承
+         Worker.prototype = new Person();
+         Worker.prototype.showJob = function(){
+             alert("我的工作是" + this.job);
+         }
+         var w1 = new Worker("小米","男",67,"程序员");
+         w1.showJob();
+         w1.showSelf(); */
+
+
+         //ECMA6class语法
+         class Person{
+             //class属性添加
+             constructor(name,sex,age){
+                 this.name = name;
+                 this.sex = sex;
+                 this.age =age;
+             }
+             showSelf(){
+                alert(this.age + "+" + this.sex + "+" + this.name);
+             }
+         }
+         var p1 = new Person("blue","男",18);
+         p1.showSelf();
+
+         //extend继承
+         class Worker extends Person{
+             constructor(name,sex,age,job){
+                 //继承父级属性
+                 super(name,age,sex);
+                 this.job = job;
+             }
+             showJob(){
+                alert("我的工作是" + this.job);
+            }
+        }
+         var w1 = new Worker("小米","男",67,"程序员");
+         w1.showJob();
+         w1.showSelf();
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

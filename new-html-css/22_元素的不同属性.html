@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .container{
+            width: 1156px;
+            height: 460px;
+            margin:12px auto;
+            overflow: auto;
+            text-align: center;
+        }
+        .container .subject{
+            height: 460px;
+            width: 210px;
+            background-color: rgb(239, 239, 239);
+            float: left;
+            margin-right: 20px;
+            padding: 0 23px;
+        }
+        .container .subject.last{
+            margin: none;
+        }
+        .container .subject img{
+            width: 68px;
+            height: 68px;
+            margin: 72px 0 52px;
+        }
+        .container .subject .content{
+            font-size: 24px;
+            line-height: 24px;
+            color: #656466;
+            margin:29px 0 22px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .container .subject a{
+            text-decoration: none;
+            color: white;
+            background-color: #045899;
+            width: 111px;
+            height: 37px;
+            line-height: 37px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        元素类型：
+            块元素：
+                可设置宽高
+                默认宽带100%
+                独占一行
+                p  ul li  h1~h6 div form table
+                p标签居中 ： 
+                text-align:center
+                margin : auto
+            内联元素：
+                无法设置宽高
+                元素大小随内容变化
+                元素默认排在一行
+                i b span a
+                文字特性 text-align
+            内联块元素：
+                既能设置宽高大小
+                又可一排显示
+                img input
+     -->
+
+     <!-- 
+         dispaly:
+            block
+            inline
+            inline-block
+      -->
+      <div class="container">
+          <div class="subject">
+              <img src="./new-html-css/22-img/ziyuan.png" alt="">
+              <p class="title">Plumber</p>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing eidt. Dolores quae porro consectetur aliquam, incidunt eius magni provident.
+              </div>
+              <a href="#">
+                Learn More
+              </a>
+          </div>
+          <div class="subject">
+              <img src="./new-html-css/22-img/daoru.png" alt="">
+              <p class="title">Plumber</p>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing eidt. Dolores quae porro consectetur aliquam, incidunt eius magni provident.
+              </div>
+              <a href="#">
+                Learn More
+              </a>
+          </div>
+          <div class="subject">
+              <img src="./new-html-css/22-img/wode.png" alt="">
+              <p class="title">Plumber</p>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing eidt. Dolores quae porro consectetur aliquam, incidunt eius magni provident.
+              </div>
+              <a href="#">
+                Learn More
+              </a>
+          </div>
+          <div class="subject last">
+              <img src="./new-html-css/22-img/home.png" alt="">
+              <p class="title">Plumber</p>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing eidt. Dolores quae porro consectetur aliquam, incidunt eius magni provident.
+              </div>
+              <a href="#">
+                Learn More
+              </a>
+          </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            求出所有的水仙花数，三位数，各位三次方等于该数本身
+        */
+       //Math.pow(x,y):求 x 的 y 次方
+       var a;//个位
+       var b;//十位
+       var c;//百位
+       for(var i =100;i <= 999;i++){
+           a = i % 10;
+           b= parseInt((i % 100)/10) ;
+           c = parseInt(i/100);
+           if(i == Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3)){
+               document.write(i+"<br/>");
+           }
+           
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            给定一个三位数，分别把这个数字的百位、十位、个位算出来并且显示
+            123
+        */
+        
+       var num=123;
+       var the_unit=num%10;
+       alert(the_unit);
+       var decade =parseInt(num/10)%10;
+       alert(decade);
+       var hundreds =parseInt(num/100);
+       alert(hundreds);
+       alert("个位："+ the_unit +"十位："+ decade+"百位："+hundreds);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //五位数中。对称的数称为回文数，eg:12321
+        var a = 0;//万位
+        var b = 0;//千位
+        var c = 0;//十位
+        var d = 0;//个位
+        for(i = 10000; i <= 99999;i++){
+            a = parseInt(i / 10000);
+            b = parseInt(i % 10000 /1000);
+            c = parseInt(i % 100 / 10);
+            d = i % 10;
+            if(a == d && b == c){
+                document.write(i + "&nbsp;");
+            }
+        }
+
+        //五位数中。对称的数称为回文数，eg:12321
+        function palindromic() {
+            var a = 0;//万位
+            var b = 0;//千位
+            var c = 0;//十位
+            var d = 0;//个位
+            for(i = 10000; i <= 99999;i++){
+                a = parseInt(i / 10000);
+                b = parseInt(i % 10000 /1000);
+                c = parseInt(i % 100 / 10);
+                d = i % 10;
+                if(a == d && b == c){
+                    document.write(i + "&nbsp;");
+                }
+            }
+         }
+        palindromi();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

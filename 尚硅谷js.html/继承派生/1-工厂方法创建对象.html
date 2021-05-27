@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            创建一个对象
+        */
+       var obj = {
+           name :"孙悟空",
+           age:18,
+           gender:"男",
+           sayName:function(){
+               alert(this.name);
+           }
+       }
+       obj.sayName();
+       var obj2 = {
+           name :"猪八戒",
+           age:28,
+           gender:"男",
+           sayName:function(){
+               alert(this.name);
+           }
+       }
+       obj2.sayName();
+       var obj3 = {
+           name :"沙河尚",
+           age:38,
+           gender:"男",
+           sayName:function(){
+               alert(this.name);
+           }
+       }
+       obj3.sayName();
+
+       //懒,想办法偷懒,重复的放在函数里
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

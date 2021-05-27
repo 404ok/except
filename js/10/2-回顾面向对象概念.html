@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面向对象：
+                语言：C++ Java JavaScript Python
+
+            1.思想
+                1.找出实体
+                2.分析实体属性和功能
+                3.让实体之间相互作用
+                    对象1：车
+                    属性：速度 60km/h 走在路上
+                    对象2：路
+                    属性：长度1000km  被车走
+
+                    车在路上走
+        */
+            var car = {
+                speed:60,
+                run:function(road){
+                    return road.length / this.speed;
+                }
+            };
+            var road = {
+                length:1000,
+            };
+            alert(car.run(road));
+            
+            /* 
+                4.语法
+                    类：一类具有相同特征事物的抽象概念
+                    对象：具体的某一个实例，唯一的某一个个体
+
+                    例子：
+                        类：对象
+                        电脑：你面前那台
+            */
+           /* 
+                5.数据结构
+                    基本数据类型(只能存储单个的值) => 数组（处理批量数据）
+                    对象（既能存储数据，又能存储函数）
+           */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

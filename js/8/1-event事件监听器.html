@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            1.传统事件绑定
+                1>.重复添加，覆盖上面的
+            
+            2.事件监听器(低版本IE浏览器下不兼容)
+                精确的删除事件上的某一个函数 
+                addEventListener()
+                    格式：node.addEventListener()
+                    参数：
+                        第一个参数：事件类型
+                        第二个参数:绑定函数
+                        第三个参数：布尔值  true 事件捕获
+                                          false 事件冒泡 默认
+                removeEventListener()
+                     格式：node.removeEventListener()
+                    参数：
+                        第一个参数：事件类型
+                        第二个参数:删除函数名字
+         */
+         window.onload = function(){
+             var btn = document.getElementById("btn1");
+             btn.addEventListener("click",function(){
+                    alert("点击1");
+             },false);
+             btn.addEventListener("click",function(){
+                    alert("点击2");
+             },true);
+         }
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+</body>
+</html>

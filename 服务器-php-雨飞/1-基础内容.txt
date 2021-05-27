@@ -1,0 +1,31 @@
+1.软件架构
+    C/S(客户端 -> 服务端)   需要下载
+    B/S(浏览器 -> 服务端)   网页
+    二者结合：饿了么、美团
+2.搭建一个服务器(超市，商店可以随意进入)
+    电脑中本地磁盘为私有，让别人访问，叫做服务器(apache软件运行在你的电脑上)
+    那么电脑上某一个磁盘就对外可见，别人可以通过IP或者域名访问到这个位置
+
+
+    服务器  资源提供者
+    客户端  资源受益方
+    相对概念
+3.服务器安装：
+    apache软件(太麻烦)
+    安装集成开发环境
+    WAMP:windows apache mysql php
+    LAMP：Linus apache mysql php
+    PHPnow:apache mysql php
+
+    PHPnow/htdocs   服务器的根目录
+        localhost   直接访问本地电脑服务器
+        .127.0.0.1
+        IP          访问当前电脑的服务器
+    默认访问的是 index开头的文件
+        index.php
+        index.html
+        index.jsp
+    可以通过localhost/.127.0.0.1访问
+4.PHP简介
+    想深入，自己再去学
+

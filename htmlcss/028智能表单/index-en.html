@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		* {
+			padding: 0; margin: 0;
+		}
+		form {
+			width: 350px; 
+			background: #9CBC2B;
+			margin: 20px auto;
+			border-radius: 5px;
+			padding: 0 15px;
+			color: #364411;
+			overflow: auto;
+		}
+		.step {
+			font-size: 14px;
+			font-weight: bold;
+			margin: 10px 0;
+		}
+		.form-line {
+			border-radius: 5px;
+			border-color: rgba(255,255,255,0.7);
+			border-width: 2px;
+			border-style: solid;
+			padding: 3px;
+			margin: 3px 0;
+			background-color: rgba(255,255,255,0.5);
+			font-size: 12px;
+			padding-left: 10px;
+		}
+		.form-line span {
+			display: inline-block;
+			width: 110px;
+		}
+		.form-line input {
+			background: white;
+			border: none;
+			height: 20px;
+			border-radius: 3px;
+			width: 180px;
+			outline: none;
+		}
+		/* .form-line input::placeholder {
+			font-style: italic;
+			font-size: 12px;
+		} */
+		
+		.form-line textarea {
+			width: 180px;
+			height: 70px;
+			vertical-align: top;
+			border: none;
+			border-radius: 3px;
+			resize: none;
+			outline: none;
+		}
+		.form-line input[type=radio] {
+			width: 25px;
+			height: 12px;
+		}
+		input.submit-btn {
+			border: none;
+			background-color: #374313;
+			color: white;
+			display: block;
+			width: 100px;
+			padding: 5px 0;
+			border-radius: 20px;
+			margin: 10px auto;
+		}
+	</style>
+	<body>
+		<form action="">
+			<section>
+				<p class="step">Step1：Details</p>
+				<p class="form-line">
+					<span>Name</span>
+					<input type="text" placeholder="First and last name">
+				</p>
+				<p class="form-line">
+					<span>Email</span>
+					<input type="text" placeholder="example@domain.com">
+				</p>
+				<p class="form-line">
+					<span>Phone</span>
+					<input type="text" placeholder="Eg.+4475000000000">
+				</p>
+				<p class="form-line">
+					<span>facebook page</span>
+					<input type="url">
+				</p>
+			</section>
+			<section>
+				<p class="step">Step2：Delivery address</p>
+				<p class="form-line">
+					<span>Address</span>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+				</p>
+				<p class="form-line">
+					<span>Post code</span>
+					<input type="text">
+				</p>
+			</section>
+			<section>
+				<p class="step">Step：Card details</p>
+				<p class="form-line">
+					<span>Card type</span>
+					<input type="radio" name="cardType">debit
+					<input type="radio" name="cardType">credit
+					<input type="radio" name="cardType">VISA
+				</p>
+				<p class="form-line">
+					<span>Card number</span>
+					<input type="number">
+				</p>
+				<p class="form-line">
+					<span>Card pwd</span>
+					<input type="number" placeholder="this is not required">
+				</p>
+				<p class="form-line">
+					<span>Name on card</span>
+					<input type="text">
+				</p>
+			</section>
+			<p>
+				<input class="submit-btn" type="submit" value="submit">
+			</p>
+		</form>
+	</body>
+</html>

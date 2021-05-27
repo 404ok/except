@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        /* 
+            innerHTML 获取标签间内容 会解析标签
+            innerText 获取标签间纯文本  不会解析文本
+
+
+            outerHTML 从外标签开始到外标签结束 会解析
+        */
+        onload = function(){
+            var div = document.getElementById("div1");
+            alert(div.innerHTML);
+            //赋值
+            div.innerHTML = "<h1>hello world</h1>";
+            alert(div.innerText);
+            div.innerText = "<h1>hello world </h1>"
+
+            alert(div.outerHTML);
+            div.outerHTML = "<h1> hello world </h1>"
+        }
+    </script>
+</head> 
+<body>
+    <div id="div1">div文本<em>em文本</em> <strong>strong文本</strong></div>
+</body>
+</html>

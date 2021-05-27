@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            事件：
+                手机铃声响 ——> 要去处理
+                事件发生        事件处理
+            事件需要绑定
+                eg:明天早上9点到    必须事先约定到了之后干什么(事先约定好行为)
+        */
+
+        /* 
+            事件绑定：
+                1.内敛模式
+                2.外联模式/脚本模式 (最多)
+
+            绑定事件格式：
+                元素节点.on + 事件类型(click) = 匿名函数。
+
+                click 事件类型
+                onclick 事件处理的函数
+        */
+        
+        function btn(){
+            alert("内联模式");
+        }
+
+        window.onload = function(){
+            var btn = document.getElementById("btn1");
+            btn.onclick = function(){
+                alert("外联模式");
+            }
+        }
+    </script>
+</head>
+<body>
+        <button onclick="btn();">内联模式</button>
+        <button id="btn1">外联模式</button>
+</body>
+</html>

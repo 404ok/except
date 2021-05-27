@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            ECMA6新增很多，实用优先
+                let关键字   用于声明变量    更过分，遇到大括号就形成作用域  块级作用域
+                vae 局部作用域
+                const关键字 声明变量，将变量或者形参所在函数的大括号作为作用域处理  变量值只能在声明时被确定，后续没法改变
+                
+        */
+       function show(){
+           var num = 10;
+           alert(num);
+       }
+       show();
+       alert(num);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

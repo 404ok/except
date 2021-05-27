@@ -1,0 +1,141 @@
+.box{
+    width: 100px;
+    height: 900px;
+}
+
+//单行注释，不会呗编译出来
+
+/*
+    多行注释，就是CSS的注释方式，会被编译出来
+*/
+
+$number:120px; /* 变量 */
+$key :margin;
+.box2{
+    width: $number;
+    height: $number;
+   #{$key}:auto;    /* 插值 */
+}
+
+/* SASS作用域是有顺序的 */
+.box3{
+    height: $number;
+    $number:800px;
+    width: $number;
+}
+
+ul{
+    list-style: none;
+    li{
+        text-align: center;
+        float: left;
+        div{margin: 10px;}
+        p{
+margin: 20px;
+        }
+    }
+    &:hover{
+        color: aqua;
+        font : {
+            size: 10px;
+            family: 宋体;
+       }
+    }
+}
+
+$num:100px;
+.box6{
+    width: $num*5;
+    height: $num+56px;
+    margin: 10px+$num;
+    /* Sass中单位不同是不会进行转换的 */
+    /* 默认“/”是分割的操作 */
+    font:20px/1.5;
+    padding:(20px / 1.5);
+    color: #010203*3;
+}
+
+.box7{
+    width: round(3.5px);/* 四舍五入 */
+    height:percentage(0.5);/* 百分比 */
+    margin: random();
+}
+
+/* 可以自定义函数 */
+@function sum($n,$m){
+    @return $n + $m;
+}
+.box8{
+    width: sum(2px,9px);
+}
+
+// 混入+传参
+@mixin show {
+    display: block;
+}
+@mixin hide($color) {
+    display: none;
+    color: $color;
+}
+.box9{
+    width: 200px;
+    @include show;
+    @include hide(red)
+}
+ 
+
+/* 继承 */
+%line{
+    display: inline-block;
+}
+.box10{
+    @extend%line;
+}
+.box11{
+    @extend%line;
+}
+
+/* 合并写法 */
+$background : (
+    a:url(a.png),
+    b :url(b.png)
+);
+$transform:(
+    a:scale(2),
+    b:rotate(30deg)
+);
+.box12{
+    background : map-values($background);
+    transform: zip(map-values($transform)...);
+}
+/* 媒体查询 */
+.box13{
+    width: 100px;
+    @media all and (min-width:768px) {
+      width: 600px;
+    }
+    @media all and (min-width:1440px) {
+      width: 900px;
+    }
+  }
+
+/* 条件 */
+$count:5;
+.box14{
+    @if($count>4){
+        width: 200px+$count;
+    }
+    @else {
+        width: 10px+$count;
+    }
+}
+
+/* 递归 */
+@for $i from 0 through 3{
+    .box-#{$i}{
+        width: 100px+$i;
+    }
+}
+
+/* 导入 */
+@import './reset.scss'

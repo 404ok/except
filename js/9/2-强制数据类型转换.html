@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+       function show(x,y){
+           alert(this);
+           alert(x + "," + y);
+       }
+       show(2,9);
+       /* 
+            call方法
+                格式：函数名.call()
+                参数：
+                    第一个参数：传入该函数this指向的对象，传入什么就强制指向什么
+                    第二个参数开始：将原函数的参数往后顺延一位
+        */
+       show.call("x",9,8);
+       /* 
+            apply
+                格式：函数名.apply()
+                参数：
+                    第一个参数：传入该函数this指向的对象，传入什么就强制指向什么
+                    第二个参数：数组，按顺序放入原函数的参数
+       */
+      show.apply("call",[90,9]);
+      /* 
+            bind:预设this指向
+      */
+       var res = show.bind("bind");
+       res(20,90);
+       //以上等于
+       show.bind("bind")(80,90);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

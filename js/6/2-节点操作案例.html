@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #div1{
+                width: 400px;
+                height: 100px;
+                background-color: chartreuse;
+            }
+            #div2{
+                width: 400px;
+                height: 500px;
+                background-color: cornflowerblue;
+            }
+            #input1{
+                width: 380px;
+                height: 30px;
+                font-size: 18px;
+                margin-left:5px ;
+            }
+            #div1 button{
+                width: 100px;
+                height: 30px;
+                font-size: 18px;
+                background-color: black;
+                color: white;
+                margin-top: 5px;
+                margin-left: 5px;
+            }
+            #div2 div{
+                border-bottom: 1px dashed gray;
+                padding: 2px;
+                position: relative;
+            }
+            #div2 div button{
+                position: absolute;
+                right: 10px;
+            }
+        </style>
+        <script src="../JS_雨飞_4/tool.js"></script>
+        <script>
+                /* 
+                    输入框：增加节点，删除和拷贝最后一条节点
+                */
+                onload = function(){
+                    var div1 = document.getElementById("div1");
+                    var div2 = document.getElementById("div2");
+                    //获取输入框内容
+                    var input = document.getElementById("input1");
+
+                    
+                    //获取div1下面的所有的button
+                    var btn = div1.getElementsByTagName("button");
+                    //分别给三个按钮添加不同的点击函数
+                    btn[0].onclick = function(){
+                        if(! input.value){
+                            alert("输入内容不能为空")
+                        }else{
+                            //获取到输入框的内容，创建节点添加到页面上
+                            //创建一个新的div节点
+                            var newDiv = document.createElement("div");
+                            var text = document.createTextNode(input.value);
+                            newDiv.appendChild(text);
+                            newDiv.style.backgroundColor = randomColor();
+                            div2.appendChild(newDiv);
+                            input.value = "";
+                        }
+                    }
+                    btn[1].onclick = function(){
+                        //删除最后一个节点
+                        div2.removeChild(div2.lastChild);
+                    }
+                    btn[2].onclick = function(){
+                        //kaob最后一个节点,再添加到页面上
+                        var newNode2 = div2.lastChild.cloneNode(true);
+                        div2.appendChild(newNode2);
+                    }
+                }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <input type="text" id="input1" placeholder="请输入节点"><br>
+            <button>增加</button>
+            <button>删除</button>
+            <button>拷贝</button>
+        </div>
+        <div id="div2">
+            <div>xxx <button>X</button></div>
+            <div>xxx <button>X</button></div>
+            <div>xxx <button>X</button></div>
+        </div>
+    </body>
+</html>

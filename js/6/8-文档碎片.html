@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            创建10W个节点，添加到页面上
+        */
+        window.onload = function(){
+            console.time("test1");//测试运行时间
+            for (let i = 0; i < 100000; i++) {
+                var newDiv = document.createElement("div");
+                document.body.appendChild(newDiv);
+            }
+            console.timeEnd("test1");
+
+            /* 
+                    先创建好10W个节点，将10W个节点插入到一个节点上，最后将这一个节点添加到页面上
+
+                    时间更短 文档碎片,即一次性都列出来去拿
+            */
+            console.time("test2");
+            var node = document.createElement("div");
+            for (let i = 0; i < 100000; i++) {
+                var newDiv = document.createElement("div");
+                node.appendChild(newDiv);
+            }
+            //以上都是在内存内运行速度块的多
+            document.body.appendChild(node);
+            console.timeEnd("test2");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

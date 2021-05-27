@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            变量:值可以被修改的是变量
+            注意：程序从磁盘读取到内存中，被CPU执行
+
+            程序被CPU执行：
+            计算机组成：
+                    磁盘    内存    CPU/GPU
+
+            关键信息：内存是一定空间的，程序本质上运行是在内存中运行的
+
+            注意：编程就是合理分配内存
+        */
+
+        /* 
+            1.声明变量(必须声明以后才能使用)
+                关键字(系统征用的有特殊功能的单词叫做关键字)：var 声明变量
+            2.初始化：声明变量时，直接给这个变量赋值叫初始化
+            3.undefined:声明变量时，没赋值给这个变量，则系统默认undefined
+        */
+
+        var num;
+        alert(num);
+
+        var n =null;
+        n=10;
+        alert(n)
+
+        /* 
+            变量：弱引用类型,赋值为什么数据类型就是什么数据类型
+            注意：不建议改变变量的数据类型，容易引起歧义
+
+            关键帧：
+                typeof
+                个数    typeof 常量/变量
+                功能：输出当前常量或变量的数据类型
+        */
+       alert(typeof 100);
+       alert(typeof "0");
+       alert(typeof true);
+       alert(typeof undefined);
+       alert(typeof typeof 10);
+       alert(typeof typeof undefined);
+        </script>
+        
+</head>
+<body>
+    
+</body>
+</html>

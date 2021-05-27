@@ -1,0 +1,90 @@
+1.box-shadow   盒子阴影
+    x
+    y
+    blur
+    spred
+    color
+    inset
+    多阴影
+
+    注意：盒子阴影默认颜色为黑色
+        默认就是外阴影，可选值只有内阴影inset
+        
+2.mask遮罩
+    url
+    repeat
+    x
+    y
+    w
+    h
+    多遮罩
+
+    注意：mask目前还没有标准化，所以需要添加浏览器前缀
+        默认x、y都是平铺的
+3.倒影操作
+    box-reflect
+        above
+        below
+        left
+        right
+        距离 
+        遮罩 | 渐变
+    transform:scale(-1) 也可以做成翻转效果
+4.blur  模糊
+    filter:blur()
+5.calc计算
+    四则运算
+6.分栏布局
+    column-count:分栏的个数
+    column-width:分栏的宽度
+    column-gap:分栏的间隔
+    column-rule:分栏的边线
+    column-span:合并分栏
+
+    注意：column-count与column-width会起冲突，不要一起设置
+7.伪类与伪元素
+    伪类：一个冒号
+        作用：为了弥补常规CSS选择器的不足，以便获取更多信息
+        通常表示获取不存在与DOM树中的信息，或获取不能被常规CSS选择器获取的信息
+        eg :    :hover
+                :focus
+                :empty
+    伪元素：两个元素
+        本质为创建了一个有内容的虚拟容器，这个容器不包含任何DOM元素，但是可以包含内容。
+        此外，还可为伪元素定制样式
+
+        eg :    ::selection     eg:选择的文字
+                ::first-line    /   first-letter
+                ::before        /   after
+8.CSS Hack
+    用于解决浏览器兼容性问题，为不同版本的浏览器定制编写不同的CSS效果，使用每个浏览器单独识别的样式代码，控制浏览器的显示样式
+        HACK分类：
+            1.CSS属性前缀法
+                IE6                     _
+                IE6、IE7                +、*
+                IE6、IE7、IE8、IE9      \9
+                IE8、IE9、IE10、IE11    \0
+            2.选择器前缀法(针对一些页面不一致或需要特殊对待的浏览器)
+                IE6                     *html
+                IE7                     *+html
+                IE9以上及现代浏览器      ：root
+
+            3.IE条件注释法(IE10以上不支持)
+    IE低版本一些BUG:
+                    1.透明度
+                    2.双边距    display:inline
+                    3.最小高度  overflow:hidden
+                    4.图片边距
+9.渐进增强  优雅降级
+    渐进增强：针对低版本进行构建页面，保证最基本功能，再针对高级浏览器进行效果、交互等改进和追加功能以达到更好的用户体验
+
+    优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容
+10.网页布局扩展
+    1.等高布局
+        利用margin-bottom与padding-bottom配合实现
+    2.三列布局，左右固定，中间自适应
+        1.BFC方式
+        2.定位
+        3.浮动（双飞翼布局、圣杯布局）
+        margin负值
+

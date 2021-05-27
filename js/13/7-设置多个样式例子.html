@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var div1 = document.getElementById("div1");
+            div1.onclick = function(){
+                setStyle(this,{
+                    width:"300px",
+                    height:"300px",
+                    backgroundColor:"blue",
+                    opacity:"0.3",
+                    
+                })
+            }
+        }
+
+        /* 
+            解决办法：我们将需要传入多个样式，变成一个css对象传入就ok
+        */
+        //设置css样式,必须进行这个方法进行修改
+        function setStyle(node,cssObj){//who,what,值
+            //如果要将css对象的键和值取出来，用for...in eg:name:100
+            //键：name  值：100
+            for(var attr in cssObj){
+                //node.style["width"] = cssObject["width"]="100px"
+                node.style[attr] = cssObj[attr];
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

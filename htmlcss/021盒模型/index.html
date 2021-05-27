@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0; /*将所有的元素边距都设置为0*/
+			}
+			#box {
+				width: 750px;
+				overflow: auto;
+				margin: auto; /*让父元素自动设置边距，左右边距相等，即可达到居中效果，水平方向有效。*/
+			}
+			.item {
+				width: 210px; height: 136px;
+				float:left;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="item" style="background: url(imgs/01.png);"></div>
+			<div class="item" style="background: url(imgs/02.png);"></div>
+			<div class="item" style="background: url(imgs/03.png);"></div>
+		</div>
+	</body>
+</html>

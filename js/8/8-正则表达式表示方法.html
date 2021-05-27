@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            正则表达式只有两个方法：
+                test
+                    格式：正则.test(字符串)
+                    功能：在字符串中匹配这个正则是否存在
+                    返回值：如果匹配成功返回true,匹配失败返回false
+                    加/i，即不区分大小写
+
+                exec
+                    格式：正则.exec(字符串)
+                    功能：在字符串中匹配这个正则是否存在
+                    返回值：返回匹配到的串，匹配成功，返回一个装有字符串的数组
+                                        匹配失败，返回null
+        */
+       var str = "how are you";
+       var box = /Are/;
+       alert(box.test(str));
+
+       var str = "how are you";
+       var box = /are/;
+       alert(box.exec(str)[0]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

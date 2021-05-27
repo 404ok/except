@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            /* 
+                attributes  获取当前元素节点上的所有属性节点
+
+                集合：无序 不重复(后面会覆盖前面)
+            */
+           window.onload = function(){
+               var div = document.getElementById("div1");
+               alert(div.attributes);//属性节点集合对象
+
+
+               //获取其中的某一个属性节点
+
+               //获取一个完整的属性节点：title="hello"  object Attr:属性节点
+               /* alert(div.attributes.getNamedItem("title").nodeName);
+               alert(div.attributes.getNamedItem("title").nodeType);
+               alert(div.attributes.getNamedItem("title").nodeValue); */
+                //简化版本
+               alert(div.attributes["title"].nodeName);
+               alert(div.attributes["title"].nodeType);
+               alert(div.attributes["title"].nodeValue);
+           }
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box"></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            程序运行：
+                程序运行段(一旦声明无法更改内存空间)
+                堆：数组
+                只读数据段(字符串)
+        */
+
+        /* 
+            字符串概念：所有带但应好或多引号的都叫字符串
+            字符串声明：
+                1.new运算符声明
+                2.省略new声明字符串
+                3.字符串常量赋值
+         */
+        var str1 = new String(100);
+        alert(str1 + 200);
+        alert(typeof str1);
+        //类型为object  对象，引用数据类型
+ 
+        var str2 = "100";
+        alert(str2 + 200);
+        alert(typeof str2);
+
+        //类型为String
+        var str3 = String(100);
+        alert(str3 + 200);
+        alert(typeof str3);
+        //类型为String
+         /* 
+            访问字符串中字符：
+                字符串.length   访问字符串中字符的个数
+                【注】 中文 utf-8(三个字符表示一个汉字) gbk(两个字符表示一个汉字)
+                在计数时，都是当作一个汉字去计算
+                【注】在JS中，字符串既是基本数据类型，又是复合数据类型
+
+            访问字符串中的单个字符：
+                字符串.charAt(下标) 【注意】 从0开始
+                字符串[下标]
+
+                【注意】字符串是只读的，一旦声明，无法被修改，如果非要声明字符串，我们只能将字符串销毁，重新生成新的字符串
+          */
+          var str = "hello北京";
+          alert(str.length);
+          alert(str.charAt(6));
+          alert(str[6]);
+
+          /* 
+            字符串中的字符进行遍历也可以通过循环遍历
+          */
+         var str9 = "hello哈哈";
+         for(var i = 0;i < str1.length;i++){
+             document.write(str[i] + "<br/>");
+         }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

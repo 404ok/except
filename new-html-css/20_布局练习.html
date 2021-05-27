@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #head{
+            height: 50px;
+            background-color: rebeccapurple;
+        }
+        #head .head{
+            background-color: red;
+            width: 500px;
+            height: 50px;
+            margin: auto;
+        }
+        #banner{
+            height: 500px;
+            background-color: rosybrown;
+        }
+        #categary{
+            width: 700px;
+            height: 200px;
+            margin: auto;
+            background-color: sandybrown;
+        }
+        #categary .item{
+            width: 67px;
+            height: 165px;
+            padding: 10px 25px 25px 25px;
+            float: left;
+            border-right: 1px dashed black;
+        }
+        #categary .item.last{
+            border: none;
+        }
+        #case{
+            height: 600px;
+            background-color: silver;
+        }
+        #case .title-text{
+            width: 700px;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-size: 45px;
+        }
+        #case .item-wrapper{
+            overflow: auto;
+            margin: auto;
+        }
+        #case .item-wrapper .item{
+            width:200px;
+            height: 330px;
+            background: skyblue;
+            float: left;
+        }
+        #case .item-wrapper .item.mg{
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <div class="head"></div>
+    </div>
+    <div id="banner">
+
+    </div>
+    <div id="categary">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item last"></div>
+    </div>
+    <div id="case">
+        <div class="title-text">
+            Case
+        </div>
+        <div class="item-wrapper">
+            <div class="item"></div>
+            <div class="item mg"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+</body>
+</html>

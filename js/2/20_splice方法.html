@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            splice()
+                格式：数组.splice(start,length,数据1，数据2...)
+                参数：
+                    start 开始获取的位置
+                    length 截取长度的长度
+                    第三个参数开始：在start位置，插入的元素
+                返回值：截取下来的元素组成的数组
+            增加
+            删除
+            修改(先修改，再增加)
+        */
+
+        var arr = [10,20,30,40,50];
+        alert(arr.length)
+        arr.splice(0,0,"ok");
+        alert(arr);
+        var res = arr.splice(2,0,"ok","pill");    //增加
+        alert(arr);
+        alert(res);
+        var res1 = arr.splice(1,2);
+        alert(res1);
+        alert(arr);
+        var res2 = arr.splice(1,2,"duck");
+        alert(res2);
+        alert(arr);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            与运算
+                格式：
+                    表达式1 && 表达式2
+                规律:只有两个都为真，整个表达式才为真
+                短路操作：
+                    eg:alert(10 < 5 && alert(num))  不报错
+                    即表达式为true(||)或false(&&)时，就不执行了
+
+            或运算
+                格式
+                    表达式1 || 表达式2
+                规律:只有两个表达式都为假，整个表达式才为假
+            非运算：
+                格式：
+                    ！表达式
+                规律：先将表达式的值自动数据类型转换为Boolean值，然后再取反
+                注意：非0即真，非空即真
+        */
+
+        alert(10>5 && 2>9);
+        alert(10>5 || 2>9);
+        alert(10 > 5 || alert(num))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

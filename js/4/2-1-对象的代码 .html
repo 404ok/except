@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            //对象属性与普通变量
+            var obj1 = new Object();
+            var obj2 = Object();
+            var obj3 = {};
+
+            //新增属性，与普通属性没有什么区别
+            obj3.username = "钢铁侠";
+            obj3.age = "18";
+            //[]中括号内必须是字符串
+            alert(obj3.username);
+            alert(obj3.age);
+            obj1["age"] = 20;
+            alert(obj1["age"])
+            alert(obj1.age);
+
+            //新增方法，使用起来，与普通函数别无二致
+            obj3.show = function(){
+                alert(obj3["username"] + "/" + obj3["age"]);
+            }
+            obj3.show();
+            delete(obj3.age);
+            alert(obj3.age);
+
+            obj3.showOne = function(){
+                alert(obj3.username);
+            }
+            obj3.showOne();
+
+            //通过对象常量赋值
+            var obj4 = {
+                username:19,
+                age:90,
+                showOk:function(){
+                    alert(obj4.username + "/" + obj4.age);
+                }
+            }
+            obj4.showOk();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

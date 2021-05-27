@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            省略var声明变量
+                变量会被强制声明成全局变量
+            【注意】：不建议，属于语法错误
+        */
+       function show() {
+           num = 10;//变成全局变量
+           alert(num);
+       }
+       show();
+       alert(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

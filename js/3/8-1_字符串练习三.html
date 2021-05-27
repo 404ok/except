@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>   
+        /* 
+             1.将字符串str = "When I was young,I love a girl in neighbor class",
+            从young提取到girl生成新字符串，但是不许数
+        */
+
+       function count(str){
+            var start = str.indexOf("young");
+            var end = str.indexOf("girl") + "girl".length;
+            var newStr = str.substring(start,end);
+            return newStr;
+       }
+       alert(count("When I was young,I love a girl in neighbor class"));
+
+       function count1(str){
+            var start = str.indexOf("young");
+            var end = str.indexOf("girl") + "girl".length;
+            var newStr = str.substring(start,end);
+            return newStr;
+       }
+       alert(count1("When I was young,I love a girl in neighbor class"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

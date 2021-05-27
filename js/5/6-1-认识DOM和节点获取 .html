@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 300px;
+        }
+    </style>
+    <script>
+        /* 
+            DOM:document(html标签内) object model(树状图 --> 模型)
+                文档对象模型
+            所有标签类型：节点
+                元素节点：<div></div>
+                属性节点  id = "div1"
+                文本节点 div文本
+
+            
+            元素节点的获取：
+                document.getElementById(id)
+                功能：通过id获取符合条件的元素(id必须是唯一)
+                返回值：就是符合条件的一个节点。
+        */
+        onload = function(){
+            var div = document.getElementById("div1");
+            alert(div);
+            alert(div.id);
+            alert(div.title);
+            alert(div.className);//不是class,因为它是关键字
+
+
+            //设置行间属性的值(只是行间样式)
+            div.title = "world";
+            div.id = "div2";
+
+            alert(div.style.width);
+            alert(div.style.height);
+            alert(div.style.backgroundColor);
+            div.style.backgroundColor = "yellow";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box" style="width: 300px;background-color: turquoise;">div文本</div>
+</body>
+</html>

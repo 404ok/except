@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #menu{
+            margin: 20px auto;
+            border: 1px solid #f1edea;
+            width: 111px;
+            height: 58px;
+            position: relative;
+        }
+        #menu ul{
+            width: 111px;
+            border:1px solid #f1edea ;
+            position: absolute;
+            top: 58px;
+            left: -1px;
+            display: none;
+        }
+        #menu:hover ul{
+            display: block;
+        } 
+        .main{
+            background-color: #F5F5F5;
+            line-height: 58px;
+            
+        }
+        .main a:hover{
+            color: #FFA381;
+        }
+        a{
+            margin-left: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #8C8C8C;
+        }
+        #menu ul li{
+            height: 37px;
+            line-height: 37px;
+        }
+        #menu ul li:hover{
+            background-color:#f5f5f5;
+        }
+        p{
+            text-align: center;
+        }
+        #menu:hover .main{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <div class="main">
+            <a href="#">千牛卖家中心</a>
+        </div>
+        <ul>
+            <li>
+                <a href="#">免费开店</a>
+            </li>
+            <li>
+                <a href="#">已卖出的宝贝</a>
+            </li>
+            <li>
+                <a href="#">出售中的宝贝</a>
+            </li>
+            <li>
+                <a href="#">卖家服务市场</a>
+            </li>
+            <li>
+                <a href="#">卖家培训中心</a>
+            </li>
+            <li>
+                <a href="#">体检中心</a>
+            </li>
+            <li>
+                <a href="#">问商友</a>
+            </li>
+        </ul>
+    </div>
+     <p>
+            测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落
+        </p>
+</body>
+</html>

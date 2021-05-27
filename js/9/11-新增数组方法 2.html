@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Array.from()    将伪数组转成真数组
+        */
+        window.onload = function(){
+            var li = document.getElementsByTagName("li");
+            alert(li.length);//只是伪数组，本质上只是一个对象
+            li = Array.from(li);//变成真正的数组
+            li.push("hello");
+            alert(li);
+            /* 
+                find():
+                    功能：在数组中查找符合条件的元素，只要找到第一个终止遍历
+                    返回值：找到的元素
+                findIndex()
+                    找到元素的下标
+            */
+            var arr = [10,20,30,40];
+            var res = arr.find(function(item,index,arr){
+                //查找条件
+                return item > 20;
+            })
+            alert(res);
+
+            //变成ECMA箭头函数来写
+            alert(arr.find(item => item >20));
+            alert(arr.findIndex(item =>item >30));
+        }
+        /* 
+            arr.copyWithin
+                参数一：下标开始位置
+                参数二、参数三：[start,end]
+        */
+        var arr = [1,2,3,4,5,67,];
+        arr.copyWithin(1,4,5);
+        alert(arr);
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            color:gray;
+        }
+        ul li{
+            list-style: none;
+        }
+        .footer{
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+        .footer p{
+            text-align: center;
+            color: white;
+            line-height: 50px;
+        }
+        
+        .topmenu li a{
+            font-size: 20px;
+            color: white;
+            float: left;
+            line-height: 50px;
+            padding-right: 15px;
+            padding-left: 15px;
+            display: inline-block;
+        }
+        .topmenu li a:hover{
+            background-color: black;
+        }
+        .topmenu li a.active{
+            background-color: #4CAF50;
+        }
+        .topmenu{
+            width: 100%;
+            height: 50px;
+            background-color: grey;
+        }
+        .column-sidemenu ul li{
+            width: 150px;
+            
+        }
+        .column-sidemenu ul li a{
+            text-transform: capitalize;
+            display: inline-block;
+            background-color: gainsboro;
+            padding: 10px;
+            margin: 5px 10px;
+        }
+        .column-sidemenu ul li a:hover{
+            background-color: rgb(44, 42, 42);
+        }
+    </style>
+</head>
+<body>
+    <ul class="topmenu">
+        <li>
+            <a href="#home" class="active">主页</a>
+        </li>
+        <li>
+            <a href="#news">新闻</a>
+        </li>
+        <li>
+            <a href="#contact">联系我们</a>
+        </li>
+        <li>
+            <a href="#about">关于我们</a>
+        </li>
+    </ul>
+    <div class="clearfix">
+        <div class="column-sidemenu">
+            <ul>
+                <li>
+                    <a href="#flight">
+                        the flight
+                    </a>
+                </li>
+                <li>
+                    <a href="#city" class="active">
+                        the city
+                    </a>
+                </li>
+                <li>
+                    <a href="#island">
+                        the island
+                    </a>
+                </li>
+                <li>
+                    <a href="#food">
+                        the food
+                    </a>
+                </li>
+                <li>
+                    <a href="#people">
+                        the people
+                    </a>
+                </li>
+                <li>
+                    <a href="#history">
+                        the history
+                    </a>
+                </li>
+                <li>
+                    <a href="#oceans">the osean</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>底部文本</p>
+    </div>
+</body>
+</html>

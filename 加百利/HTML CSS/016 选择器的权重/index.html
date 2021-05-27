@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			/* 优先级  权重值 */
+			/* 通用选择器：权重值：0 */
+			/* 标签选择器：权重值：1 */
+			/* 类别选择器：权重值：10 */
+			/* ID选择器： 权重值：100 */
+			/* 行内样式   权重值：10000 */
+			/* 选择器选择的范围越小，越精确，优先级越高 */
+			#p1{
+				color: #7FFFD4;
+			}
+			*{
+				color: aquamarine;
+			}
+			.pp{
+				color: #B22222;
+			}
+			p{
+				color: firebrick;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="pp" id="p1" >
+			猜猜我是什么颜色~
+		</p>
+	</body>
+</html>

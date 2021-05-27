@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            键盘事件(表单元素，全局window)
+                keydown     键盘按下(如果按下不放手，会一直触发)
+                keyup       键盘抬起
+                keypress    键盘按下(只支持字符键，不支持功能键)
+        */
+
+        window.onload = function(){
+            var i = 0;
+            window.onkeydown = function(){
+                document.title = i++;
+            }
+            window.onkeyup = function(){
+                document.title = "抬起";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

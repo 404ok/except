@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .progress{
+            width: 300px;
+            height: 30px;
+            border: 1px solid black;
+            margin: 100px;
+            background-image: 
+            linear-gradient(to right bottom,#999 25%,#080 25%,#080 50%,#999 50%,#999 75%,#080 75% );
+            background-size: 30px;
+            /* background-repeat:no-repeat ; */
+            animation: 6s move infinite ; }
+            @keyframes move{
+                0%{
+                    background-position: 0 0;
+                }       
+                100%{
+                    background-position: 300px 0;
+                }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="progress">
+
+    </div>
+</body>
+</html>

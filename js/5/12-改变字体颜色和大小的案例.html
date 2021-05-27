@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #div{
+           border: 1px solid black;
+           width: 400px;
+           height: 200px;
+           margin: 100px auto;
+           line-height: 200px;
+           text-align: center;
+       }
+    </style>
+    <script src="../JS_雨飞_4/tool.js"></script>
+    <script>
+        /* 
+            写一个定时器，每隔一秒修改遗产div内文本颜色和字体大小   
+            
+            颜色随机(rgb(255,255,255))
+            parseInt(Math.random() * 256)
+            最开始这个文字是默认大小，大小开始增大，当增大了6次一行
+            文字大小开始变小，缩小6次，文字再开始增大
+        */
+        window.onload = function(){
+            function randomColor(){
+                return "rgb(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ",1)";
+            }
+            var div = document.getElementById("div");
+            var speed = 6;
+            var count = 0;
+            setInterval(function(){
+                div.style.color = randomColor();
+                //获取上一次的样式
+                var iCur = parseInt(getStyle(div,"font-size"));
+                div.style.fontSize = (iCur+ speed) +"px";
+                count++;
+                if(count % 6 == 0){
+                    speed *= -1;
+                }
+                
+            },1000)
+            
+        }
+        
+
+    </script>
+</head>
+<body>
+       <div id="div">
+           div文本
+       </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Object.assign 合并对象,把所有对象都复制合并到第一个对象，其他对象不变
+            浅拷贝：数组是拷贝地址
+            深拷贝：将复合数据类型重新拷贝
+        */
+       var obj1 = {
+           a:10,
+       }
+       var obj2 = {
+           b:20,
+           c:30,
+       }
+       var obj3 = {
+           d:40,
+           f:["hello","world",true],
+       }
+       Object.assign(obj1,obj2,obj3);
+       obj2.b = 100;
+       console.log(obj1);
+       console.log(obj2);
+       console.log(obj3);
+       obj3.f.push("xx");
+       console.log(obj1);
+       console.log(obj2);
+       console.log(obj3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

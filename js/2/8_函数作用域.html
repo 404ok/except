@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            任何程序在执行的时候都要占用内存空间，函数调用时也要占用内存空间
+
+            垃圾回收机制：调用函数的时候，系统会分配对应的空间给这个函数使用(空间大小一般由这个函数里声明的变量和形参决定)，当函数使用完毕后，内存空间要释放，还给系统。
+
+            【注】 在函数内部声明的变量和形参是属于当前函数的内存空间的
+
+            内存管理机制：在函数中声明的变量和形参，会随着函数的调用被创建，随着函数的调用结束而被销毁。
+                在函数中声明的变量和形参，有效范围是当前函数(当前函数的大括号内)，即作用域，局部作用域
+            eg:身份证和护照
+
+            就近原则：离哪个近就用哪个
+        */
+       /* var a = 2;
+       function  show() {
+           a++;
+           alert(a);
+       }
+       show();
+       show();
+       alert(a); */
+/* 
+       function show() {
+           var a = 2;//局部变量
+           a++;
+           alert(a);
+         }
+         show();
+         show();
+         alert(a); */
+
+
+
+        var a = 10, b = 20;
+        function show(a) {
+        var b = 100;
+        a += 5;
+        alert(a);
+        alert(b);
+        }
+        show(a);
+        alert(a);
+        alert(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

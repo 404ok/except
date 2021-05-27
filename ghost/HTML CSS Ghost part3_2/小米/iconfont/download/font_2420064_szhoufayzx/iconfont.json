@@ -1,0 +1,30 @@
+{
+  "id": "2420064",
+  "name": "拉勾网",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1335573",
+      "name": "搜索",
+      "font_class": "icon-plus-search",
+      "unicode": "e714",
+      "unicode_decimal": 59156
+    },
+    {
+      "icon_id": "7385139",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "9874523",
+      "name": "KHCFDC_首页",
+      "font_class": "shouye",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    }
+  ]
+}

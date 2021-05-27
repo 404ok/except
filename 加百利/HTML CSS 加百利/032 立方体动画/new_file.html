@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>立方体动画</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#cube{
+				width: 300px;
+				height: 300px;
+				border: 1px dashed black;
+				font-size: 80px;
+				text-align: center;
+				line-height: 300px;
+				transition: 0.2s;
+				transform: rotateY(1deg) rotateX(-1deg);
+				transform-style: preserve-3d;
+				margin: 200px;
+			}
+			#cube div{
+				width: 300px;
+				height: 300px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 0.31s;
+			}
+			#cube .flat1{
+				background-color: #0077AA;
+				transform: translateY(-150px) rotateX(90deg);
+			}
+			#cube .flat2{
+				background-color: aqua;
+				transform: translateY(150px) rotateX(-90deg);
+			}
+			#cube:hover .flat3{
+				background-color: powderblue;
+				transform: translateX(-150px) rotateY(90deg) rotateZ(-90deg);
+			}
+			#cube:hover .flat4{
+				background-color: pink;
+				transform: translateX(150px) rotateY(90deg)rotateZ(-90deg);
+			}
+			#cube .flat5{
+				background-color:red;
+				transform: translateZ(150px) ;
+			}
+			#cube .flat6{
+				background-color:cadetblue;
+				transform: translateZ(-150px) ;
+			}
+			#cube:hover .flat1{
+				background-color: #0077AA;
+				transform: translateZ(150px);
+			}
+			#cube:hover .flat2{
+				background-color: aqua;
+				transform: translateZ(-150px) ;
+				}
+			#cube:hover .flat3{
+				background-color: powderblue;
+				transform: translateX(150px) rotateY(-90deg) ;
+			}
+			#cube .flat4{
+				background-color: pink;
+				transform: translateX(150px) rotateY(90deg);
+			}
+			#cube:hover .flat5{
+				background-color:red;
+				transform: translateY(150px)rotateX(-90deg);
+			}
+			#cube:hover .flat6{
+				background-color:cadetblue;
+				transform: translateY(-150px)rotateX(-90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cube">
+			<div class="flat1">
+				Home
+			</div>
+			<div class="flat2">
+				home
+			</div>
+			<div class="flat3">
+				左
+			</div>
+			<div class="flat4">
+				右
+			</div>
+			<div class="flat5">
+				Home
+			</div>
+			<div class="flat6">
+				后
+			</div>
+		</div>
+	</body>
+</html>

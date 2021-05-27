@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+    <script>
+        /* 
+            1.匀速运动
+                <1>.每次启动定时器时，关闭上一次定时器
+                <2>.if...else将运动和停止分开
+            2.分享到菜单    淡入淡出效果(alpha)
+                startMove(iTarget);
+            3.缓冲运动
+                var speed = (iTarget - iCur) / 8;(经过长期实验，8 对于动画更合理)
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
+            4.缓冲菜单
+                滑动条无论滑倒哪，菜单都会缓冲到中间
+
+                    1.获取滚动高度
+                    2.因为是中间，所以当前窗口的高 = (窗口高 - div高) /2
+        */
+
+        window.onload = function(){
+            //获取居中的top值
+            var div = document.getElementById("div1");
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var iH = scrollTop + parseInt((windowHeight - div.offsetHeight)/2) ;
+            startMove(iH);
+            window.onscroll = function(){
+                var div = document.getElementById("div1");
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    
+                var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                var iH = scrollTop + parseInt((windowHeight - div.offsetHeight)/2) ;
+                startMove(iH);
+            }
+            Window.onresize = function(){
+                var div = document.getElementById("div1");
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    
+                var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                var iH = scrollTop + parseInt((windowHeight - div.offsetHeight)/2) ;
+                startMove(iH);
+
+            }
+        }
+        //页面滑动时，它也随着滑下来的函数
+        //这是初始方块滑下来的函数
+        var timer = null;
+        function startMove(iTarget){
+            var div = document.getElementById("div1");
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = (iTarget - div.offsetTop) /8;
+                speed = speed ? Math.ceil(speed) : Math.floor(speed);
+                //计算速度
+                if(div.offsetTop == iTarget){
+                    clearInterval(timer);
+                }else{
+                    div.style.top = div.offsetTop + speed +"px";
+                }
+                document.title = div.offsetTop + "," +iTarget;
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

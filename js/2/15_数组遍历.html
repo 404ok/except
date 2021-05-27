@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组变历：
+                for循环
+                for...in遍历    快速遍历/快速枚举法
+        */
+       var arr = [10,20,30,40,50];
+       //在页面上分别将每一个数据输出
+       //for循环遍历    上学查学生证的大爷，安全级别高
+       for(var i = 0;i < arr.length;i++){
+           document.write(arr[i]+"<br/s>");
+       }
+       document.write("<br/><br/>")
+
+       //for...in遍历   看一下就进，不查看
+       for(var j in arr){
+        document.write(arr[j]+"<br/s>");
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

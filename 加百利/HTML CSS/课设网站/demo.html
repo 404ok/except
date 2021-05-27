@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>中国国画</title>
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: 楷体;
+			}
+			#header{
+				height: 40px;
+				padding: 10px;
+			}
+			#header .yemian{
+				float: right;
+			}
+			#header .yemian a{
+				text-decoration: none;
+				font-size: 20px;
+				
+				color: #000000;
+			}
+			#header .yemian .about{
+				float: right;
+				padding-right:120px;
+			}
+			#header .yemian .time-line{
+				float: right;
+				padding-right:40px;
+			}
+			#header .head{
+				width: 1005px;
+				height: 50px;
+				margin: auto;
+				padding-left:550px;
+				font-family: 楷体;
+			}
+			#banner{
+				width: 9999px;
+				height: 9999px;
+				animation: 8s x infinite;
+			}
+			#banner img{
+				float: left;
+				
+			}
+			#tv{
+				width: 1024px;
+				height: 390px;
+				overflow: hidden;
+				margin: auto;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			@keyframes x{
+				0%{
+					
+				}
+				25%{
+					transform: translateX(0px) ;
+				}
+				30%{
+					transform: translateX(-1024px);
+				}
+				50%{
+					transform: translateX(-1024px);
+				}
+				55%{
+					transform: translateX(-2048px);
+				}
+				75%{
+					transform: translateX(-2048px);
+				}
+				100%{
+					transform: translateX(0);
+				}
+				
+			}
+			#introduction{
+				width: 1024px;
+				height: auto;
+				padding: 20px;
+				margin:  auto;
+			}
+			#introduction #text-a p{
+				font-size: 25px;
+				padding-top:20px;
+				padding-bottom:20px ;
+			}
+			#introduction #ex p{
+				font-family: 楷体;
+				background-color: #bdc3c7;
+				padding: 10px;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			#category{
+				width: 1024px;
+				height: 200px;
+				margin: auto;
+			}
+			#category #text-b p{
+				font-size: 25px;
+				padding-top:20px;
+				padding-bottom:20px ;
+				
+			}
+			#category .item{
+				width: 125px;
+				height: 165px;
+				padding-left:25px ;
+				padding-right:25px ;
+				padding-bottom: 60px;
+				border-right: dashed 1px black;
+				float: left;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			#category .item.last{
+				padding-right: 0;
+				border: 0;
+				padding-left: 10px;
+				background-color: #bdc3c7;
+				padding-top: 10px;
+				padding-right:44px ;
+			}
+			#category .item.first{
+				padding-left: 44px;
+				background-color: #bdc3c7;
+				padding-top: 10px;
+				
+			}
+			
+			#category .item.second{
+				padding-left: 10px;
+				background-color: #bdc3c7;
+				padding-top: 10px;
+				
+			}
+			#category .item.three{
+				padding-left: 10px;
+				background-color: #bdc3c7;
+				padding-top: 10px;
+				
+			}
+			#category .item.fourth{
+				padding-left: 10px;
+				background-color: #bdc3c7;
+				padding-top: 10px;
+				
+			}
+			#category .item.fifth{
+				padding-left: 10px;
+				background-color: #bdc3c7;
+				padding-top: 10px;
+				
+			}
+			#category .item h3{
+				padding-bottom: 5px;
+				background-color: #bdc3c7;
+			}
+			#category .item h3{
+				padding-bottom: 5px;
+				background-color: #bdc3c7;
+			}
+			#case{
+				height: 400px;
+				margin-left:100px;
+				float:left;
+			}
+			#case .title-text{
+				width: 1020px;
+				margin: auto;
+				font-size: 25px;
+				padding:20px;
+			}
+			.container{
+				width: 1000px;
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				margin-left: 20px;
+			}
+			.container .box{
+				position: relative;
+				width: 200px;
+				background: #bdc3c7;
+				padding: 100px 40px 60px;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				margin-bottom: 40px;
+			}
+			.container .box:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #2c3e50;
+				transform: scaleY(0);
+				transform-origin: top;
+				transition: transform 0.5s;
+			}
+			.container .box:hover:before{
+				transform: scaleY(1);
+				transform-origin: bottom;
+				transition: transform 0.5s;
+			}
+			.container .box h2{
+				position: absolute;
+				left: 40px;
+				top: 60px;
+				font-size: 4em;
+				font-weight: 800;
+				z-index: 1;
+				opacity: 0.1;
+				transition: 0.5s;
+			}
+			.container .box:hover h2{
+				opacity: 1;
+				color: #fff;
+				transform: translateY(-40px);
+			}
+			
+			.container .box p{
+				position: relative;
+				z-index: 2;
+				color: #555;
+				transition: 0.5s;
+				line-height: 23px;
+			}
+			.container .box:hover p{
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="yemian">
+				<p>
+					<div class="about">
+						<a href="About/About.html">
+							关于
+						</a>
+					</div>
+					<div class="time-line">
+						<a href="Time-line/Time-line.html">
+						时间线
+					</a>
+					</div>
+			</p>
+			</div>
+			
+			<div class="head">
+				<h1>中国国画</h1>
+			</div>
+			
+		</div>
+		<div id="tv">
+			<div id="banner" >
+				<img src="banner/1024427.jpg" >
+				<img src="banner/1024461.jpg" >
+				<img src="banner/1024515.jpg" >
+				<img src="banner/VCG211140694655.jpg" >
+			</div>
+		</div>
+		<div id="introduction">
+			<div id="text-a">
+				<p>简介</p>
+			</div>
+			<div id="ex">
+				<p>国画一词起源于汉代，主要指的是画在绢、宣纸、帛上并加以装裱的卷轴画。
+			国画是中国的传统绘画形式，是用毛笔蘸水、墨、彩作画于绢或纸上。
+			工具和材料有毛笔、墨、国画颜料、宣纸、绢等，题材可分人物、山水、花鸟等，
+			技法可分具象和写意。中国画在内容和艺术创作上，体现了古人对自然、社会及与
+			之相关联的政治、哲学、宗教、道德、文艺等方面的认知。</p>
+			</div>
+			
+		</div>
+		<div id="category">
+			<div id="text-b">
+				<p>分类</p>
+			</div>
+			<div class="item first">
+				<h3>山水</h3>
+				欣赏中国山水画，先要了解国画制作者的胸襟意象。画家把名山大川的特色，先储于心，
+				再形于手，所以不以"肖形"为佳，而以"通意"为主。
+			</div>
+			<div class="item second">
+				<h3>动物</h3>
+				动物种类繁多，大小不一，狮、虎、猫、犬可称为走兽，各种鱼类可称为游鱼，蝉、
+				蝶、蜻蜓称为草虫，各种雀鸟称为翎毛。动物可以归到花鸟画。
+			</div>
+			<div class="item three">
+				<h3>人物</h3>
+				分为古今两类:古装人物，或者是历代英士为一类;现代服装，或者模特儿写生为一类。
+				由于人物要有动作、表情，所以人物画是比较深奥的制作。
+			</div>
+			<div class="item fourth">
+				<h3>工笔</h3>
+				用细致的笔法制作，工笔画着重线条美，一丝不苟，是工笔画的特色。
+			</div>
+			<div class="item fifth">
+				<h3>写意</h3>
+				心灵感受、笔随意走 ，视为意笔，写意画不重视线条，重视意象，
+				与工笔的精细背道而驰。生动往往胜于前者。
+				根据画面内容又可以分为传统绘画和现代绘画。
+			</div>
+			<div class="item last">
+				<h3>传统</h3>
+				中国画画龄以千年计，形成了一套笔法、构图法 、皴法等固定的模式，
+				所以具有此种风格的国画称为传统绘画。
+			</div>
+		</div>
+		<div id="case">
+			<div class="title-text">
+				画法口诀
+			</div>
+				<div class="container">
+					<div class="box">
+						<h2>01</h2>
+						<p>
+							画前需定形, 先从树起跟!<br>
+							勾出树枝干, 稍点树梢墨!<br>
+							颜色要细调, 红绿要纯清!<br>
+							染在树梢顶, 树头浓墨分!<br>
+							松要摆大气, 枝干壮山魂!<br>
+							近松叶要明, 远松稍点清!<br>
+							叶用深绿染, 干要株黄清!<br>
+							杂树枝要细, 点叶要分明!<br>
+							不可太浓厚, 不要太稀匀!<br>
+							山涧多树长, 层次要分明!<br>
+							大小照远近, 浓淡要看形!<br>
+							山石虽大气. 莫忘暗与明!<br>
+						</p>
+							
+					</div>
+					<div class="box">
+						<h2>02</h2>
+							<p>有光一方照, 此方须淡澄!<br>
+							无光一方照, 明暗下笔沉!<br>
+							画好一磅石, 远近多关心!<br>
+							与树相连处, 层次要高明!<br>
+							无光山顶树, 树下一片黑!<br>
+							有光山顶树, 用色要沉稳!<br>
+							落山脚处时, 染色几次分!<br>
+							山脚可点树, 但要雾和云!<br>
+							山脚不作树, 需要染纯清!<br>
+							远山写云海墨色相染成!<br>
+							近山有雾气, 只在山脚形!<br>
+							高低多层次, 写云几次成!<br>
+							</p>
+					</div>
+					<div class="box">
+						<h2>03</h2>
+						<p>
+							浓墨下脚处, 浓淡要细明!<br>
+							檫点明暗处, 用笔要细稳!<br>
+							檫点一山成, 远近常关心!<br>
+							山涧紧相连, 浓淡要辩清!<br>
+							画半要细看, 似乎可以成!<br>
+							若是不合意, 寻找顺势形!<br>
+							该改侧大胆, 不改须细心!<br>
+							画前须静想, 画时耐心稳!<br>
+							多在墙面画, 才好看得正!<br>
+							画好需回味, 多看否改进!<br>
+							细看多难处, 记得下次稳,<br>
+							此为画中意, 意境难悟成!<br>
+						</p>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

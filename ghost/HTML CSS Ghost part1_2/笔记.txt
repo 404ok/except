@@ -1,0 +1,370 @@
+1.CSS背景样式
+    background-color：背景颜色
+    background-image:背景图
+        url（背景地址） 会水平垂直都铺满背景图
+    background-repeat:平铺方式
+                repeat-x    x轴平铺
+                repeat-y    y轴平铺
+                repeat(x,y都进行平铺)
+                no-repeat   都不平铺
+    background-position:背景位置
+        x y : number | 单词
+            x : left center right
+            y : top centet bottom
+    background-attachment：背景图随滚动条移动方式
+        scroll：默认值  (背景位置是按当前元素位置进行偏移的)
+        fixed           (背景位置是按当前浏览器进行偏移的)
+2.CSS边框样式
+    border-style:边框样式
+        solid:实线
+        dashed：虚线
+        dotted：点线
+    border-width：边框大小
+    border-color：边框颜色
+    边框也可以针对某一条边框进行设置
+
+    颜色：透明颜色  transparent
+3.CSS文字样式
+    font-family:字体类型
+        衬线体（棱角）和非衬线体
+        设置多字体类型目的；引号问题（有空格:''）
+    font-size:字体大小
+        默认大小：16px
+        number,单词
+        一般设定为偶数
+    font-weight:字体粗细
+        模式：正常（normal）、加粗（bold）
+        数值：100px、200px......900px
+        100~500：正常   600~900：加粗
+    font-style:字体样式
+        模式：正常（normal）、斜体（italic、oblique(了解即可)）
+        区别：
+            1.italic 所有带有倾斜字体的可以设置
+            2.oblique 没有带有倾斜字体的也可以设置
+    color：字体颜色
+4.CSS段落样式
+    text-decoration:文本装饰
+        下划线：underline
+        删除线：line-through
+        上划线：overline
+        不添加任何装饰：none
+        添加多个，用空格隔开
+    text-transform:文本大小写（针对英文）
+        lowercase：全部小写
+        uppercase:全部大写
+        capitalize：首字母大写
+
+    text-indent：文本缩进
+        首行缩进效果
+        em单位：1em=1字大小
+    text-align:文本对齐方式
+        对齐方式：left、center、right、justify(两端点对齐)
+    line-height:行高（上边距+字体大小+下边距，即一行文字的高度）
+        默认行高根据字体大小而变化
+        取值：1.number  2.比例值：scale(跟文字大小相比)
+    letter-spacing:字之间间距
+    word-spacing:词之间间距（针对英文）
+    英文和数字不自动折行的问题：
+            1.word-break:break-all(非常强烈的折行)
+            2.word-wrap:break-word(不是非常强烈的折行)
+5.CSS复合样式
+    background:color url() repeat 0 0 ;
+    border
+    以上二者不需要关心顺序
+    font（需要关心顺序）：最少要有两个值 size family
+        正常顺序： weight style size family                  √
+                  style weight  size/line-height family     √
+    尽量不要即写单一样式，又写混合样式，假如一定要写，先写复合样式，再写单一样式
+6.CSS选择器
+    1.ID选择器
+        #elem{}     id="elem"
+    注意：
+        1.id值是唯一的，出现多次不符合规范
+        2.命名只能是字母-_数字(且第一个字不能是数字)
+        3.驼峰式：searchButton(小驼峰)
+                 SearchButton(大驼峰)
+          短线：search-small-button
+          下划线：search_small_button
+    2.class选择器
+        .elem{}     class="elem"
+    注意：
+        1.class可以复用
+        2.可以添加多个class样式
+        3.多个样式的时候，样式优先级根据CSS决定，而不是class属性中的顺序
+        4.标签+类的写法
+    3.标签选择器(TAG选择器 元素选择器)
+        div{}   <div> </div>
+        ul li{}
+        ol li{}
+        使用场景：
+        1.去掉某些标签的默认样式时
+        2.复杂的选择器中，如层次选择器
+    4.群组选择器(分组选择器)
+        用逗号隔开，给多个不同的CSS选择器添加样式，来达到代码复用
+    5.通配选择器
+        *{}
+        尽量避免通配选择器
+        使用场景：
+            1.去掉所有标签的默认样式时
+    6.层次选择器
+        后代：M N{ }
+        父子：M>N{ }
+        兄弟：M~N{ }当前M下的所有兄弟N标签
+        相邻：M+N{ }当前M下面相邻的N标签（不能隔开）
+    7.属性选择器
+        M[attr]{ }  (attr为属性)
+        = ： 完全匹配
+        *= : 部分匹配
+        ^= : 起始匹配
+        $= ： 结束匹配
+        [] [] []: 组合匹配
+    8.伪类选择器    (控制台可以操作这些行为)
+        M：伪类{}
+        a:（只能添加给a标签）
+            :link       访问前的样式
+            :visited    访问后的样式
+        所有标签：
+            :hover      鼠标移入的样式
+            :active     鼠标按下时的样式
+        如果要上面四个标签都生效，注意顺序：L V H A
+    一般网站都只设置a{ } , a:hover{ }
+
+    :after、:before 通过伪类方式给元素添加一段文本内容，用content设置，用于对于一段文本的不同样式设计
+    ：checked、：disabled、：focus(获取光标时): 都是针对表单元素的
+        结构伪类选择器：
+            nth-of-type :
+            nth-of-child :
+            取值：1~无穷大 | n值：表示从0到无穷大
+                2n:偶数
+                2n+1奇数
+            first-of-type:
+            forst-of-child
+            last-of-type:
+            last-of-child
+            only-of-type:
+            only-of-child
+
+             nth-of-type 和 nth-of-child区别：
+                type:类型   child:孩子
+7.CSS继承
+    文字相关的样式可以被继承
+    color   √
+    font-weight √
+    font-style  √
+    font-family ×
+    line-height √
+    font-size   √
+    布局相关的样式不能被继承(默认不能继承，但是可以设置继承属性 inherit值)
+8.CSS优先级
+    1.相同样式优先级
+        当设置相同样式优先级，后设置的优先级高，不建议重复设置样式
+        即就近原则
+    2.内部样式和外部样式
+        内部样式和外部样式优先级相同，后写的优先级高
+        即就近原则
+    3.单一样式优先级
+        style行间 > id > class > tag > * >继承(body) 
+        注意：权重
+            style行间   1000
+            id          100
+            class       10
+            tag         1
+    4.！important
+        提升样式优先级，非规范方式，不建议使用
+    5.标签 + 类与单类 
+        标签 + 类 > 单类 (看权重)
+    6.群组优先级
+        与单一选择器的优先级一致，就近原则
+    7.层次优先级
+        1.权重比较
+            ul li .box p input{ }   1+1+10+1
+            .hello span #elem { }   10+1+100
+            100个1加在一起是小于10的    (官大一级压死人)
+        2.约分比较
+            ul li .box p input{ }   
+            .hello span #elem { }  
+
+            ul li p input{ }   
+            span #elem { } 
+
+            li p input{ } 
+            #elem { } 
+        层次选择器，尽量三层以上
+9.CSS盒子模型
+    组成：content->padding->border->margin
+            物品     填充物   包装盒  盒子与盒子之间的间距
+            content   内容区域    宽高
+            padding   内边距(内填充)
+                只写一个值：30px(上下左右)
+                写两个值：30px 30px (上下 左右)
+                写四个值：30px 10px 3px 9px (上右下左)
+            margin    外边距(外填充)
+
+            注意：
+            1.背景颜色填充到margin以内区域，不包括margin
+            背景图border以内
+            2.文字在content区域
+            3.padding不能为负数，而margin为正数
+    box-sizing:
+        盒尺寸，可以改变盒子模型的展示形态
+        默认值：width,height作用于content
+        border-box:width,height作用于content,padding,border
+
+        使用场景：
+            1.不用再去计算一些值
+            2.解决一些100%的问题
+    盒子模型的一些问题：
+        1.margin叠加问题，出现在上下margin同时存在的时候,会取上下中值较大的作为叠加的值
+            解决办法：想办法只给一个添加间距
+        2.margin传递问题，出现在嵌套的结构中，并且只是margin-top
+            解决办法：  1.给父容器加边框
+                       2.margin换成padding
+    
+    span对盒模型
+
+    margin扩展：
+        1.margin自适应是可以的，但是上下自适应是不行的(卖个关子，second part)
+        2.width,height不设置的时候，对盒子模型的影响,会自动计算容器大小，节省代码
+10.标签分类
+    按类型分类：
+        block:块    div、p、ul、li、h1...
+            1.独占一行
+            2.支持所有样式
+            3.不写宽，与父元素一致
+            4.所占区域为矩形
+
+        inline:内联 span、em、strong、a、img（特别）...
+            1.挨在一起的
+            2.有些样式不支持，例如width,height,margin上下样式和padding上样式
+            3.不写宽时，宽由内容决定
+            4.所占区域不一定为矩形
+            5.内联标签会有空隙，由HTML代码换行导致  解决方法：body{font-size=0;} 再给
+            对应span标签加上相对应字体大小
+            注意：布局一般用块标签，修饰文本一般用文本标签
+        
+        inline-block:   input、select
+            1.挨在一起，支持宽高
+            2.所占区域为矩形
+            3.内联标签会有空隙，由HTML代码换行导致
+        控制台可以查看以上标签分类
+
+    按内容分类：
+        Flow:流数据:感知的到
+        Metadata:元数据
+        Sectioning:分区
+        Heading:标题
+        Phrasing：措辞
+        Embedded:嵌入的
+        Interactive:互动的
+        ......
+    按显示分类：
+        替换元素：img（支持宽高，矩形）,input
+        非替换元素，只写标签即可，不需要写元素
+        div、h1
+    display显示框分类：
+        block
+        inline
+        inline-block
+        none    隐藏
+        注意：
+            dispaly:none与visibility:hidden区别:
+                dispaly:none:不占空间隐藏
+                visibility:hidden：占空间隐藏
+11.标签嵌套规范
+    ul li、ol li
+    dl dt dd
+    table tr td
+
+    块标签可以嵌套内联标签
+    <div>
+        <span></span>
+        <a href="#"></a>
+    </div>
+    块不一定能嵌套块标签
+        特殊：<p> <div>  </div>  </p>   ❌
+    内联不能嵌套块：
+        <span> 
+            <div>
+            </div>
+        </span> ❌
+        特殊：
+            <a>
+                <div></div>
+            </a>
+            a标签是一个透明的
+            a不能嵌套a
+12.溢出隐藏
+    overflow:
+        visible:默认
+        hidden:边界裁切隐藏
+        scroll:滚动条
+        auto：自动感知
+        x轴、y轴：overflow-x、overflow-y:针对两个轴进行设置
+13.透明度与手势
+    opacity：0(透明，占空间)~1(不透明)
+        0.5（半透明）
+        注意所有子内容也会透明
+        rgba():0~1
+        注意：可以让指定的样式透明，而不影响其他样式
+    手势：
+        cursor:
+            default:默认
+            pointer:手势
+            move:移动的手势
+        要实现自定义鼠标：要准备图片(格式：.cur ico)
+14.最大、最小宽高
+    min-height,max-height
+    min-width，max-width
+    min即大于等于;max即小于等于；即实现自适应
+
+    注意：强化对%单位的理解：换算->以父容器大小进行换算（只看亲爹）
+
+    一个内容怎么适应屏幕的高:容器加height:100% ; body:100% ; html:100%
+    即html,body{ height:100%}
+    .container{ height:100%}
+15.CSS默认样式
+    没有默认样式的：div span
+    有默认样式的：
+        body -> margin : 8px
+        h1 -> margin:上下 21.440px
+                font-weight:bold
+        p -> margin:上下 16px
+        ul li -> margin:上下 16px padding:左 40px
+                默认前面的点：list-style : disc
+        a -> cursor:pointer tex-decoration:underline
+16.CSS reset
+    *{margin:0;padding:0}
+    优点：不需要考虑各个标签有默认的marggin和padding
+    缺点：稍微的影响性能
+
+    ul li{list-style:none;}
+    a{
+        text-decoration:none;
+        color:#666
+    }
+    img{
+        dispaly:block;
+    }   
+    原因：图片跟容器底部有一些空虚，内联元素的文字按照基线对齐，而不是文字底线对齐的
+    verical-align:baseline  基线对齐方式，默认值
+    img{
+            vertical-align: bottom;
+        }   (此方式是推荐的)
+
+    写具体页面或布局效果时：
+                    1.写结构
+                    2.CSS重置样式
+                    3.写CSS具体样式
+
+
+
+                
+
+
+6 67                
+
+    
+
+    
+
+

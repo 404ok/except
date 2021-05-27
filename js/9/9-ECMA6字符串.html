@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            传统字符串：所有单引号，双引号括起来的叫做字符串
+            ECMA6字符串：反引号 ``
+                优点：
+                    1.想怎么写都能体现出来
+                    2.'字符${变量/表达式/函数调用}字符'
+        */
+       var str = "hello \
+       world";
+       var str1 =`hello
+       world`;
+       alert(str);
+       alert(str1);
+       function showSelf({name,age,sex = "男"}){
+           alert(name + "," + age + "," + sex);
+           alert(`${name},${age},${sex}`);
+       }
+       showSelf({
+           age:18,
+           name:"小明",
+           sex:"女",
+       })
+       showSelf();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

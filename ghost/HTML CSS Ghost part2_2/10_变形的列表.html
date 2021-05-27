@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        .list{
+            width: 250px;
+            margin:  30px auto;
+        }
+        .list li{
+            height: 97px;
+            border-bottom: 1px dashed #d0d6d9;
+            overflow: hidden;
+        }
+        .list li:last-child{
+            border-bottom: none;
+        }
+        .list .list-photo{
+            float: left;
+            width: 112px;
+            height: 77px;
+            margin: 10px 9px 0 5px;
+            position: relative;
+        }
+        .list .list-photo .list-photo-box{
+            width: 92px;
+            height: 57px;
+            border: 1px white solid;
+            position: absolute;
+            left: 9px;
+            top: 9px;
+            transform-origin: 0 0;
+            transition: 2s;
+            transform:translate(0,-60px) rotate(-90deg) ;
+        }
+        .list .list-photo .list-photo-text{
+            position: absolute;
+            width: 100%;
+            color: white;
+            text-align: center;
+            bottom: 15px;
+            font-size: 14px;
+            transition: 2s;
+            transform-origin: 0 0;
+            transform:translate(0,100) ;
+        }
+        .list .list-photo img{
+            width: 100%;
+        }
+        .list .list-text{
+            float: left;
+            width: 114px;
+            font-size: 12px;
+            line-height: 21px;
+            margin-top: 10px;
+        }
+
+        .list li:hover .list-photo-box{
+            transform:translate(0,0) rotate(0) ;
+        }
+        .list li:hover .list-photo-text{
+            transform:translate(0,0) rotate(0) ;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>
+            <div class="list-photo">
+                <img src="./img/list_photo.png" alt="">\
+                <div class="list-photo-box"></div>
+                <div class="list-photo-text">陌陌上市</div>
+            </div>
+            <div class="list-text">
+                <p>测试文字</p>
+            </div>
+        </li>
+        <li>
+            <div class="list-photo">
+                <img src="./img/list_photo.png" alt="">
+                <div class="list-photo-box"></div>
+                <div class="list-photo-text">陌陌上市</div>
+            </div>
+            <div class="list-text">
+                <p>测试文字</p>
+            </div>
+        </li>
+        <li>
+            <div class="list-photo">
+                <img src="./img/list_photo.png" alt="">
+                <div class="list-photo-box"></div>
+                <div class="list-photo-text">陌陌上市</div>
+            </div>
+            <div class="list-text">
+                <p>测试文字</p>
+            </div>
+        </li>
+        <li>
+            <div class="list-photo">
+                <img src="./img/list_photo.png" alt="">
+                <div class="list-photo-box"></div>
+                <div class="list-photo-text">陌陌上市</div>
+            </div>
+            <div class="list-text">
+                <p>测试文字</p>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            attribute方法：
+                setAttribute
+                getAttribute
+                removeAttribute()
+        */
+       onload = function(){
+            var div = document.getElementById("div1");
+            alert(div.id);
+            alert(div.title);
+            alert(div.name);//name只对表单属性有用
+            alert(div.getAttribute("id"));
+            alert(div.getAttribute("title"));
+            //区别: 1.class的访问
+            alert(div.className );
+            alert(div.getAttribute("class"));
+            //2.可以获取自定义的
+            alert(div.xxx);
+            alert(div.getAttribute("xxx"));
+
+            //3. 设置
+            div.className = "div4";
+            div.zzz = "000";//添加成功，但是显示不了
+            alert(div.zzz);
+
+            div.setAttribute("zzz","000");
+            div.setAttribute("class","box5");
+
+            //删除class样式
+            div.className = '';
+            div.removeAttribute("title");
+       }
+    </script>
+</head>
+<body>
+        <div id="div1" class="box"title="hello" xxx="yyy"></div>
+</body>
+</html>

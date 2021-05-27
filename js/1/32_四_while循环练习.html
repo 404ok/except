@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            //打印100以内7的倍数
+            var i = 0;
+            while(i < 100){
+                if(i % 7 == 0){
+                    document.write(i + "&nbsp;");
+                }
+                i++;
+            }
+            document.write("<br/>")
+            
+            //打印100以内的奇数
+            var i2 = 0;
+            while(i2 < 100){
+                if(i2 % 2 == 0){
+                    document.write(i2 + "&nbsp;");
+                }
+                i2++;
+            }
+            document.write("<br/>")
+
+            //打印100以内所有偶数的和
+            var i3 = 0;
+            var sum = 0;
+            while(i3 < 100){
+                if(i3 % 2 == 0){
+                    sum += i3
+                }
+                i3++;
+            }
+            document.write(sum + "<br/>")
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                假设用户提交了信息，JS程序会检查表单确认是否是符合要求的
+                正则表达式：super string
+                描述字符模式的对象，ECMAScript的RegExp类
+                和字符串一样，都定义了强大的[模式匹配] 和 [文本检索]与[替换]的函数
+            */
+
+            /*  
+                1.通过new去声明正则表达式 
+                    第一个参数：正则表达式主体部分  字符串
+                    第二个参数：修饰符
+                    i
+                    g
+                    【注】 修饰符没有顺序
+                2.省略new运算符去声明正则表达式
+                3.通过常量赋值
+            */
+            var box1 = new RegExp("hello","ig");
+            alert(box1);    //  /hello/gi
+            var box =  RegExp("hello","ig");
+            alert(box);
+
+            var box2 = /hello/gi;
+            alert(box2);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

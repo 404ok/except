@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 已知邮箱格式的用户名只能由数字字母下划线组成，域名：@1000phone.com,判断一个字符串是否是千峰邮箱，是返回true,不是返回false
+        eg:mail@1000phone.com 是
+           $mail@1000phone.com 不是
+           mail@1000phone.comp  不是
+    -->
+    <script>
+        function isEmail(email){
+            //1.查找一个@符号位置
+            var index = email.indexOf("@");
+            if(index == -1){
+                return false
+            }else{
+                var endStr = email.substring(index);
+                if(endStr != "@1000phone.com"){
+                    return false;
+                }else{
+                    var startStr = email.substring(0,index);
+                    var isYES = true;
+                    for(var i = 0;i <startStr.length;i++){
+                        if(!isDEF(startStr[i])){
+                            isYES = false;
+                        }
+                    }
+                    return isYES;
+                }
+
+            }
+        }
+        alert(isEmail("$mail@1000phone.com"));
+        alert(isEmail("mail@1000phone.com"));
+        alert(isEmail("mail@1000phone.comp"));
+        //判断单个字符是否符合数字字母下划线
+        function isDEF(charStr){
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z"){
+                return true;
+            }else if(charStr >= 0 && charStr <=9){
+                return true;
+            }else if(charStr == "_"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

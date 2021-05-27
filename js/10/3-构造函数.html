@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            工厂方法
+
+            1.创建一个有名字和性别的人
+            2.如果要再加一个人
+         */
+        var p1 = new Object();
+        p1.name = "blue";
+        p1.sex = "男";
+        p1.showName = function(){
+            alert("我的名字" + this.name);
+        }
+        p1.showSex = function(){
+            alert("我的性别" + this.sex);
+        }
+        p1.showName();
+        p1.showSex();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

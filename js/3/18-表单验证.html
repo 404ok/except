@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: cornflowerblue;
+            margin: auto;
+            width: 400px;
+            height: 200px;
+            padding-top: 50px;
+        }
+        input{
+            display: block;
+            margin: auto;
+        }
+        span{
+            margin-left:120px;
+            margin-right: 120px;
+            display: block;
+            font-size: 15px;
+        }
+    </style>
+    <script>
+        /* 
+            6~18个字符，可使用字母，数字，下划线，需以字母开头
+            提示结果根据内容不一样，光标移出进行判断
+            事件驱动函数：onclick
+                        onblur:失去焦点
+        */
+        function func(){
+            var username = document.getElementById("username");
+            var username_span = document.getElementById("username_span");
+            var name = username.value;
+            if(name.length < 6 || name.length > 18){
+                username_span.innerHTML = "!长度应该位6~18个字符";
+            }else if(!isABC(name[0])){
+                username_span.innerHTML = "!首字母应该是英文字母";
+            }else{
+                var isYES = true;
+                for(var i = 0;i < name.length;i++){
+                    if(!isDEf(name[i])){
+                        isYES = false;
+                        break;
+                    }
+                }
+                if(isYES){
+                    username_span.innerHTML = "✔恭喜~ 该邮件地址可注册"
+                }else{
+                    username_span.innerHTML = "!需以字母，数字，下划线组成"
+                }
+            }
+
+            function isABC(str){
+                if(str >= "a" && str <= "z" || str >= "A" && str <= "Z")
+                {
+                    return true
+                }
+            }
+            function isDEf(charStr){
+                if(charStr >= 0 && charStr <= 9){
+                    return true;
+                }else if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z" ||charStr == "_"){
+                    return true;
+                }else{
+                return false;
+                }
+            }
+       }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" id="username" placeholder="用户名" onblur="func()">
+        <span id="username_span">6~18个字符，可使用字母，数字，下划线，需以字母开头</span>
+        <input type="text" placeholder="密码">
+    </div>
+    
+</body>
+</html>

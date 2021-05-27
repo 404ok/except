@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        a{
+            text-decoration: none;
+            color: #666;
+        }
+        h1,h2,h3,h4,h5{
+            font-size: 16px;
+        }
+
+        .l{
+            float: left;
+        }
+        .r{
+            float: right;
+        }
+        .clear:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #main{
+            margin: 20px auto;
+            width: 393px;
+        }
+        #main .title{
+            font-size: 14px;
+            line-height: 24px;
+            height: 24px;
+            font-weight: bold;
+            padding-left:31px ;
+            
+            background: url(./img/icon.jpg) no-repeat 5px 3px,
+            url(./img/背景title渐变.jpg) repeat-x ;
+        }
+        #main ul{
+            overflow: hidden;
+            margin-top: 14px;
+        }
+        #main li{
+            margin-bottom: 23px;
+        }
+        #main .img{
+            width: 104px;
+            border: 2px solid #d5d3d8;
+            padding: 1px;
+            margin-left: 4px;
+        }
+        #main .content{
+            margin-left: 12px;
+        }
+        #main .content h2{
+            line-height: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #main .content p{
+            width: 260px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2 class="title">
+            外媒提炼精选
+        </h2>
+        <ul>
+            <li class="clear first">
+                <div class="l img">
+                    <a href="#">
+                        <img src="./img/one.jpg" alt="">
+                    </a>
+                </div>
+                <div class="l content">
+                    <h2>《加勒比海盗》--商业味浓郁</h2>
+                    <p>本集《加勒比海盗》讲述了杰克船长受英王所托寻找“不老息”,与他-<a href="#">[详细]</a></p>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="l img">
+                    <a href="#">
+                        <img src="./img/two.jpg" alt="">
+                    </a>
+                </div>
+                <div class="l content">
+                    <h2>《雷神托尔》——神话版莎茹戏剧</h2>
+                    <p>《雷神》由克里斯·海姆斯沃斯和今年新晋奥斯卡影后娜塔莉·被特曼.<a href="#">[详细]</a></p>
+                    
+                </div>
+            </li>
+            <li class="clear">
+                <div class="l img">
+                    <a href="#">
+                        <img src="./img/three.jpg" alt="">
+                    </a>
+                </div>
+                <div class="l content">
+                    <h2>《源代码》-—科幻与惊阔完美结合</h2>
+                    <p>《源代码》由杰克·吉伦哈尔、米歌尔·莫娜汉、维拉·法梅加主演:..<a href="#">[详细]</a></p>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

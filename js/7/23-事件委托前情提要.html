@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            window.onload = function(){
+                var ul = document.getElementById("ul1");
+                var li = ul.getElementsByTagName("li");
+
+                //添加点击事件
+                for (let i = 0; i < li.length; i++) {
+                    li[i].onclick = function(){
+                        this.style.backgroundColor = "red";
+                    }
+                }
+                var btn = document.getElementById("btn1");
+                var i = 7;
+                btn.onclick = function(){
+                    var newNode = document.createElement("li");
+                    newNode.innerHTML = i++ * 111;
+                    ul.appendChild(newNode);
+                }
+                /* 
+                    1.浪费
+                    2.后面加的节点没有点击事件
+                */
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btn1">新增节点</button>
+        <ul id="ul1">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+            <li>444</li>
+            <li>555</li>
+            <li>666</li>
+        </ul>
+    </body>
+</html>

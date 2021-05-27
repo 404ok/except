@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- dpr -->
+		<title>响应式</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			a{
+				cursor: pointer;
+			}
+			header{
+				height: 50px;
+				background-color: rgba(0,0,0,0.7);
+				position: fixed;
+				width: 100%;
+			}
+			header .menu{
+				float: right;
+				margin-right: 20px;
+				color: white;
+				font-size: 18px;
+				line-height: 50px;
+				display: none;
+				/* 此元素不会被显示。 */
+			}
+			header .menu .nav-list{
+				width: 100%;
+				position: fixed;
+				top: 50px;
+				left: 0;
+			}
+			header .menu .nav-list a{
+				display: block;
+				width: 100%;
+				height: 50px;
+				background-color: rgba(0,0,0,0.6);
+				text-align: center;
+				border-bottom: 1px dotted white;
+			}
+			header .menu{
+				cursor: pointer;
+			}
+			header .menu:hover  .nav-list{
+				display: block;
+			}
+			header img.logo{
+				float: left;
+				width: 150px;
+				margin-left: 30px;
+			}
+			header .nav-list{
+				display: block;
+				float: right;
+				margin-right: 20px;
+			}
+			header .nav-list a{
+				color: white;
+				font-size: 18px;
+				line-height: 50px;
+				float: left;
+				margin-right: 20px;
+				text-decoration: none;
+			}
+			.banner{
+				background: url(../003%20图片%20100px/img/屏幕截图%202020-11-30%20135344.jpg);
+				height: 400px;
+				margin-bottom: 20px;
+			}
+			.product-list li{
+				box-sizing: border-box;
+				width: 20%;
+				float: left;
+				padding: 0 10px 20px;
+			}
+			.product-list li img{
+				width: 100%;
+				border-radius: 4px;
+				box-shadow: 0 0 6px 0 #666;
+			}
+			@media screen and (max-width:1024px) {
+				.product-list li{
+					width: 25%;
+				}
+			@media screen and (max-width:640px) {
+				.product-list li{
+					width: 50%;
+				}
+			@media screen and (max-width:768px) {
+				.product-list li{
+					width: 33.333%;
+				}
+				header .menu{
+					display: block;
+				}
+				header .nav-list{
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="menu">
+				menu
+				<nav class="nav-list">
+					<a>文章</a>
+					<a>素材</a>
+					<a>活动</a>
+					<a>素材</a>
+					<a>文章</a>
+					<a>活动</a>
+				</nav>
+			</div>
+			<img src="../013%20背景图/img/001-仓库.png" class="logo">
+			<nav class="nav-list">
+				<a href="">文章</a>
+				<a href="">素材</a>
+				<a href="">活动</a>
+				<a href="">素材</a>
+				<a href="">文章</a>
+				<a href="">活动</a>
+			</nav>
+		</header>
+		<div class="banner">
+			
+		</div>
+		<div class="product-list">
+			<li>
+				<div>
+					<img src="../013%20背景图/img/002-交货时间.png" >
+					<p>迷你微型摄影展</p>
+					<p>
+						<span>2020-12-12</span>
+						<span>作者:?</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="../013%20背景图/img/002-交货时间.png" >
+					<p>迷你微型摄影展</p>
+					<p>
+						<span>2020-12-12</span>
+						<span>作者:?</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="../013%20背景图/img/002-交货时间.png" >
+					<p>迷你微型摄影展</p>
+					<p>
+						<span>2020-12-12</span>
+						<span>作者:?</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="../013%20背景图/img/002-交货时间.png" >
+					<p>迷你微型摄影展</p>
+					<p>
+						<span>2020-12-12</span>
+						<span>作者:?</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="../013%20背景图/img/002-交货时间.png" >
+					<p>迷你微型摄影展</p>
+					<p>
+						<span>2020-12-12</span>
+						<span>作者:?</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="../013%20背景图/img/002-交货时间.png" >
+					<p>迷你微型摄影展</p>
+					<p>
+						<span>2020-12-12</span>
+						<span>作者:?</span>
+					</p>
+				</div>
+			</li>
+		</div>
+	</body>
+</html>

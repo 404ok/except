@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                番茄炒蛋
+                    番茄 + 鸡蛋 + 调料
+                事件绑定时：
+                    元素节点.on + 事件类型 = 匿名函数;
+                    【注】 系统在事件绑定一旦完成的时侯,生成一个事件对象
+
+                    触发事件时，系统会自动去调用事件绑定的函数，将事件对象当作第一个参数传入
+                    怎么去拿到一个事件对象
+            */ 
+            //普通函数  先声明再调用
+            function show(ev){
+                /* alert(arguments.length);//每一个函数有一个arguments关键字
+                alert(arguments[0]); */
+                alert("hello world");
+                //alert(ev);IE8以下不兼容,兼容 window.event
+               
+            }
+            // show();
+            window.onload = function(){
+                var btn = document.getElementById("btn1");
+                btn.onclick = function(ev){
+                    //事件对象获取的方法,固定写法
+                    var e = ev || window.event;
+                    alert(e);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btn1">按钮</button>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                docunment.getElementById(id);
+
+                node.getElementsByTagName(标签名) 复数
+                功能：从node节点开始，通过标签名获取符合条件的元素节点
+                返回值：伪数组/类数组(only one也是一个伪数组)
+
+                node.getElementsByClassName(class名字)  IE8以下不兼容
+                功能：通过class名字获取符合条件的元素节点
+                伪数组
+
+                document.getElementsByName(name属性的值)
+                功能：通过name属性的值获取符合条件的元素节点
+                伪数组
+            */
+
+            window.onload = function(){
+                var aLis = document.getElementsByTagName("li");
+                alert(aLis);//返回的是对象，使用起来和数组类似 一般情况把这一类叫做伪数组/类数组(非官方)
+                alert(aLis.length);//获取有几个节点
+
+
+                //获取ol下的li节点
+
+                var oOl =document.getElementById("ol1");
+                var aLis1 = oOl.getElementsByTagName("li");
+                alert(aLis1.length);
+                
+                alert(aLis1[0]);
+                for(var i = 0;i < aLis.length;i++){
+                    aLis[i].style.backgroundColor = "red";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>111</li>
+            <li class="box">111</li>
+            <li>111</li>
+            <li>111</li>
+            <li class="box">111</li>
+            <li name="hello">111</li>
+            <div class="box" name="hello"></div>
+        </ul>
+        <input type="text" name="hello">
+        <ol id="ol1">
+            <li>222</li>
+            <li class="box">222</li>
+            <li class="box">222</li>
+            <li>222</li>
+        </ol>
+    </body>
+</html>

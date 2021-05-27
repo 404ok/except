@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective-origin: bottom;perspective: 700px;
+        }
+        ul,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .parent{
+            margin: 30px auto;
+        }
+        .parent ul{
+            width: 800px;
+            height: 200px;
+            position: relative;
+            transform: rotateX(30deg);
+            
+            line-height: 200px;
+            font-size: 26px;
+            text-align: center;
+            transform-style: preserve-3d;
+            
+        }
+        .parent ul li{
+            border: 2px solid black;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 3s;
+            transform-origin: right;
+            
+        }
+        .parent ul li:nth-child(1){
+            left: 0;
+            top:0 ;
+            background-color:white;
+        }
+        .parent ul li:nth-child(2){
+            left: 200px;
+            top: 0;
+            z-index: 4;
+            background-color:white;
+        }
+        .parent ul li:nth-child(3){
+            left: 0;
+            top: 0;
+            z-index: 3;
+            background-color: transparent;
+            background-color:white;
+        }
+        .parent ul li:nth-child(4){
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background-color: transparent;
+            background-color:white;
+        }
+        .parent ul li:nth-child(5){
+            left: 0;
+            top: 0;
+            z-index: 1;
+            background-color: transparent;
+            background-color:white;
+        }
+        .parent ul li:nth-child(6){
+            left: 0;
+            top: 0;
+        }
+        .parent ul:hover li:nth-child(2){
+            transform:rotateY(0) ;
+        }
+        .parent ul:hover li:nth-child(1){
+            transform: rotateY(0);
+            z-index: 1;
+        }
+        .parent ul:hover li:nth-child(3){
+            transform: rotateY(180deg);
+            transition-delay: 1S;
+            z-index: 2;
+        }
+        .parent ul:hover li:nth-child(4){
+            transform: rotateY(180deg);
+            transition-delay: 1.5S;
+            z-index: 3;
+        }
+        .parent ul:hover li:nth-child(5){
+            transform: rotateY(180deg);
+            transition-delay: 2S;
+            z-index: 4;
+        }
+        .parent ul:hover li:nth-child(6){
+            transform: rotateY(0);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <ul>
+            <li>1</li>
+            <li></li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2,.box3,.box4{
+            width: 100px;
+            height: 100px;
+            background-color: springgreen;
+            margin: 5px;
+        }
+        .box1{
+            animation: 2s move 2s;
+        }
+        @keyframes move {
+            0%{
+                transform: translate(0,0);
+                background-color: tomato;
+            }
+            100%{
+                transform: translate(300px,0px);
+            }
+        }
+        .box2{
+            animation: 2s move 2s;
+            animation-fill-mode: backwards;
+        }
+        .box3{
+            animation: 2s move 2s;
+            animation-fill-mode: forwards;
+        }
+        .box4{
+            animation: 2s move 2s;
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        1
+    </div>
+    <div class="box2">
+        2
+    </div>
+    <div class="box3">
+        3
+    </div>
+    <div class= "box4">
+        4
+    </div>
+</body>
+</html>

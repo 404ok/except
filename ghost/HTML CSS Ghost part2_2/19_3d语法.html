@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            overflow: hidden;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 30px auto;
+            perspective: 100px;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 100px;
+            transition: 1s ;
+            /* transform: rotateX(0); */
+            /* transform: rotateY(0); */
+            transform: translateZ(0);
+            /* transform: scaleZ(0); */
+        }
+        .box1:hover .box2{
+            /* transform: rotateY(360deg); */
+           /* transform: rotateX(180deg); */
+           transform: translateZ(20px);
+           /* transform: scaleZ(5); */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            aaaaaaaaaaaa
+        </div>
+    </div>
+</body>
+</html>

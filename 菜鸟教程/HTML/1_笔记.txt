@@ -1,0 +1,120 @@
+1.HTML 不是一种编程语言，而是一种标记语言；标记语言是一套标记标签 (markup tag)
+2.HTML文档也叫做 web 页面，HTML文档包含了HTML标签及文本内容
+3.一个 HTML 元素包含了开始标签与结束标签
+4.VS Code 和 Sublime Text 还可以配合 Emmet 插件来提高编码速度。
+
+Emmet 官网：http://emmet.io/
+5.a标签中href 属性中指定链接的地址
+6.空元素在开始标签中进行关闭（以开始标签的结束而结束）eg:<br>
+<br /> 元素是一个空的 HTML 元素。由于关闭标签没有任何意义，因此它没有结束标签。
+7.某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号
+例如：name='John "ShotGun" Nelson'
+8.属性和标签最好都用小写
+9.浏览器会自动地在段落的前后添加空行。（</p> 是块级元素）
+10.HTML 代码中的所有连续的空行（换行）也被显示为一个空格。
+11.计算机/编程代码
+    <code>计算机输出</code>
+    <br />
+    <kbd>键盘输入</kbd>
+    <br />
+    <tt>打字机文本</tt>
+    <br />
+    <samp>计算机代码样本</samp>
+    <br />
+    <var>计算机变量</var>
+    <br />
+12.<address> </address> 地址
+13.
+缩写：<acronym title="World Wide Web">WWW</acronym>
+首字母缩写：<abbr title="etcetera">etc.</abbr>
+注意：仅对于 IE 5 中的 acronym 元素有效。
+对于 Netscape 6.2 中的 abbr 和 acronym 元素都有效。
+14.改变文字的方向：<bdo dir="rtl"></bdo>
+15.块引用：
+<p>WWF's goal is to: 
+    <q>Build a future where people live in harmony with nature.</q>
+    We hope they succeed.</p>
+16.a标签的id属性：创建在一个HTML文档书签标记。(应用：书签)
+    <a id="tips">有用的提示部分</a>
+    <a href="#tips">访问有用的提示部分</a>(创建一个连接到上面id的位置)
+    <a href="https://www.runoob.com/html/html-links.html#tips">
+        访问有用的提示部分
+    </a>
+    (从另一个页面链接过来)
+
+    eg:
+    <p>
+        <a href="#C4">查看章节 4</a>
+    </p>
+    <h2><a id="C4">章节 4</a></h2>
+    <p>这边显示该章节的内容……</p>
+17.假如你的页面被固定在框架之内。
+<a href="//www.runoob.com/" target="_top">点击这里!</a> 
+18.
+<head></head>里
+    1>.<base> 定义页面中所有链接默认的链接目标地址。
+        eg:<base target="_blank">;
+    2>.<meta></meta>:描述HTML文档的描述，关键词，作者，字符集等。
+        <meta name="description" content="免费在线教程">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="runoob">
+        每30秒钟刷新当前页面：
+        <meta http-equiv="refresh" content="30">
+19.CSS 可以通过以下方式添加到HTML中:
+    1>.内联样式- 在HTML元素中使用"style" 属性
+    2>.内部样式表 -在HTML文档头部 <head> 区域使用<style></style>元素 来包含CSS
+    3>.外部引用 - 使用外部 CSS 文件
+20.这些标签将不支持新版本的HTML标签。
+    不建议使用的标签有: <font>, <center>, <strike>
+    不建议使用的属性: color 和 bgcolor.
+21.创建带有可供点击区域的图像地图。其中的每个区域都是一个超级链接。
+    <img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+    <map name="planetmap">
+        <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+        <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+        <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+    </map>
+    shape指的是点击区域的形状，coords指的应该是链接区域在图片中的坐标（像素为单位）
+    1>.矩形：(左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2))
+        <area shape="rect" coords="x1,y1,x2,y2" href=url>
+    2>.圆形：(圆心坐标为(X1,y1)，半径为r)
+        <area shape="circle" coords="x1,y1,r" href=url>
+    3>.多边形：(各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......)
+        <area shape="poly" coords="x1,y1,x2,y2 ......" href=url>
+22.table th(表头) tr(行：row ) td (列：colum)
+    带标题 (caption) 的表格  
+    <caption>Monthly savings</caption>
+    自定义列表：dl dt dd
+23.使用iframe来显示目标链接页面
+    iframe可以显示一个目标链接的页面
+    目标链接的属性必须使用iframe的属性，
+24.应对不支持脚本或禁用脚本的浏览器:
+    <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+25.HTML字符实体对大小写敏感
+    eg:空格	&nbsp;
+    小于号	&lt;
+    a&#768;	à
+    &#169; 等同于 ©
+26.浏览器是如何运作的？
+    用户界面
+    浏览器引擎
+    渲染引擎
+
+    进程：操作系统进行资源分配和调度的基本单元
+    线程：运算调度的最小单位，一个进程可以并发多个线程，每条线程并行执行不同的任务
+
+    渲染器线程主线程  DOM style(样式计算) layout paint(绘制生成遍历表) layer 
+    合成器线程 tiles(图块)  frame(合成器帧)
+    栅格线程(栅格化) raster  draw quads
+
+    重排 重绘 js  (主线程)
+
+
+    优化：requestAnimationFrame(在每一帧被调用js)React Fiber
+
+    transform(css在栅格线程和合成器线程运行，不占用主线程)
+27.html5未学
+    
+         
+
+

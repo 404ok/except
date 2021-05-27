@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            KFC 点餐系统:
+                1.吃什么
+                2.怎么吃
+        */
+        //回调函数：把一个函数调用进去，再在合适的地方调用
+       function KFC(food,eatFunc){
+           alert("您的餐" + food + "准备好了，请你及时取餐");
+           eatFunc();
+       } 
+       KFC("香辣鸡腿堡",function (){
+            alert("堂食");
+       });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

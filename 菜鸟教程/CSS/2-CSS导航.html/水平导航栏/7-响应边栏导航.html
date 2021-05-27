@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            overflow: hidden;
+            background-color: yellowgreen;
+            height: 100%;
+            width: 25%;
+            position: fixed;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 10px 16px;
+        }
+        a.active{
+            background-color: hotpink;
+        }
+        a:hover:not(.active){
+            background-color: greenyellow;
+        }
+        
+        .content{
+            margin-left: 25%;
+            height: 1500px;
+        }
+        @media screen and (max-width:900px){
+            ul{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            ul li a{
+            float: left;
+            padding: 15px;
+            }
+            .content{
+                margin-left: 0;
+                float: left;
+            }
+        }
+        @media screen and (max-width:500px){
+            ul.sidenav li a{
+                text-align: center;
+                float: none;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <body>
+
+        <ul class="sidenav">
+          <li><a class="active" href="#home">主页</a></li>
+          <li><a href="#news">新闻</a></li>
+          <li><a href="#contact">联系</a></li>
+          <li><a href="#about">关于</a></li>
+        </ul>
+        
+        <div class="content">
+            <h2>响应式边栏导航实例</h2>
+            <p>该实例在屏幕宽度小于900px时导航栏为顶部水平导航栏，如果大于900px,导航栏会在左边，且是固定的</p>
+            <p>如果屏幕宽度小于400px，会变成垂直导航栏</p>
+            <h3>重置浏览器窗口大小查看效果</h3>
+        </div>
+
+</body>
+</html>

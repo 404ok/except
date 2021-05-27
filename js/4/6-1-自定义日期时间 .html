@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showTime(){
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;   //因为月份是从1月开始
+            var date = d.getDate();
+
+            var day = d.getDay();
+            day = weekOfChinese(day);
+            var hour = d.getHours();
+            hour = doubleNum(hour);
+            var min = d.getMinutes();
+            min = doubleNum(min);
+            var sec = d.getSeconds();
+            sec = doubleNum(sec);
+
+            var str = year + "年" + month + "月" + date + "日 星期" + day + " " + hour + ":" + min + ":" + sec;
+            return str; 
+        }
+        document.write(showTime());
+
+        function weekOfChinese(day){
+            var arr = ["日","一","二","三","四","五","六"];
+            return arr[day];
+        }
+        function doubleNum(num){
+            if(num < 10){
+                return "0" + num;
+            }else{
+                return num;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

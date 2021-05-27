@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            输入两个数n,a。如果 n =3 ,a = 2。
+            如果2+22+222的值。(不用输出式子)
+            如果n = 4，a = 3
+            输出3 + 33 + 333 +3333的值
+        */
+       var n = 3;
+       var a = 2;
+       var n1 = 3;
+       var sum = 0;
+       var k = 1;
+       for(i = 1;i <= n; i++){
+            sum = sum + a * k * n1;
+            k = k*10;
+            n1--;
+        }
+        alert(sum);
+
+        function sumFunction(n,a){
+            //升级版
+            var sum = 0;
+            var tmp =a;//每一次累加的数
+            for(i = 1;i <= n;i++){
+                sum = sum + tmp;
+                tmp =tmp *10 + a;
+            }
+        }
+        alert(sumFunction(3,2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        
+       function commonDivisor(num1,num2){
+            var min = num1 > num2 ? num2 : num1;
+            for(;min >= 1;min--){
+                if(num1 % min == 0 &&num2 % min == 0){
+                    return min;
+                    break;
+                }
+            }
+       }
+       alert(commonDivisor(12,6));
+       function  commonMultiple(num1,num2){
+            var max = num1 > num2 ? num1 : num2;
+            for(;1;max++){
+                if(max % num1 == 0&& max % num2 ==0){
+                    return max;
+                    break;
+                }
+            }
+       }
+       alert(commonMultiple(24,6));
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

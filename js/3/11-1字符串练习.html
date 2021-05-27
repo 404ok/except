@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            3.将字符串按照单词进行逆序，空格作为划分单词的唯一条件
+            传入："Welcome to Beijing" 改为 "BeiJing to Welcome"
+        */
+       function reverse(str){
+            var arr = str.split(" ");
+            arr.reverse();
+            return arr.join(" ");
+       }
+       alert(reverse("Welcome to Beijing"))
+       </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0; padding: 0;
+		}
+		.container {
+			width: 1200px; margin: auto;
+			position: relative;
+		}
+		.point {
+			width: 10px; height: 10px; display: block;
+			background: #6AD7E9; 
+			border-radius: 50%;
+			position: absolute;
+		}
+		.ripple-1 {
+			animation: ripple 4500ms 225ms infinite;
+		}
+		.ripple-2 {
+			animation: ripple 4500ms 1575ms infinite;
+		}
+		.ripple-base {
+			width: 120px; height: 120px;
+			border: 2px solid #00cdec;
+			border-radius: 50%;
+			transform: scale(0.01);
+			position: absolute; left: -57px; top: -57px;
+		}
+		@keyframes ripple{
+			100% { opacity: 0; transform: scale(1) }
+		}
+	</style>
+	<body>
+		<p style="text-align: center;">阿里云全球服务器分布</p>
+		<div class="container">
+			<img src="aliyun/TB1EBxZrwoQMeJjy0FoXXcShVXa-1127-508.png" style="width: 100%;">
+			<div class="point" style="top: 196px; left: 950px;">
+				<div class="ripple-base ripple-1"></div>
+				<div class="ripple-base ripple-2"></div>
+			</div>
+		</div>
+	</body>
+</html>

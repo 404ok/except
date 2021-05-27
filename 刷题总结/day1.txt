@@ -1,0 +1,14 @@
+1.html5十大新特性的总结：
+    一、用于绘画的canvas元素
+    二、更加丰富强大的表单
+    三、用于媒介的video和audio元素
+    四、html5地理定位
+    五、html5拖放
+    六：html5 Web存储
+    七、html5应用程序缓存
+    八、html5 Web Workers
+    九、html5服务器发送事件
+    十、html5 WebSocket　
+    完全支持 CSS3
+2.a标签内可以包含任何元素，但不能嵌套a自己
+3.p元素不能包含任何块级元(包含自身)

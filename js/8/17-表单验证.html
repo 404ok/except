@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: black;
+            margin: auto;
+            width: 400px;
+            height: 200px;
+            padding-top: 50px;
+            border-radius: 5%;
+        }
+        input{
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            width: 300px;
+            height: 20px;
+        }
+        span{
+            margin-left: 50px;
+            color:gray;
+            display: block;
+            font-size: 18px;
+            font-size: 12px;
+        }
+        #div1 .testCode{
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgb(51, 51, 51);
+            color: white;
+            text-align: center;
+            float: left;
+            margin-left:20px;
+            margin-top: 10px;
+        }
+        #div1 div:first-of-type{
+            margin-left: 90px;
+        }
+    </style>
+    <script>
+        /* 
+            6~18个字符，可使用字母，数字，下划线，需以字母开头
+            提示结果根据内容不一样，光标移出进行判断
+            事件驱动函数：onclick
+                        onblur:失去焦点
+        */
+        window.onload = function(){
+            var username = document.getElementById("username");
+            var username_span = document.getElementById("username_span");
+            var password = document.getElementById("password");
+            var div1 = document.getElementById("div1") ;
+            var divs = div1.getElementsByClassName("testCode");
+
+            //添加失去焦点事件
+            username.onblur = function(){
+                var value = username.value;
+                //1.用户名长度是否符合要求
+                if(value.length < 6 || value.length > 18) {
+                    username_span.innerHTML = "!长度应该位6~18个字符";
+                    //2.修改颜色
+                    username_span.style.color = "red";
+                    
+                    //3.判断首字母是否是字母
+                }else if(!/[a-zA-Z]/.test(value[0])){
+                    username_span.innerHTML = "!首字母应该是英文字母";
+                    username_span.style.color = "red";
+                }else if(/\W/.test(value)){
+                    username_span.innerHTML = "!邮件地址需由字母、数字或下线组成";
+                    username_span.style.color = "red";
+                    
+                }else{
+                    username_span.innerHTML = "√该用户名可注册";
+                    username_span.style.color = "green";
+                }
+            }
+
+            //给密码输入框，添加键盘事件
+            password.onkeyup = function(){
+                var value = this.value;//onkeydown触发早了一步，在文本输入之前
+                //每次触发之前，需要将上一次样式全部清空
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.backgroundColor = "rgb(51, 51, 51)";
+                }
+
+                if(value.length >= 6){
+                    /* 
+                        开始密码强度判定 ：
+                            1.弱：纯数字 纯小写 纯大写
+                            2.中：两两混合
+                            3.强：三种都有
+                    */
+                    if(/^\d+$/.test(value) || /^[a-z]+$/.test(value) || /^[A-Z]+$/.test(value)){
+                        divs[0].style.backgroundColor = "orange";
+                    }else if(/\d/.test(value) && /[a-z]/.test(value) && /[A-Z]/.test(value)){
+                        divs[2].style.backgroundColor = "orange";
+                    }else{
+                        divs[1].style.backgroundColor = "orange";
+                    }
+                }
+            }
+        }
+           
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" id="username" placeholder="用户名" onblur="func()">
+        <span id="username_span">6~18个字符，可使用字母，数字，下划线，需以字母开头</span>
+        <input type="text" placeholder="密码" id="password">;
+        <div class="testCode">弱</div>
+        <div class="testCode">中</div>
+        <div class="testCode">强</div>
+    </div>
+    
+</body>
+</html>

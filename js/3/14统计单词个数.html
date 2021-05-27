@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            已知一个字符串对象中，英语单词用各种非字母字符分割，统计单词个数
+            传入：“Yes,she*is$my@love,” 
+            返回：5
+
+            规律：当前面一个字符是字母，后面一个字符是非字母时，这就是单词
+        */
+        function countOfWord(str){
+            var count = 0;
+            for(var i = 0; i < str.length - 1;i++){
+                if(isABC(str[i]) && !isABC(str[i + 1])){
+                    count++;
+                }
+            }
+            return count;
+        }
+        alert(countOfWord('Yes,she*is$my@love,' ));
+
+        //判断单个字符是否是字母
+        function isABC(charStr){
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z"){
+                 return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

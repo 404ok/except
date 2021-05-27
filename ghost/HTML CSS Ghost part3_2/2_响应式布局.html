@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            padding-left: 15px;
+            padding-right:15px;
+            margin-left: auto
+        }
+        @media all and (min-width: 768px){
+            .container{max-width: 720px;}
+        }
+        @media all and (min-width: 992px){
+            .container{max-width: 960px;}
+        }
+        @media all and (min-width: 1120px){
+            .container{max-width: 1140px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        hello media
+    </div>
+</body>
+</html>

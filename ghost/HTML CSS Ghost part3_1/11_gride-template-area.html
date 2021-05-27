@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px gray dotted;
+            display: grid;
+            /* grid-template-rows: repeat(3,1fr);
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "a1 a1 a1"
+            "a2 a2 a3" "a2 a2 a3"; */
+            grid-template: 
+            "a1 a1 a1" 1fr
+            "a2 a2 a3" 1fr
+            "a2 a2 a3" 1fr
+            /* 上面为横向 */
+            /1fr 1fr 1fr;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+        }
+        .box div{
+            background-color: hotpink;
+            border:1px solid khaki;
+            border-radius: 10px;
+        }
+        .box div:nth-child(1){
+            grid-area: a1;
+        }
+        .box div:nth-child(2){
+            grid-area: a2;
+        }
+        .box div:nth-child(3){
+            grid-area: a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

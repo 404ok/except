@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ok{
+            width: 200px;
+            height: 900px;
+            background-color: hotpink;
+            float: left;
+        }
+        .po{
+            width: 90px;
+            height: 900px;
+            float: left;
+            background-color: indianred;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        浮动元素会脱离文档流，与其他元素发生重叠，
+        但是，不会与文字内容发生重叠
+        文字环绕效果
+        横向排版
+     -->
+     <div class="ok"></div>
+     <div class="po"></div>
+
+     <!-- 
+         元素浮动，但不影响后面元素操作：
+            1.一个整的(这个父元素要设高度，因为子元素皆为浮动，无法撑开父元素)包裹着所以浮动元素，不浮动即可
+            2.父元素：overflow:auto
+            3.clear:left/right/both 当前元素不受什么影响
+        
+      -->
+</body>
+</html>

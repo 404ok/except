@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            每一个函数中都有一个内置的变量this,this指向当前函数的主人，函数的主人根据上下文关系进行判断
+        */
+        //常见this
+        //1.全局函数    this = window
+        function show(){
+            alert(this);
+        }
+        show();
+
+        //2.this => person
+        var person = {  //person对象
+            username : "钢铁侠",
+            show:function(){
+                alert(person.username);
+                alert(this.username);
+            }
+        }
+
+        window.onload = function(){
+            var btn = document.getElementById("btn1");
+            btn.onclick = function(){
+                alert(this.innerHTML);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+</body>
+</html>

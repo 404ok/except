@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0; padding: 0;
+			}
+			#header {
+				height: 50px;
+				background: #E83828;
+			}
+			#header .head {
+				width: 1005px; height: 50px;
+				background: #D1D3D6;
+				margin: auto; /*居中显示*/
+			}
+			
+			#banner {
+				height: 520px;
+				background: slateblue;
+			}
+			
+			#category {
+				width: 1005px; height: 200px;
+				margin: auto; /*居中显示*/
+				background: #FF359A;
+			}
+			#category .item {
+				width: 125px; height: 165px; /*设置大小*/
+				padding-left: 25px; /*左填充*/
+				padding-right:25px; /*右填充*/
+				padding-bottom: 25px; /*下填充*/
+				padding-top: 10px; /*上填充*/
+				border-right: 1px dashed black; /*右边框，1像素，虚线 ，黑色*/
+				float: left; /*左浮动*/
+			}
+			#category .item.first {
+				padding-left: 0; /*取消左填充*/
+			}
+			#category .item.last {
+				padding-right: 0;  /*取消右填充*/
+				border: 0;  /*取消边框*/
+			}
+			#case { height: 490px; background: #eeeeee; }
+			#case .title-text {
+				width: 1005px;
+				margin: auto; /*水平居中*/
+				padding-top: 20px;  /*上填充*/
+				padding-bottom: 10px; /*下填充*/
+				font-size: 45px; /*字体大小*/
+			}
+			#case .item-wrapper {
+				width: 1000px;
+				margin: auto; /*水平居中*/
+				overflow: auto;  /*自动设置高度，防止因子元素浮动而高度塌陷*/
+			}
+			#case .item-wrapper .item {
+				width: 320px; height: 330px; background: #9ACD32;
+				float: left; /*左浮动*/
+			}
+			#case .item-wrapper .item.mg { margin-left:20px; margin-right:20px; /*左右边距*/ }
+			#case p {
+				width: 1005px; height: 40px; 
+				margin-left: auto; margin-right: auto; /*水平居中*/
+				margin-top: 15px; /*上边距*/
+				line-height: 40px; /*行高和高度一致时，文字垂直居中*/
+				text-align: center; /*文字水平居中*/
+				font-size: 30px; /*字体大小*/
+				color: dimgray; /*字体颜色*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="head"></div>
+		</div>
+		<div id="banner"></div>
+		<div id="category">
+			<div class="item first"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item last"></div>
+		</div>
+		<div id="case">
+			<div class="title-text">
+				Case
+			</div>
+			<div class="item-wrapper">
+				<div class="item"></div>
+				<div class="item mg"></div>
+				<div class="item"></div>
+			</div>
+			<p>查看更多+</p>
+		</div>
+	</body>
+</html>

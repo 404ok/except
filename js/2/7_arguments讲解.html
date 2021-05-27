@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            arguments:每一个函数都会有一个，系统内置
+            注意：arguments是用来存储实际传入的参数的
+
+                属性：
+                    arguments.length 输出当前里面存储的参数个数
+                    访问某一个数据：
+                        arguments(下标);
+                        注意：下标从0开始
+                【注】优先使用形参，除非特殊情况
+
+            object:对象
+         */
+
+         /* function show() {
+             alert(arguments.length);
+             alert(arguments[1])
+         }
+         show(3,"98",true);
+ */
+         /* 
+            例子：求任意一个数字的和
+
+         */
+        function sum() {
+            var res = 0;//求和的数
+            for(var i = 0;i < arguments.length;i++){
+                res += arguments[i];
+            }
+            return res;
+        }
+        alert(sum(10,20,50,6));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

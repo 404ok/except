@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            empty-cells: hide;
+            border-collapse: collapse;
+        }
+        table .line{
+            border-top: 200px solid red;
+            border-left:600px solid blue;
+            position: relative;
+            
+        }
+        table .line em{
+            position: absolute;
+            left:-200px ;
+            top: -200px;
+        }
+        table .line span{
+            position: absolute;
+            left:-480px ;
+            top: -120px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1px" cellspacing="30" cellpadding="30">
+        <caption>天气预报</caption>
+        <colgroup>
+            <col span="2" style="background: red;">
+            <col span="2" style="background: gold;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2" > 
+                    <div class="line">
+                        <em>详情</em>
+                        <span>日期</span>
+                    </div>
+                    
+                </th>
+                <th>天气情况</th>
+                <th>出行情况</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="left" valign="top">
+                <td rowspan="2">2021年2月25日</td>
+                <td>白天</td>
+                <td><img src="./images/乘务员.jpg" alt=""></td>
+                <td>适合出行</td>
+            </tr>
+            <tr>
+                <td>夜晚</td>
+                <td><img src="./images/乘务员.jpg" alt=""></td>
+                <td>适合出行</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2021年2月25日</td>
+                <td>白天</td>
+                <td><img src="./images/乘务员.jpg" alt=""></td>
+                <td></td>
+            </tr>
+            <tr>
+               
+                <td>夜晚</td>
+                <td><img src="./images/乘务员.jpg" alt=""></td>
+                <td>不适合出行</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>手机上下两栏布局</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+		}
+		html,body {
+			height: 100%;
+		}
+		body {
+			display: flex;
+			flex-direction: column;
+		}
+		main,nav {
+			width: 100%;
+		}
+		main {
+			flex-grow: 1;
+			background-color: gray;
+		}
+		nav {
+			height: 60px; background-color: #1E90FF;
+		}
+	</style>
+	<body>
+		<main></main>
+		<nav></nav>
+	</body>
+</html>

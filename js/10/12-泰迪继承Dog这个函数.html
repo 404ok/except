@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面向对象，继承、封装()封装构造函数、多态
+        */
+        function Dog({name,type,age}){
+            this.name = name;
+            this.type = type;
+            this.age = age;
+        }
+        Dog.prototype = {
+            run:function(){
+                alert(this.name + "会飞快的奔跑");
+            },
+            showSelf:function(){
+                alert(`这是一个$(this,type)的,$(this.age)岁的，叫$(this.name)的小狗`);
+            }
+        }
+        /* 
+            分类更加细分的构造函数，继承
+        */
+        function Teddy({name,type,age,color}){
+            //this = new Object()
+            //1.继承父一级构造函数的所有属性
+            //构造函数的伪装
+            Dog.call(this,{
+                name:name,
+                type:type,
+                age:age,
+            })
+            //2.添加自己的属性
+            this.color = color;
+            //return this;
+        }
+
+
+        /* 
+            原型链继承
+        */
+        //泰迪继承Dog这个函数
+        for(var funcName in  Dog.prototype) {
+            Teddy.prototype[funcName] = Dog.prototype[funcName];
+        }
+        //在子一级构造函数重写这个showSelf方法
+        Teddy.prototype.showSelf = function(){
+            alert(`这是一个$(this,type)的,$(this.age)岁的，是$(this.color)叫$(this.name)的小狗`);
+        }
+        Teddy.prototype.showColor = function(){
+            alert(this.color);
+        }
+        var xiaohong = new Teddy({
+            name:"小花",
+            type:"泰迪",
+            age:10,
+            color:"红色"
+        })
+        alert(xiaohong.name);
+        alert(xiaohong.type);
+
+        var xiaohei = new Dog({
+            name:"小黑",
+            type:"拉布拉多",
+            age:5,
+        })
+        alert(xiaohei.showColor);
+
+        /* 
+            继承和多态：同一件事情的两种完全不同的侧重
+            继承：侧重是从父一级构造函数，继承到的属性和方法
+            多态：子一级，自己能够重写和新增的属性和方法
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

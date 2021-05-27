@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            /* 
+                /i:匹配一个
+                /g:全局匹配
+                字符串中可以使用正则的方法：
+                    match()
+                        格式：字符串.match(正则)
+                        功能：在字符串中匹配是否有符合正则表达式
+                        返回：匹配成功，返回装有匹配到子串的数组
+                            匹配失败：返回null
+                    replace()
+                        格式：字符串.replace(oldStr/正则,newStr);
+                        功能：替换
+                        返回：替换成功的新字符串
+                    split()
+                        格式：字符串.split(分隔符/正则)
+                        功能：用分隔符将原字符串进行分割替换
+                        返回值：分割剩下的子串组成的数组
+                    search()
+                        格式：字符串.search(子串/正则)
+                        功能：找到符合条件的子串第一次出现的位置
+                        返回值：如果找到，返回>=0的下标
+                               否则，返回-1
+
+                    
+            */
+            var str = "how Are are ARE you";
+            alert(str.search("a"))
+            var str = "how are Are ARE you";
+            var box = /arex/ig;
+            alert(str.match(box));
+
+            var str = "how are Are ARE you";
+            var arr = str.split(/are/i);
+            alert(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

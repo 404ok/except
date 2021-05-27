@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            定时器
+                格式：var timer = setInterval(函数,毫秒数)
+                功能：每隔对应的毫秒数，执行遗产传入的函数
+                返回值：启动定时器时，系统分配的编号
+                clearInterval(timer):取消定时器
+
+        */
+       /* var i = 0;
+       function show (){
+           if(i >= 5){
+               clearInterval(timer);
+           }
+           document.write(i++ + "<br/>");
+       }
+       var timer = setInterval(show,1000); */
+       //此处show函数不要括号
+
+
+       var show1 = function(){
+           if(i >= 5){
+               clearInterval(timer);
+           }
+           document.write(i++ + "<br/>");
+       }
+       var timer = setInterval(show1,1000);
+
+       //填入法 没有名字的函数叫匿名函数
+       var timer = setInterval(function(){
+           if(i >= 5){
+               clearInterval(timer);
+           }
+           document.write(i++ + "<br/>");
+       },1000);
+
+
+       </script>
+</head>
+<body>
+    
+</body>
+</html>

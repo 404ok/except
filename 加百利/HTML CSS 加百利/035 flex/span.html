@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Flex实例</title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			display: flex;
+		}
+		.box{
+			width: 100%;
+			height: 300px;
+			background-color: #0077AA;
+			
+		}
+		.box1{
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			float: left;
+			background-color: #057200;
+			width: 20%;
+			height: 200px;
+			margin: 20px;
+		}
+		.box2{
+			float: left;
+			flex-direction: column;
+			justify-content: space-between;
+			background-color: #00FFFF;
+			width: 60%;
+			height: 200px;
+			margin: 20px;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="box1">
+				<span>31</span>
+				<span>八月</span>
+			</div>
+			<div class="box2">
+				<span>社群大事件</span>
+				<span>今天群主竟然拒绝女装，我记下了</span>
+			</div>
+		</div>
+	</body>
+</html>

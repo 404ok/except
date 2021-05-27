@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                求两个数的和
+                1.分析不确定值
+                2.将不确定的值声明成形参
+                3.函数名与形参名要见名思意
+            */
+           /*  
+                程序员可能对函数运行的结果有不同的处理方式
+                【注意】：我们不能将函数进行的结果写在函数里面
+           */
+          /* 
+                return 关键字
+                有参数有返回值的函数
+                    格式：
+                        function 函数名(形参1,形参2...){
+                            函数体;
+                            return 表达式;
+                        }
+                【注意】:return后面写什么表达式，函数调用的结果就是return后面表达式的值
+
+                【注意】：函数运行的时候，如果遇到return关键字，整个函数会终止
+          */
+
+           /* function add(num1,num2){
+               return num1 + num2;
+           }
+           var res = add(10,2);
+           alert(res);
+           var res2 = add(8,5);
+           document.write(res2); */
+
+           function show(){
+               alert(1);
+               return 1;//终止啦
+               alert(2);
+           }
+           show();
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

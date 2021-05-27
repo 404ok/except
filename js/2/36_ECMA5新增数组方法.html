@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            indexOf()
+                格式：数组.indeOf(item,start)
+                参数：item 任意的数据
+                      start 下标 可以不传入，默认是0
+                功能：在数组中查找第一次item元素下标，从start开始去查找
+                返回值：-1 没有查找到
+                        >=0 查找到的元素的下标
+         */
+
+         var arr = [10,20,30,90,40,20];
+         var index = arr.indexOf(120,3);
+         alert(index);
+
+         /* 
+            数组遍历
+                for循环
+                for...in
+                forEach(ECMA5新增)
+
+            小彩蛋：forEach 屏蔽了初学者对于循环的理解
+          */
+          var arr1 = [10,20,30,40,50];
+          arr1.forEach(function(item,index,arr1){
+              /* 
+                item当前遍历到的元素
+                index当前遍历到元素的下标
+                arr数组本身
+              */
+             document.write(item + "," + index + "," + arr1 + "<br/>");
+          })
+
+          /* 
+                map：映射
+                返回值即处理方式
+          */
+         var arr2 = [10,20,30,40,50];
+         var newArr = arr2.map(function(item,index,arr2){
+             //遍历要做的事情
+             return item * 1.3;
+         })
+         alert(arr2);
+         alert(newArr);
+
+         /* 
+            filter()过滤
+         */
+        var arr3 = [10,20,30,40,50];
+        var newArr1 = arr3.filter(function(item,index,arr3){
+            //过滤所有大于20的元素
+            return item > 20;
+        })
+        alert(arr3);
+        alert(newArr1);
+
+        /* 
+            some 某些
+            功能：
+                查找是否有符合条件的元素，如果有，返回true,无,返回false
+                短路操作：只要找到符合条件的，即停止
+        */
+        var arr4 = [10,20,30,40,50];
+        var res = arr4.some(function (item,index,arr4) {
+            alert(item);
+            return item > 20;
+        })
+        alert(arr4);
+        alert(res);
+
+        /* 
+            every 每一个
+            【注】在数组中查找每一个元素是否都符合条件的，是返回true,否返回false(同短路操作)
+        */
+       var arr5 = [90,80,70,60,50];
+       var res = arr5.every(function (item,index,arr5) {
+           alert(item);
+           return item > 70;
+
+         })
+         alert(arr5);
+         alert(res);
+
+         /* 
+            reduce 归并
+                先并第一二个，再并第三个...
+         */
+        var arr6 = [10,20,30,40,50,60];
+        var res = arr6.reduce(function (prev,next,index,arr6) {
+            /* 
+                prev 第一次是 下标为0的元素
+                     第二次开始 是上一次遍历return的值
+                next 从下标1开始，当前遍历到的元素
+                arr6数组本身
+            */
+            alert(prev + "," + next);
+            return prev + next;
+        })
+        alert(res);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

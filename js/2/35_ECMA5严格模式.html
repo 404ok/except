@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                ECMA5严格模式：
+                    目的：
+                        1.消除JS语法的一些不合理、不严谨之处，减少一些怪异行为
+                        2.减少一些不安全之处
+                        3.提高编译效率
+                    变化：
+                        1.全局变量声明时，必须要加var
+                        2.函数内重名属性
+                        3.arguments只存储我传的实参的值，即对象不允许被动态改变
+                        4.新增保留字：implements、interface、let、package、private、protected、public、static、yield
+            */
+
+            /* 
+                严格模式：写在哪个作用域下，在哪个作用域下就生效  "use strict" 
+                【注】尽量注意不要将此模式写在全局
+            */
+            
+            /* 1.全局变量声明时，必须要加var
+            function show(){
+                "use strict"//严格模式
+                num = 10;
+            }
+            show();
+            alert(num); */
+
+            /* 2.函数内重名属性
+            function show(num1,num1,num2){
+                "use strict"
+                alert(num1 + "," + num2);
+            }
+            show(19,89,90); */
+
+            /* 3.arguments只存储我传的实参的值，即对象不允许被动态改变
+            function show(num1,num2){
+                "use strict"
+                num1 = "hello";
+                alert(num1 + "," + num2);
+                alert(arguments[0] + "," + arguments[1]);
+            }
+            show(10,20); */
+
+           /*  4.新增保留字：implements、interface、let、package、private、protected、public、static、yield
+            "use strict";
+            var interface = 10;
+            alert(interface); */
+        </script>
+    </head>
+    <body>
+        
+    </body> 
+</html>

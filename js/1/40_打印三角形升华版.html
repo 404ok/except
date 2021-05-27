@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //打印倒三角形
+
+       /*  输出空格个数 = 5 - 当前行的圆圈
+                      5-i
+                &nbsp; 空格 半角空格
+                &ensp; 空格 全角空格
+
+            循环中用于计数的数  下标(index)
+            命名：i j k l m n(习惯性)
+        */
+        for(var i = 1;i <= 5;i++){
+            for(var m = 1;m <= 5-i;m++){
+               document.write("&ensp;&ensp;&nbsp;");
+            }
+            for(var k =1;k <= i;k++){
+                document.write("m");
+                document.write("&nbsp;");
+            }
+            document.write("<br/>");
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

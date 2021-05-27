@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            window.onload = function (){
+                var oUl = document.getElementById("ul1");
+                var nodes =oUl.getElementsByClassName("box");
+
+                alert(nodes.length);
+                for(var i = 0; i < nodes.length;i++){
+                    nodes[i].style.backgroundColor = "red";
+                }
+            }
+            
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>111</li>
+        <li class="box">111</li>
+        <li>111</li>
+        <li>111</li>
+        <li class="box">111</li>
+        <li name="hello">111</li>
+        <div class="box" name="hello">div</div>
+    </ul>
+    <input type="text" name="hello">
+    <ol id="ol1">
+        <li>222</li>
+        <li class="box">222</li>
+        <li class="box">222</li>
+        <li>222</li>
+    </ol>
+</body>
+</html>

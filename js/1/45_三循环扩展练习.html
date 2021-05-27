@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        <!-- 例题：输入两个数，求两个数的最大公约数(两个整数共有约数的最大数); GCD
+        最小公倍数(即两个的最小的倍数)LCM -->
+    
+     <script>
+         
+         var num1 =16;
+         var num2 =8;
+         if(num1 > num2){
+            for(var GCD1 = num2;GCD1 >= 1;GCD1--){
+                if(num1 % GCD1 == 0 && num2 % GCD1 == 0){
+                    alert("最大公约数为" + GCD1);
+                    break;
+                }
+            }
+            for(var LCM1 = num1;1;LCM1++){
+                if(LCM1 % num1 == 0 && LCM1 % num2 == 0 ){
+                    alert("最小公倍数为"+ LCM1);
+                    break;
+                }
+            }
+         }else{
+            for(var GCD2 = num1;GCD2 >= 1;GCD2--){
+                if(num1 % GCD2 == 0 && num2 % GCD2 == 0){
+                    alert("最大公约数为" + GCD2);
+                    break;
+                }
+         }
+         for(var LCM1 = num2;1;LCM1++){
+                if(LCM1 % num1 == 0 && LCM1 % num2 == 0 ){
+                    alert("最小公倍数为"+ LCM1);
+                    break;
+                }
+            }
+         }
+     </script>
+</head>
+
+<body>
+    
+</body>
+</html>

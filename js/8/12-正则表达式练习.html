@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            替代字符    |
+         */
+         var str = "baidu";
+         var box = /googlr|baidu|bing/;
+         alert(box.test(str));
+
+
+        /* 
+            修饰符：
+                i   忽略大小写
+                g   全局匹配
+                m   换行匹配
+                    【注意】如果在字符串，遇到换行，重新开始计算行首
+        */
+        
+        var str = "1、baidu1\n2、baidu2\n3、bing3"; //\n代表换行
+        var box = /^\d/mg;
+        alert(str.replace(box,"*"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

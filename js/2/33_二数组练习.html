@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                编写函数has(arr,60),判断数组中是否存在60这个元素，返回布尔类型
+            */
+           var item = 60;
+           var arr = [10,90,60,80];
+           function has(arr,item){
+                for(i = 0;i < arr.length;i++){
+                    if(arr[i] === item){    //要用恒等
+                        return true;
+                        //遇到return则停止
+                    }
+                }
+                return false;
+           }
+           alert(has(arr,item));
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

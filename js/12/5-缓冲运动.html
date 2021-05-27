@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            position: absolute;
+            left: 0;
+            top: 200px;
+        }
+    </style>
+    <script>
+        /* 
+            缓冲运动：
+                (距离为到停下的位置的距离)
+                踩刹车：速度最大，距离最大
+                停下：速度为0，距离为0
+            规律：速度和距离成正相关
+            var speed = 距离
+            var speed = (iTarget(目的值) - iCur(距离值))/8
+
+            【注意】计算机最小能识别的像素是1像素(主要是速度小于1所导致的)
+         */
+
+         window.onload = function(){
+             var btn = document.getElementById("btn1");
+             var div = document.getElementById("div1");
+
+             btn.onclick = function(){
+                 //需要一个缓冲函数
+                 startMove(500);
+             }
+         }
+        var timer = null;
+        function startMove(iTarget){
+        var div = document.getElementById("div1");
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = (iTarget - div.offsetLeft)/8;//速度和距离的公式
+            speed = Math.ceil(speed);//向上取整
+            if(div.offsetLeft == iTarget){
+                clearInterval(timer);
+            }else{
+                div.style.left = div.offsetLeft +speed +"px";
+            }
+            var txt1 = document.getElementById("txt1");
+            txt1.value += speed + "," + div.offsetLeft +"\n";
+        }, 30);
+        }
+</script>
+</head>
+<body>
+    <button id="btn1">开始运动</button>
+    <div id="div1"></div>
+    <textarea name="" id="txt1" cols="30" rows="10"></textarea>
+    <span style="width: 1px ;height: 500px;background-color: black;position: absolute;left: 500px;"></span>
+    <!-- 会有一些误差，对于用户体验有问题 -->
+</body>
+</html>

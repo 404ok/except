@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            XMLHttpRequest  IE8以下不兼容   政府网站
+            IE6以下：new ActiveXObject("Microsoft.XMLHTTP");
+
+        */
+        //1.创建ajax对象
+
+        window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+
+                var xhr = null;
+                try{
+                    xhr = new XMLHttpRequest();
+                }catch{
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xhr.open("get","6.get.php?username=yyy&age=19&password=9090",true);
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            alert(xhr.responseText);
+                        }else{
+                            alert("error" + xhr.status);
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btn">GET请求</button>
+</body>
+</html>

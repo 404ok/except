@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>关于</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: 楷体;
+			}
+			#header{
+				height: 40px;
+				padding: 10px;
+			}
+			#header .yemian{
+				float: left;
+			}
+			#header .yemian  a{
+				padding-bottom: 20px;
+			}
+			#header .head{
+				width: 1005px;
+				height: 50px;
+
+				padding-left: 550px;
+				font-family: 楷体;
+			}
+			section{
+				width: 800px;
+				height: 100px auto;
+				margin: 40px auto;
+				background-color: ghostwhite;
+			}
+			section article{
+				float: left;
+				width: 200px;
+				height: 300px;
+				overflow: hidden;
+				border-radius: 6px;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			#text-a{
+				background-color: #f4f4f2;
+				color: black;
+			}
+			#text-b{
+				background-color: #e8e8e8;
+				color:  black;
+			}
+			#text-c{
+				background-color: #bbbfca;
+				color:  black;
+			}
+			#text-d{
+				background-color: #495464;
+				color: black;
+			}
+			h1{
+				margin: 10px 10px 5px 50px;
+			}
+			p{
+				margin: 16px 30px;
+			}
+			section:hover article{
+				width: 50px;
+			}
+			section article:hover{
+				width: 650px;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="yemian">
+				<a href="../demo.html">
+					<img src="../img/返回.png" width="15%">
+				</a>
+			</div>
+			<div class="head">
+				<h1>关于</h1>
+			</div>
+		</div>
+		<section>
+			<article id="text-a">
+				<h1>总体设计</h1>
+				<p>
+					整体来说是关于中国画这个主题的设计，有三个页面进行响应，分别是主页，时间线，关于，全文字体为楷体。
+					初始界面是主页，然后时间线和关于按钮位于主页的右上角，用超链接实现，点击可以跳转
+					到另一个页面。另一个页面是另外一个文件夹里的HTML做的新页面，然后在时间线和关于界
+					面里也在一个超链接里放了一个返回图标，点击即可返回到主页面
+				</p>
+			</article>
+			<article id="text-b">
+				<h1>主页</h1>
+				<p>
+					主页题目banner中国国画居中，然后是对于三张国画图片的轮播，这里运用的是用两个div盒子，
+					里面的div盒子是将三张图片设置成float，外层的div盒子是设置其大小只展示一张图片，轮播效果通过对于其用动
+					画transform里的translatX来变化。<br>
+					接下来是国画的简介和分类，主要是对于CSS里的padding和margin来设置出效果，分类里的虚线是用border实现，
+					最后是画法口诀，这里用了：before，：after，和hover来实现了数字向上浮动，颜色慢慢向上动画，与轮播原理
+					类似，还有就是背景颜色改变，字体颜色变亮。
+				</p>
+			</article>
+			
+			<article id="text-c">
+				<h1>时间线</h1>
+				<p>
+					时间线是用border设置的，而黑色椭圆形也是用border radius来实现，再通过margin和
+					padding来调整位置，得到效果。
+				</p>
+			</article>
+			<article id="text-d">
+				<h1>关于</h1>
+				<p>
+					这里首先是用于：hover来做出来鼠标经过效果，然后值得一提的是，这里字超过了盒子，
+				但是我通过用overflow来实现对于超过的字隐藏效果。
+				</p>
+			</article>
+		</section>
+	</body>
+</html>

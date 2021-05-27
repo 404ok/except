@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        /* 
+            拖拽div1    面向过程方法
+         */
+
+         window.onload = function(){
+             var div1 = document.getElementById("div1");
+             div1.onmousedown = function(ev){
+                    var e = event || window.event;
+                    //alert(e.offsetX + "," + e.offsetY);
+                    var offsetX = e.clientX - div1.offsetLeft;
+                    var offsetY = e.clientY - div1.offsetTop;
+
+                    document.onmousemove = function(ev){
+                        var e = ev || window.event;
+                        div1.style.left = e.clientX - offsetX +"px";
+                        div1.style.top = e.clientY - offsetY +"px";
+                    }
+             }
+             document.onmouseup = function(){
+                 document.onmousemove = null;
+             }
+         }
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

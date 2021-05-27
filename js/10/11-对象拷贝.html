@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            
+        */
+        var obj1 = {
+            a:10,
+            b:20,
+            c:30,
+        }
+
+        var obj2 = obj1;//因为对象是复合对象类型，所以直接把地址给了obj1
+        //修改obj2的一个值，再输出
+        obj2.c = 100;
+        console.log(obj2);
+        console.log(obj1);
+
+        //解决办法：1.声明一个空对象    2.通过循环遍历obj1，拿到属性名，再把属性名，添加到obj2
+        var obj3 = {};
+        for(var attr in obj1){
+            obj3[attr] = obj1[attr];
+        }
+        obj3.c = 2500;
+        console.log(obj3);
+        console.log(obj1)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

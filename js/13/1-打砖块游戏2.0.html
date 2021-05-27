@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 600px;
+            height: 600px;
+            border: 1px solid black;
+            position: relative;/* 小球和板子都相对于其定位 */
+            margin: auto;
+        }
+        #ball{
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 30px;
+            left: 290px;
+        }
+        #bat{
+            width: 100px;
+            height: 30px;
+            background-color: blue;
+            bottom: 0;
+            left: 200px;
+            position: absolute;
+        }
+        #brick div{
+            width: 98px;
+            height: 18px;
+            border: 1px solid black;
+            float: left;
+        }
+    </style>
+    <script>
+        /* 
+            1.四处运动的小球
+            2.下面的板子
+                可以左右拖拽
+                小球碰到会弹回去
+            3.上面的砖块
+                小球碰到砖块会消失
+                小球也会弹回去
+         */
+
+            window.onload = function(){
+                //获取所有节点
+                var div = document.getElementById("div1");
+                var ball = document.getElementById("ball");
+                var bat = document.getElementById("bat");
+                var brick = document.getElementById("brick");
+                //将所有砖块拿到
+                var bricks = brick.getElementsByTagName("div");
+
+
+                //小球
+                //让小球可以水平方向运动 随机一个水平方向速度(3~6之间的速度)
+                var speedX =parseInt(Math.random() * 4) + 3;
+                //随机一个垂直方向的速度    5~7
+                var speedY = -(parseInt(Math.random() * 3) + 5);
+
+                //让小球运动
+                setInterval(function(){
+/*                     clearInterval(ball.timer); */
+                    ball.style .left = ball.offsetLeft + speedX +"px";
+                    ball.style.top = ball.offsetTop + speedY +"px";
+                    if(ball.offsetLeft >= 580 || ball.offsetLeft <= 0){
+                        speedX *=-1;
+                    }
+                    if(ball.offsetTop <= 0){
+                        speedY *= -1;
+                    }
+                    //小球碰到下边，gameover
+                    if(ball.offsetTop >=580){
+                        alert("GAME OVER");
+                        window.location.reload();
+                        //火狐兼容，谷歌不兼容
+                    }
+                    //进行碰撞检测(30ms一次)
+                    //1.滑块和小球的碰撞
+                    if(knock(ball,bat)){
+                        speedY *= -1;
+                    }
+                    //2.小球和砖块发生碰撞，不知道和哪一块发生碰撞，遍历每一块砖块
+                    for(var i = bricks.length - 1;i >0;i--){
+                        if(knock(ball,bricks[i])){
+                            speedY *= -1;
+                            //碰到的砖块要销毁掉，用父节点将其删除
+                            brick.removeChild(bricks[i]);
+                            break;
+                        }
+                    }
+
+
+                }, 30);
+
+                //滑块：1.只能在水平方向上滑动  2.不能出框
+                dragX(bat);
+                //砖块
+                createBrick(60);
+            }
+            //拖拽X这个函数
+            function dragX(node){
+                //mousedown:鼠标按下，记录当前相对位置,先拿到事件对象
+                node.onmousedown = function(ev){
+                    var e = ev || window.event;
+                    var offsetX = e.clientX - node.offsetLeft;
+                    document.onmousemove = function(ev){
+                    var e = ev || window.event;
+                    var l = e.clientX - offsetX;
+                    //限制出界
+                    if(l <= 0){
+                        l = 0;
+                    }
+                    if(l >=500){
+                        l = 500;
+                    }
+                    node.style.left = l + "px";
+                    //记得加"px"
+                }
+                }
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    //取消move
+                }
+            }
+
+            //创建砖块函数 n:创建个数
+            function createBrick(n){
+                //拿到brick
+                var brick = document.getElementById("brick");
+                //通过循环创建一个一个新的节点
+                for(var i = 0;i < n;i++){
+                    var node = document.createElement("div");//创建节点
+                    node.style.backgroundColor = randomColor();//随机颜色
+                    brick.appendChild(node);//将节点插入到页面上
+                }
+                
+                //相对定位转换成绝对定位    文档流转换
+                //将所有砖块拿到
+                var bricks = brick.getElementsByTagName("div");
+                //通过循环拿到所有砖块的位置
+                for(var i = 0;i < bricks.length;i++){
+                    bricks[i].style.left = bricks[i].offsetLeft + "px";
+                    bricks[i].style.top = bricks[i].offsetTop + "px";
+                }
+                for(var i = 0;i < bricks.length;i++){
+                    bricks[i].style.position = "absolute";
+                }
+            }
+            //随机颜色
+            function randomColor(){
+                var str = "rgba("+ parseInt(Math.random() * 256) + "," +parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256)+ ",1)"; 
+                return str;
+            }
+            //碰撞函数
+            function knock(node1,node2){
+            //先将node1、node2的上下左右四条边算出来
+            var l1 = node1.offsetLeft;
+            var r1 = node1.offsetLeft + node1.offsetWidth;
+            var t1 = node1.offsetTop;
+            var b1 = node1.offsetTop + node1.offsetHeight;
+            var l2 = node2.offsetLeft;
+            var r2 = node2.offsetLeft + node2.offsetWidth;
+            var t2 = node2.offsetTop;
+            var b2 = node2.offsetTop + node2.offsetHeight;
+            //碰撞
+            if(l2 >r1 || r2 < l1 || t2 > b1 || b2 < t1){
+                return false;
+            }else{
+                return true;
+            }
+       }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="ball"><!-- 小球 -->
+
+        </div>
+        <div id="bat"></div><!-- 滑块 -->
+        <div id="brick">
+            
+        </div>
+    </div><!-- 带边框的div,即游戏盒子 -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ajax.js"></script>
+    <script>
+        /* 
+            前后端交互的流程:
+                1.通过ajax下载数据(转成字符串)
+                2.分析数据，转成对应数据结构
+                3.处理数据
+         */
+         window.onload = function(){
+             var btn = document.getElementById("btn1");
+             btn.onclick = function(){
+                $ajax({
+                    method:"get",
+                    url:"./getList.php",
+                    success:function(result){
+                        alert(result);
+                        /* 
+                            var arr = JSON.parse(result);
+                            //将字符串转成对应数组
+                            for(var i = 0;i <arr.length;i++){
+                            alert(i + "," + arr[i]);
+                            } 
+                        */
+                        //将字符串转回对象
+                        var obj = JSON.parse(result);
+                        //输出对象的某一个属性
+                        alert(obj.username); 
+                    },
+                    error:function(msg){
+                        //报错
+                        alert(msg);
+                    }
+                })
+             }
+         }
+    </script>
+</head>
+<body>
+    <button id="btn1">下载数据</button>
+</body>
+</html>
